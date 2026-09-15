@@ -61,7 +61,7 @@ class GitHubCollector(BaseCollector):
         state: str = "all",
         max_issues: int = 1000,
         max_prs: int = 1000,
-        max_commits: int = 1000,
+        max_commits: int = 50,
         since: str | None = None,
         **kwargs,
     ) -> list[Path]:
@@ -213,10 +213,15 @@ class GitHubCollector(BaseCollector):
 
         body_lines += ["", "## Description", "", pr.body or "_No description._", ""]
 
-        # Commits — full messages (subject + body), no diffs
-        commits = list(pr.get_commits())
-        shown = commits[:max_commits]
+        # Commits — full messages (subject + body), no diffs.
+        # Iterate lazily so we only make as many API calls as needed.
+        shown: list = []
+        for c in pr.get_commits():
+            shown.append(c)
+            if len(shown) >= max_commits:
+                break
         if shown:
+            total = pr.commits  # GitHub provides the total count without extra calls
             body_lines += ["## Commits", ""]
             for c in shown:
                 sha = c.sha[:8]
@@ -228,8 +233,8 @@ class GitHubCollector(BaseCollector):
                 if body.strip():
                     for line in body.strip().splitlines():
                         body_lines.append(f"  {line}")
-            if len(commits) > max_commits:
-                body_lines.append(f"- _… {len(commits) - max_commits} more commits not shown_")
+            if total > max_commits:
+                body_lines.append(f"- _… {total - max_commits} more commits not shown_")
             body_lines.append("")
 
         # Reviews (summary-level — APPROVED / CHANGES_REQUESTED with top-level comment)
