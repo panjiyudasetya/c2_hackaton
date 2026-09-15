@@ -57,11 +57,11 @@ class JiraCollector(BaseCollector):
 
         Args:
             jql: JQL filter string, e.g. ``project = OFI AND sprint in openSprints()``.
-                 Defaults to all issues updated in the last 30 days.
+                 Defaults to issues updated in the last 30 days, newest first.
             max_results: Maximum number of issues to fetch.
         """
-        if not jql:
-            jql = "order by updated DESC"
+        if not jql.strip():
+            jql = "updated >= -30d ORDER BY updated DESC"
 
         jira = self._client()
         issues = jira.jql(jql, limit=max_results).get("issues", [])

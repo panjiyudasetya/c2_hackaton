@@ -129,7 +129,7 @@ def github(
 # ── JIRA ───────────────────────────────────────────────────────────────────────
 
 @cli.command()
-@click.option("--jql", default="", help="JQL query. Default: all issues, newest first.")
+@click.option("--jql", default="", help="JQL query. Default: issues updated in the last 30 days.")
 @click.option("--max", "max_results", default=50, show_default=True)
 @click.pass_context
 def jira(ctx: click.Context, jql: str, max_results: int) -> None:
