@@ -2,21 +2,22 @@
 Phase 5 — AI agent using the Claude Code SDK.
 
 Runs under your existing Claude Code session credentials — no separate
-Anthropic API key required.  The agent uses the built-in Bash tool to
-call three decision-intel CLI subcommands:
-  decision-intel search "query"
-  decision-intel links  "doc_id"
-  decision-intel read-doc "file_path"
+Anthropic API key required.
+
+Strategy: search and graph calls are made locally in Python first, then the
+collected evidence is embedded into a single prompt sent to Claude with no
+tool calls.  This avoids the multi-turn tool loop that triggers rate-limit
+events before a text answer is produced.
 """
 
 from __future__ import annotations
 
 import asyncio
 import os
-import shutil
 from pathlib import Path
 
 from claude_code_sdk import ClaudeCodeOptions, query
+from claude_code_sdk._errors import MessageParseError
 from claude_code_sdk.types import AssistantMessage, ResultMessage, TextBlock
 
 _SYSTEM = """\
@@ -24,24 +25,12 @@ You are a decision-intelligence assistant for an engineering team. Your job is t
 WHY technical decisions were made by analysing evidence collected from GitHub, JIRA,
 Confluence, and Notion.
 
-You have three bash commands available (always run them from the project directory):
-
-  decision-intel search "QUERY" [--top-k N] [--source github|jira|notion|confluence] [--since YYYY-MM-DD]
-      Semantic search over all collected documents. Returns JSON with doc_id, text, score, file_path.
-
-  decision-intel links "DOC_ID" [--min-confidence 0.5] [--depth 2]
-      Follow cross-source links from a document through the metadata graph.
-      Returns JSON list of linked documents with confidence scores.
-
-  decision-intel read-doc "FILE_PATH"
-      Read the full markdown content of a specific collected document.
+The user's question and all relevant evidence have already been collected for you below.
+Do NOT call any external tools — answer solely from the provided evidence.
 
 When answering:
-1. Use `decision-intel search` first to find relevant context.
-2. Use `decision-intel links` to follow cross-source chains (JIRA → Confluence → PR).
-3. Use `decision-intel read-doc` when you need the full content of a specific file.
-4. Cite every claim with the document id (e.g. github:org/repo:pr:42).
-5. Be explicit about gaps — where the evidence is missing or ambiguous, say so.
+1. Cite every claim with the document id (e.g. github:org/repo:pr:42).
+2. Be explicit about gaps — where the evidence is missing or ambiguous, say so.
 
 Structure your final answer with:
 - Summary (2–3 sentences)
@@ -52,13 +41,63 @@ Structure your final answer with:
 """
 
 
+def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
+    """Search + graph locally; return a formatted evidence block."""
+    from ..indexer import search_documents
+    from ..graph import get_linked_documents
+
+    results = search_documents(query=question, output_dir=output_dir, top_k=top_k)
+    if not results:
+        return "No relevant documents found in the index."
+
+    lines: list[str] = ["## Search Results", ""]
+    seen_files: set[str] = set()
+
+    for r in results:
+        lines.append(f"### {r.doc_id}  (score: {r.score:.3f})")
+        lines.append(f"**File:** {r.file_path}")
+        lines.append("")
+        lines.append(r.text[:2000])
+        lines.append("")
+        if r.file_path:
+            seen_files.add(r.file_path)
+
+    # Follow graph links from the top-3 results
+    linked_lines: list[str] = []
+    for r in results[:3]:
+        try:
+            linked = get_linked_documents(
+                doc_id=r.doc_id,
+                output_dir=output_dir,
+                min_confidence=0.5,
+                depth=2,
+            )
+            for lnk in linked:
+                if lnk.file_path and lnk.file_path not in seen_files:
+                    seen_files.add(lnk.file_path)
+                    linked_lines.append(f"### {lnk.doc_id}  (linked, confidence: {lnk.score:.3f})")
+                    linked_lines.append(f"**File:** {lnk.file_path}")
+                    linked_lines.append("")
+                    try:
+                        content = Path(lnk.file_path).read_text(encoding="utf-8")
+                        linked_lines.append(content[:2000])
+                    except OSError:
+                        linked_lines.append("_(could not read file)_")
+                    linked_lines.append("")
+        except Exception:
+            pass
+
+    if linked_lines:
+        lines += ["## Linked Documents (via metadata graph)", ""] + linked_lines
+
+    return "\n".join(lines)
+
+
 class DecisionAgent:
     """Answers decision-reasoning questions using the Claude Code SDK."""
 
     def __init__(self, output_dir: Path) -> None:
         self.output_dir = output_dir
-        cli_path = shutil.which("decision-intel") or "decision-intel"
-        self._system = _SYSTEM + f"\nThe decision-intel command is at: {cli_path}\n"
 
     def ask(self, question: str) -> str:
         """Run the agent and return the final answer as markdown."""
@@ -74,16 +113,33 @@ class DecisionAgent:
             if val:
                 removed[key] = val
 
+        # Gather evidence locally — no tool calls needed.
+        context = _build_context(self.output_dir, question)
+
+        prompt = (
+            f"## Question\n\n{question}\n\n"
+            f"{context}\n\n"
+            "Please answer the question using only the evidence above."
+        )
+
         options = ClaudeCodeOptions(
-            allowed_tools=["Bash"],
-            append_system_prompt=self._system,
+            allowed_tools=[],          # no tools — single-turn answer
+            append_system_prompt=_SYSTEM,
             cwd=str(self.output_dir.parent),
-            max_turns=20,
+            max_turns=1,
         )
 
         last_text = ""
         try:
-            async for message in query(prompt=question, options=options):
+            aiter = query(prompt=prompt, options=options).__aiter__()
+            while True:
+                try:
+                    message = await aiter.__anext__()
+                except StopAsyncIteration:
+                    break
+                except MessageParseError:
+                    continue
+
                 if isinstance(message, ResultMessage):
                     if message.result:
                         return message.result
