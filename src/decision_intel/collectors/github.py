@@ -33,13 +33,14 @@ class GitHubCollector(BaseCollector):
 
     # ── repo listing (used by CLI picker) ─────────────────────────────────────
 
-    def list_all_repos(self, max_repos: int = 200) -> list[tuple[str, str]]:
-        """Return (full_name, last_pushed_date) for every accessible repo."""
+    def list_all_repos(self, max_repos: int = 200) -> list[tuple[str, str, str]]:
+        """Return (full_name, last_pushed_date, description) for every accessible repo."""
         gh = self._client()
-        results: list[tuple[str, str]] = []
+        results: list[tuple[str, str, str]] = []
         for repo in gh.get_user().get_repos(sort="pushed", direction="desc"):
             pushed = str(repo.pushed_at.date()) if repo.pushed_at else ""
-            results.append((repo.full_name, pushed))
+            desc = repo.description or ""
+            results.append((repo.full_name, pushed, desc))
             if len(results) >= max_repos:
                 break
         return results

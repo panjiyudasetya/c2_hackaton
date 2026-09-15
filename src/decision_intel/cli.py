@@ -70,7 +70,7 @@ def github(
     elif all_repos:
         with console.status("Fetching repository list…"):
             available = collector.list_all_repos()
-        selected_repos = [name for name, _ in available]
+        selected_repos = [name for name, _, _ in available]
         console.print(f"Collecting from [bold]{len(selected_repos)}[/bold] repositories.")
     else:
         # Interactive checkbox picker
@@ -89,10 +89,10 @@ def github(
 
         choices = [
             questionary.Choice(
-                title=f"{name}  [dim]({pushed})[/dim]" if pushed else name,
+                title=f"{name}  ({pushed})  {desc}" if desc else f"{name}  ({pushed})",
                 value=name,
             )
-            for name, pushed in available
+            for name, pushed, desc in available
         ]
         selected = questionary.checkbox(
             "Select repositories to collect (space to select, enter to confirm):",
