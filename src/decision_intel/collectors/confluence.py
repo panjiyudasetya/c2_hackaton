@@ -62,22 +62,41 @@ class ConfluenceCollector(BaseCollector):
         return created
 
     def _list_pages(self, confluence, space_key: str, max_pages: int) -> list[dict]:
-        """Return lightweight page stubs (id, title) — no body.
+        """Return page stubs (id, title, version, history) via the v1 REST API.
 
-        The atlassian library uses cursor-based pagination internally, so we
-        call once and let the library's generator handle batching.
+        Using the v1 content endpoint with spaceKey directly — the v2 API
+        requires a numeric space ID, which would need an extra lookup.
         """
-        return list(confluence.get_all_pages_from_space(
-            space_key,
-            limit=max_pages,
-        ))[:max_pages]
+        pages: list[dict] = []
+        start = 0
+        batch_size = 50
+        while len(pages) < max_pages:
+            result = confluence.get(
+                "rest/api/content",
+                params={
+                    "spaceKey": space_key,
+                    "type": "page",
+                    "start": start,
+                    "limit": min(batch_size, max_pages - len(pages)),
+                    "expand": "version,history",
+                },
+            )
+            batch = result.get("results", []) if isinstance(result, dict) else []
+            if not batch:
+                break
+            pages.extend(batch)
+            if len(batch) < batch_size:
+                break
+            start += len(batch)
+        return pages
 
     def _write_page(self, confluence, stub: dict, space_key: str) -> Path:
         from markdownify import markdownify as md
 
         page_id = stub["id"]
         title = stub.get("title", "Untitled")
-        base_url = confluence.url.rstrip("/")
+        # Use the env var as base — confluence.url may already have /wiki appended.
+        base_url = os.environ["CONFLUENCE_URL"].rstrip("/")
         url = f"{base_url}/wiki/spaces/{space_key}/pages/{page_id}"
 
         # Fetch body separately — keeps listing fast and progress responsive.
