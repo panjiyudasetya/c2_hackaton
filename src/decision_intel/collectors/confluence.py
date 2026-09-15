@@ -72,7 +72,7 @@ class ConfluenceCollector(BaseCollector):
         batch_size = 50
         while len(pages) < max_pages:
             result = confluence.get(
-                "rest/api/content",
+                "wiki/rest/api/content",
                 params={
                     "spaceKey": space_key,
                     "type": "page",
