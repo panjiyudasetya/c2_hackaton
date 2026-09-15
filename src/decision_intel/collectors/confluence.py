@@ -20,8 +20,6 @@ from pathlib import Path
 
 from .base import BaseCollector, render_frontmatter, safe_filename
 
-PAGE_SIZE = 50
-
 
 class ConfluenceCollector(BaseCollector):
     """
@@ -64,21 +62,15 @@ class ConfluenceCollector(BaseCollector):
         return created
 
     def _list_pages(self, confluence, space_key: str, max_pages: int) -> list[dict]:
-        """Return lightweight page stubs (id, title, version, history) — no body."""
-        pages: list[dict] = []
-        start = 0
-        while len(pages) < max_pages:
-            batch = list(confluence.get_all_pages_from_space(
-                space_key,
-                start=start,
-                limit=min(PAGE_SIZE, max_pages - len(pages)),
-                expand="version,history",
-            ))
-            if not batch:
-                break
-            pages.extend(batch)
-            start += len(batch)
-        return pages
+        """Return lightweight page stubs (id, title) — no body.
+
+        The atlassian library uses cursor-based pagination internally, so we
+        call once and let the library's generator handle batching.
+        """
+        return list(confluence.get_all_pages_from_space(
+            space_key,
+            limit=max_pages,
+        ))[:max_pages]
 
     def _write_page(self, confluence, stub: dict, space_key: str) -> Path:
         from markdownify import markdownify as md
