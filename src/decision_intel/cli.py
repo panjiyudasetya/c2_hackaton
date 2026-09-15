@@ -129,12 +129,21 @@ def github(
 # ── JIRA ───────────────────────────────────────────────────────────────────────
 
 @cli.command()
-@click.option("--jql", default="", help="JQL query. Default: issues updated in the last 30 days.")
+@click.option("--project", "projects", multiple=True, metavar="KEY",
+              help="JIRA project key to collect. Repeatable, e.g. --project OFI --project TECH.")
+@click.option("--jql", default="", help="Raw JQL query (combined with --project if both given).")
 @click.option("--max", "max_results", default=50, show_default=True)
 @click.pass_context
-def jira(ctx: click.Context, jql: str, max_results: int) -> None:
+def jira(ctx: click.Context, projects: tuple[str, ...], jql: str, max_results: int) -> None:
     """
     Fetch JIRA issues and write one markdown file per issue.
+
+    Examples:
+
+    \b
+      decision-intel jira --project OFI
+      decision-intel jira --project OFI --project TECH
+      decision-intel jira --project OFI --jql "sprint in openSprints()"
     """
     from decision_intel.collectors import JiraCollector
 
@@ -143,8 +152,15 @@ def jira(ctx: click.Context, jql: str, max_results: int) -> None:
         console.print("[red]JIRA not configured.[/red] Set JIRA_URL, JIRA_USER, JIRA_API_TOKEN.")
         raise SystemExit(1)
 
+    # Build effective JQL from --project and/or --jql.
+    effective_jql = jql.strip()
+    if projects:
+        keys = ", ".join(projects)
+        project_clause = f"project in ({keys})"
+        effective_jql = f"{project_clause} AND ({effective_jql})" if effective_jql else project_clause
+
     with console.status("Fetching JIRA issues…"):
-        paths = collector.collect(jql=jql, max_results=max_results)
+        paths = collector.collect(jql=effective_jql, max_results=max_results)
 
     _print_results("JIRA", paths)
 
