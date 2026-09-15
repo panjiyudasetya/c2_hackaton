@@ -251,6 +251,49 @@ def graph(ctx: click.Context, no_heuristics: bool) -> None:
     console.print(f"Graph saved to [cyan]{output_dir}/.graph.db[/cyan]")
 
 
+# ── Agent tool subcommands (called by the Claude Code SDK agent via Bash) ──────
+
+@cli.command("search")
+@click.argument("query")
+@click.option("--top-k", default=10, show_default=True)
+@click.option("--source", default=None, type=click.Choice(["github", "jira", "notion", "confluence"]))
+@click.option("--since", default=None, metavar="YYYY-MM-DD")
+@click.pass_context
+def search_cmd(ctx: click.Context, query: str, top_k: int, source: str | None, since: str | None) -> None:
+    """Semantic search over collected documents. Outputs JSON."""
+    import json
+    from .indexer import search_documents
+    output_dir = ctx.obj["output_dir"]
+    results = search_documents(query=query, output_dir=output_dir, top_k=top_k, source=source, since=since)
+    click.echo(json.dumps([r.to_dict() for r in results], indent=2) if results else "[]")
+
+
+@cli.command("links")
+@click.argument("doc_id")
+@click.option("--min-confidence", default=0.5, show_default=True)
+@click.option("--depth", default=2, show_default=True)
+@click.pass_context
+def links_cmd(ctx: click.Context, doc_id: str, min_confidence: float, depth: int) -> None:
+    """Follow cross-source links from a document. Outputs JSON."""
+    import json
+    from .graph import get_linked_documents
+    output_dir = ctx.obj["output_dir"]
+    results = get_linked_documents(doc_id=doc_id, output_dir=output_dir, min_confidence=min_confidence, depth=depth)
+    click.echo(json.dumps([r.to_dict() for r in results], indent=2) if results else "[]")
+
+
+@cli.command("read-doc")
+@click.argument("file_path")
+def read_doc_cmd(file_path: str) -> None:
+    """Read the full content of a collected markdown file."""
+    path = Path(file_path)
+    if not path.exists():
+        click.echo(f"File not found: {file_path}", err=True)
+        raise SystemExit(1)
+    content = path.read_text(encoding="utf-8")
+    click.echo(content[:20_000] + "\n\n_[truncated]_" if len(content) > 20_000 else content)
+
+
 # ── Phase 5: ask ──────────────────────────────────────────────────────────────
 
 @cli.command()
