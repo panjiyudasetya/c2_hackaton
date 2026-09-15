@@ -61,6 +61,7 @@ class ConfluenceCollector(BaseCollector):
 
         created: list[Path] = []
         for space_key in space_keys:
+            (self.output_dir / space_key).mkdir(parents=True, exist_ok=True)
             for page in self._iter_pages(confluence, space_key, max_pages):
                 created.append(self._write_page(confluence, page, space_key))
         return created
@@ -109,7 +110,16 @@ class ConfluenceCollector(BaseCollector):
             "explicit_links": [],
         }
 
-        lines = [f"# {title}", "", f"**URL:** {url}  ", "", body]
+        lines = [
+            f"# {title}",
+            "",
+            f"**Space:** {space_key}  ",
+            f"**URL:** {url}  ",
+            "",
+            "## Content",
+            "",
+            body,
+        ]
 
-        filename = f"{page_id}_{_safe_filename(title)}.md"
+        filename = f"{space_key}/{page_id}_{_safe_filename(title)}.md"
         return self._write(filename, render_frontmatter(meta, "\n".join(lines)))

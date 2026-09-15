@@ -12,13 +12,13 @@ collect → enrich → index → graph → ask
 
 | Phase | Command | What it does |
 |-------|---------|--------------|
-| 1 | `github` / `jira` / `notion` | Fetches issues, PRs, and pages; writes one Markdown file each with YAML frontmatter |
+| 1 | `github` / `jira` / `confluence` / `notion` | Fetches issues, PRs, and pages; writes one Markdown file each with YAML frontmatter |
 | 2 | `enrich` | Scans every `.md` file for cross-source link patterns (`PTO-123`, `Closes #42`, etc.) and writes them into each file's `explicit_links` frontmatter field |
 | 3 | `index` | Chunks and embeds all Markdown files into a local ChromaDB vector store (`all-MiniLM-L6-v2`, ~90 MB download on first run) |
 | 4 | `graph` | Builds a SQLite metadata graph from explicit links plus temporal/author-proximity heuristics |
 | 5 | `ask` | Searches the vector store and graph locally, then sends the collected evidence to Claude in a single prompt — no tool-call round-trips |
 
-All data is local. The only outbound calls are to GitHub/JIRA/Notion APIs during collection and to Claude during `ask`.
+All data is local. The only outbound calls are to GitHub/JIRA/Confluence/Notion APIs during collection and to Claude during `ask`.
 
 ---
 
@@ -26,7 +26,7 @@ All data is local. The only outbound calls are to GitHub/JIRA/Notion APIs during
 
 - Python 3.11+
 - [Claude Code](https://claude.ai/code) installed and signed in (`claude auth login`)
-- A GitHub personal access token (for GitHub collection)
+- Credentials for whichever sources you want to collect (see `.env.example`) — e.g. a GitHub personal access token for GitHub collection, an Atlassian API token for JIRA/Confluence
 
 ---
 
@@ -45,6 +45,9 @@ GITHUB_TOKEN=ghp_...
 JIRA_URL=https://yourorg.atlassian.net
 JIRA_USER=you@yourorg.com
 JIRA_API_TOKEN=...
+CONFLUENCE_URL=https://yourorg.atlassian.net
+CONFLUENCE_USER=you@yourorg.com
+CONFLUENCE_API_TOKEN=...     # can reuse JIRA_API_TOKEN — same Atlassian Cloud auth
 NOTION_TOKEN=secret_...
 ```
 
@@ -107,6 +110,7 @@ decision-intel --help
 |---------|-------------|
 | `github` | Collect GitHub issues and PRs |
 | `jira` | Collect JIRA issues |
+| `confluence` | Collect Confluence pages |
 | `notion` | Collect Notion pages |
 | `enrich` | Scan collected files for cross-source links |
 | `index` | Embed chunks into ChromaDB vector store |
@@ -126,6 +130,12 @@ decision-intel github --repo owner/repo1 --repo owner/repo2
 # Collect only recent items
 decision-intel github --since 2026-01-01 --max-prs 100
 
+# Collect JIRA issues matching a JQL query
+decision-intel jira --jql "project = PTO AND updated >= -30d"
+
+# Collect one or more Confluence spaces
+decision-intel confluence --space TC --space PTO
+
 # Skip heuristic graph edges (author/date proximity)
 decision-intel graph --no-heuristics
 
@@ -144,16 +154,20 @@ decision-intel --output-dir /path/to/output ask "..."
 output/
   github/
     owner_repo/
-      issues/   issue_N_title.md
-      prs/      pr_N_title.md
-  jira/         PROJ-123_title.md
-  notion/       page-title.md
-  answers/      20260915_124620_question_slug.md
-  .chromadb/    (vector store — managed by ChromaDB)
-  .graph.db     (SQLite metadata graph)
+      issues/     issue_N_title.md
+      prs/        pr_N_title.md
+  jira/
+    PROJ/         PROJ-123.md
+  confluence/
+    SPACE/        pageid_title.md
+  notion/
+    database_id/  page-title.md
+  answers/        20260915_124620_question_slug.md
+  .chromadb/      (vector store — managed by ChromaDB)
+  .graph.db       (SQLite metadata graph)
 ```
 
-Each collected `.md` file has a YAML frontmatter block with `id`, `source`, `type`, `date`, `author`, `url`, and `explicit_links`.
+Each collected `.md` file has a YAML frontmatter block with at least `id`, `source`, `type`, `title`, `url`, and `explicit_links`, plus source-specific fields (e.g. `repo`/`labels` for GitHub, `project`/`issuetype` for JIRA, `space` for Confluence, `database_id` for Notion).
 
 ---
 

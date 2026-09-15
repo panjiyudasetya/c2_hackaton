@@ -18,10 +18,6 @@ def _safe_filename(text: str) -> str:
     return re.sub(r"[^\w\-]", "_", text).strip("_")[:80]
 
 
-def _md_escape(text: str | None) -> str:
-    return (text or "").replace("|", "\\|")
-
-
 def _issue_links(fields: dict) -> list[tuple[str, str, str]]:
     """Return (related_key, related_summary, relation_label) for every
     issuelink on a raw fields dict."""
@@ -40,9 +36,7 @@ def _issue_links(fields: dict) -> list[tuple[str, str, str]]:
 
 
 class JiraCollector(BaseCollector):
-    """
-    Collects JIRA issues matching a JQL query and writes them as markdown.
-    """
+    """Collects JIRA issues matching a JQL query and writes them as markdown."""
 
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "jira")
@@ -110,11 +104,14 @@ class JiraCollector(BaseCollector):
         if parent:
             explicit_links.append(f"jira:{parent['key']}")
 
+        project_key = key.split("-")[0] if "-" in key else "unknown"
+
         meta = {
             "id":             f"jira:{key}",
             "source":         "jira",
             "type":           "subtask" if is_subtask else "issue",
             "key":            key,
+            "project":        project_key,
             "issuetype":      issue_type,
             "priority":       priority,
             "assignee":       assignee,
@@ -164,5 +161,6 @@ class JiraCollector(BaseCollector):
                 body = (c.get("body") or "").strip()
                 lines += [f"### {author} — {c_created}", "", body, ""]
 
-        filename = f"{_safe_filename(key)}.md"
+        (self.output_dir / project_key).mkdir(parents=True, exist_ok=True)
+        filename = f"{project_key}/{_safe_filename(key)}.md"
         return self._write(filename, render_frontmatter(meta, "\n".join(lines)))
