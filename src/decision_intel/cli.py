@@ -49,6 +49,50 @@ def jira(ctx: click.Context, jql: str, max_results: int) -> None:
     _print_results("JIRA", paths)
 
 
+# ── Confluence & JIRA, frontmatter-tagged (Phase 1) ─────────────────────────────
+# These write one .md file per page/issue with a YAML "tag" frontmatter block
+# (id/source/type/.../explicit_links), matching the convention already used
+# for GitHub docs — see decision_intel/frontmatter_utils.py.
+
+@cli.command("collect-confluence")
+@click.option("--space", "space_key", required=True, help="Confluence space key, e.g. TC.")
+@click.option("--out", "out_dir", default=None, help="Output dir. Default: <output-dir>/confluence.")
+@click.pass_context
+def collect_confluence(ctx: click.Context, space_key: str, out_dir: str | None) -> None:
+    """Fetch every page in a Confluence space as frontmatter-tagged markdown."""
+    from .collectors import confluence
+
+    target = out_dir or str(ctx.obj["output_dir"] / "confluence")
+    try:
+        with console.status(f"Fetching Confluence space {space_key}…"):
+            paths = confluence.collect(space_key, target)
+    except RuntimeError as exc:
+        console.print(f"[red]Confluence not configured:[/red] {exc}")
+        raise SystemExit(1)
+
+    _print_results("Confluence", [Path(p) for p in paths])
+
+
+@cli.command("collect-jira")
+@click.option("--boards", "board_names", multiple=True, required=True, help="Board name (substring match). Repeatable.")
+@click.option("--out", "out_dir", default=None, help="Output dir. Default: <output-dir>/jira.")
+@click.pass_context
+def collect_jira(ctx: click.Context, board_names: tuple[str, ...], out_dir: str | None) -> None:
+    """Fetch every card (and subtasks) from the given JIRA boards as
+    frontmatter-tagged markdown, one file per issue."""
+    from .collectors import jira as jira_tagged
+
+    target = out_dir or str(ctx.obj["output_dir"] / "jira")
+    try:
+        with console.status(f"Fetching JIRA boards {list(board_names)}…"):
+            paths = jira_tagged.collect(list(board_names), target)
+    except RuntimeError as exc:
+        console.print(f"[red]JIRA not configured:[/red] {exc}")
+        raise SystemExit(1)
+
+    _print_results("JIRA (tagged)", [Path(p) for p in paths])
+
+
 # ── GitHub ────────────────────────────────────────────────────────────────────
 
 @cli.command()
@@ -168,3 +212,11 @@ def _print_results(source: str, paths: list[Path]) -> None:
     for p in paths:
         table.add_row(str(p))
     console.print(table)
+
+
+if __name__ == "__main__":
+    # Required for `python -m decision_intel.cli ...` to actually dispatch
+    # into the Click group — without this, running the module just defines
+    # the commands and exits with no output and no error (which is exactly
+    # what was happening before this line existed).
+    cli()
