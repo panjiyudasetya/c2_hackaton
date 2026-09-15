@@ -209,22 +209,26 @@ class GitHubCollector(BaseCollector):
 
         body_lines += ["", "## Description", "", pr.body or "_No description._", ""]
 
-        # Commits — messages only, no diffs
+        # Commits — full messages (subject + body), no diffs
         commits = list(pr.get_commits())
         shown = commits[:max_commits]
         if shown:
             body_lines += ["## Commits", ""]
             for c in shown:
                 sha = c.sha[:8]
-                msg = (c.commit.message or "").split("\n")[0]
+                full_msg = (c.commit.message or "").strip()
+                subject, _, body = full_msg.partition("\n")
                 c_author = c.commit.author.name if c.commit.author else "unknown"
                 c_date = str(c.commit.author.date)[:10] if c.commit.author else ""
-                body_lines.append(f"- `{sha}` **{c_author}** ({c_date}): {msg}")
+                body_lines.append(f"- `{sha}` **{c_author}** ({c_date}): {subject}")
+                if body.strip():
+                    for line in body.strip().splitlines():
+                        body_lines.append(f"  {line}")
             if len(commits) > max_commits:
                 body_lines.append(f"- _… {len(commits) - max_commits} more commits not shown_")
             body_lines.append("")
 
-        # Reviews
+        # Reviews (summary-level — APPROVED / CHANGES_REQUESTED with top-level comment)
         reviews = list(pr.get_reviews())
         if reviews:
             body_lines += ["## Reviews", ""]
@@ -238,7 +242,22 @@ class GitHubCollector(BaseCollector):
                     "",
                 ]
 
-        # Issue comments
+        # Inline review comments (per-line code threads — most technical discussion lives here)
+        review_comments = list(pr.get_review_comments())
+        if review_comments:
+            body_lines += ["## Review Comments", ""]
+            for rc in review_comments:
+                if _is_bot(rc.user.login if rc.user else None):
+                    continue
+                path_hint = f" on `{rc.path}`" if rc.path else ""
+                body_lines += [
+                    f"### {rc.user.login if rc.user else 'unknown'} — {str(rc.created_at)[:10]}{path_hint}",
+                    "",
+                    rc.body or "",
+                    "",
+                ]
+
+        # General PR comments (non-review thread comments)
         comments = list(pr.get_issue_comments())
         if comments:
             body_lines += ["## Comments", ""]
