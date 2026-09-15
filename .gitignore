@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# decision-intel: generated artifacts (rebuildable with `decision-intel build`)
+output/.chromadb/
+output/.graph.db
