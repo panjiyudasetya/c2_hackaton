@@ -40,8 +40,8 @@ def cli(ctx: click.Context, output_dir: str) -> None:
               help="Collect from every accessible repo without showing the picker.")
 @click.option("--state", default="all",
               type=click.Choice(["open", "closed", "all"]), show_default=True)
-@click.option("--max-issues", default=50, show_default=True)
-@click.option("--max-prs",    default=50, show_default=True)
+@click.option("--max-issues", default=1000, show_default=True)
+@click.option("--max-prs",    default=1000, show_default=True)
 @click.option("--max-commits", default=50, show_default=True,
               help="Max commits listed per PR (messages only, no diffs).")
 @click.option("--since", default=None, metavar="YYYY-MM-DD",
