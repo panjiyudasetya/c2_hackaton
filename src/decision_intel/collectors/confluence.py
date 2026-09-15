@@ -55,12 +55,16 @@ class ConfluenceCollector(BaseCollector):
 
         created: list[Path] = []
         for space_key in space_keys:
-            for n, page in enumerate(self._iter_pages(confluence, space_key, max_pages), start=1):
-                created.append(self._write_page(confluence, page, space_key))
-                self._report(n, None, "Pages")
+            # List page IDs quickly (no body), then fetch body per page so
+            # progress updates after each page rather than after the whole batch.
+            page_stubs = self._list_pages(confluence, space_key, max_pages)
+            for n, stub in enumerate(page_stubs, start=1):
+                created.append(self._write_page(confluence, stub, space_key))
+                self._report(n, len(page_stubs), "Pages")
         return created
 
-    def _iter_pages(self, confluence, space_key: str, max_pages: int) -> list[dict]:
+    def _list_pages(self, confluence, space_key: str, max_pages: int) -> list[dict]:
+        """Return lightweight page stubs (id, title, version, history) — no body."""
         pages: list[dict] = []
         start = 0
         while len(pages) < max_pages:
@@ -68,29 +72,31 @@ class ConfluenceCollector(BaseCollector):
                 space_key,
                 start=start,
                 limit=min(PAGE_SIZE, max_pages - len(pages)),
-                expand="body.storage,version,history",
+                expand="version,history",
             )
             if not batch:
                 break
             pages.extend(batch)
-            start += PAGE_SIZE
+            start += len(batch)
         return pages
 
-    def _write_page(self, confluence, page: dict, space_key: str) -> Path:
+    def _write_page(self, confluence, stub: dict, space_key: str) -> Path:
         from markdownify import markdownify as md
 
-        page_id = page["id"]
-        title = page.get("title", "Untitled")
+        page_id = stub["id"]
+        title = stub.get("title", "Untitled")
         base_url = confluence.url.rstrip("/")
         url = f"{base_url}/spaces/{space_key}/pages/{page_id}"
 
-        html_content = page.get("body", {}).get("storage", {}).get("value", "")
-        body = md(html_content, heading_style="ATX").strip()
+        # Fetch body separately — keeps listing fast and progress responsive.
+        full = confluence.get_page_by_id(page_id, expand="body.storage")
+        html_content = (full.get("body") or {}).get("storage", {}).get("value", "")
+        body = md(html_content, heading_style="ATX").strip() if html_content else ""
 
-        version = page.get("version") or {}
+        version = stub.get("version") or {}
         author = ((version.get("by") or {}).get("displayName") or
-                  (page.get("history", {}).get("createdBy", {}).get("displayName", "")))
-        date = version.get("when") or page.get("history", {}).get("createdDate", "")
+                  (stub.get("history", {}).get("createdBy", {}).get("displayName", "")))
+        date = version.get("when") or stub.get("history", {}).get("createdDate", "")
 
         meta = {
             "id":             f"confluence:{page_id}",
