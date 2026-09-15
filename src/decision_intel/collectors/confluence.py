@@ -68,12 +68,12 @@ class ConfluenceCollector(BaseCollector):
         pages: list[dict] = []
         start = 0
         while len(pages) < max_pages:
-            batch = confluence.get_all_pages_from_space(
+            batch = list(confluence.get_all_pages_from_space(
                 space_key,
                 start=start,
                 limit=min(PAGE_SIZE, max_pages - len(pages)),
                 expand="version,history",
-            )
+            ))
             if not batch:
                 break
             pages.extend(batch)
