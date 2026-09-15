@@ -118,7 +118,7 @@ def github(
     _print_results("GitHub", paths)
 
 
-# ── JIRA (Phase 6 — frontmatter not yet added) ────────────────────────────────
+# ── JIRA ───────────────────────────────────────────────────────────────────────
 
 @cli.command()
 @click.option("--jql", default="", help="JQL query. Default: all issues, newest first.")
@@ -137,6 +137,31 @@ def jira(ctx: click.Context, jql: str, max_results: int) -> None:
         paths = collector.collect(jql=jql, max_results=max_results)
 
     _print_results("JIRA", paths)
+
+
+# ── Confluence ──────────────────────────────────────────────────────────────
+
+@cli.command()
+@click.option("--space", "space_keys", multiple=True, required=True,
+              help="Confluence space key, e.g. TC. Repeatable.")
+@click.option("--max-pages", default=100, show_default=True, help="Max pages per space.")
+@click.pass_context
+def confluence(ctx: click.Context, space_keys: tuple[str, ...], max_pages: int) -> None:
+    """Fetch every page in the given Confluence spaces and write one markdown file each."""
+    from .collectors import ConfluenceCollector
+
+    collector = ConfluenceCollector(ctx.obj["output_dir"])
+    if not collector.is_configured():
+        console.print(
+            "[red]Confluence not configured.[/red] Set CONFLUENCE_URL, CONFLUENCE_USER, "
+            "CONFLUENCE_API_TOKEN."
+        )
+        raise SystemExit(1)
+
+    with console.status(f"Fetching Confluence spaces {list(space_keys)}…"):
+        paths = collector.collect(space_keys=list(space_keys), max_pages=max_pages)
+
+    _print_results("Confluence", paths)
 
 
 # ── Notion (Phase 6) ──────────────────────────────────────────────────────────
@@ -361,3 +386,11 @@ def _print_results(source: str, paths: list[Path]) -> None:
     for p in paths:
         table.add_row(str(p))
     console.print(table)
+
+
+if __name__ == "__main__":
+    # Required for `python -m decision_intel.cli ...` to actually dispatch
+    # into the Click group — without this, running the module just defines
+    # the commands and exits with no output and no error (which is exactly
+    # what was happening before this line existed).
+    cli()

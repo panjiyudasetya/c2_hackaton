@@ -25,6 +25,7 @@ dependencies = [
     "python-dotenv>=1.0",
     "click>=8.1",
     "rich>=13.7",
+    "markdownify>=0.13",   # confluence.py: HTML page body -> markdown
 ]
 
 [project.optional-dependencies]

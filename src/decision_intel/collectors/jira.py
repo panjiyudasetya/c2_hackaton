@@ -1,5 +1,8 @@
 """
-JIRA collector — fetches issues (and their comments) and writes one markdown file each.
+JIRA collector — fetches issues (and their comments) and writes one markdown
+file each, tagged with YAML frontmatter (id/source/type/.../explicit_links)
+so Phase 2/3/4 (enrich/index/graph) can pick them up the same way they
+already do for GitHub docs — see collectors/base.py's render_frontmatter.
 """
 
 from __future__ import annotations
@@ -8,7 +11,7 @@ import os
 import re
 from pathlib import Path
 
-from .base import BaseCollector
+from .base import BaseCollector, render_frontmatter
 
 
 def _safe_filename(text: str) -> str:
@@ -17,6 +20,23 @@ def _safe_filename(text: str) -> str:
 
 def _md_escape(text: str | None) -> str:
     return (text or "").replace("|", "\\|")
+
+
+def _issue_links(fields: dict) -> list[tuple[str, str, str]]:
+    """Return (related_key, related_summary, relation_label) for every
+    issuelink on a raw fields dict."""
+    out = []
+    for link in fields.get("issuelinks", []) or []:
+        if "inwardIssue" in link:
+            issue = link["inwardIssue"]
+            label = link["type"]["inward"]
+        elif "outwardIssue" in link:
+            issue = link["outwardIssue"]
+            label = link["type"]["outward"]
+        else:
+            continue
+        out.append((issue["key"], issue["fields"].get("summary", ""), label))
+    return out
 
 
 class JiraCollector(BaseCollector):
@@ -69,7 +89,9 @@ class JiraCollector(BaseCollector):
 
         title = fields.get("summary", "")
         description = fields.get("description") or ""
-        issue_type = (fields.get("issuetype") or {}).get("name", "")
+        issuetype_fields = fields.get("issuetype") or {}
+        issue_type = issuetype_fields.get("name", "")
+        is_subtask = bool(issuetype_fields.get("subtask"))
         status = (fields.get("status") or {}).get("name", "")
         priority = (fields.get("priority") or {}).get("name", "")
         reporter = ((fields.get("reporter") or {}).get("displayName") or
@@ -81,6 +103,30 @@ class JiraCollector(BaseCollector):
         created_at = (fields.get("created") or "")[:10]
         updated_at = (fields.get("updated") or "")[:10]
         url = f"{os.environ['JIRA_URL']}/browse/{key}"
+
+        links = _issue_links(fields)
+        explicit_links = [f"jira:{k}" for k, _, _ in links]
+        parent = fields.get("parent")
+        if parent:
+            explicit_links.append(f"jira:{parent['key']}")
+
+        meta = {
+            "id":             f"jira:{key}",
+            "source":         "jira",
+            "type":           "subtask" if is_subtask else "issue",
+            "key":            key,
+            "issuetype":      issue_type,
+            "priority":       priority,
+            "assignee":       assignee,
+            "labels":         labels,
+            "components":     components,
+            "title":          title,
+            "author":         reporter,
+            "status":         status,
+            "date":           created_at,
+            "url":            url,
+            "explicit_links": explicit_links,
+        }
 
         # Fetch comments
         comments_data = jira.issue(key, fields="comment").get("fields", {}).get("comment", {})
@@ -99,16 +145,24 @@ class JiraCollector(BaseCollector):
             lines.append(f"**Labels:** {', '.join(labels)}  ")
         if components:
             lines.append(f"**Components:** {', '.join(components)}  ")
+        if parent:
+            lines.append(f"**Parent:** [{parent['key']}] {parent['fields'].get('summary', '')}  ")
 
         lines += ["", "## Description", "", description or "_No description._", ""]
+
+        if links:
+            lines += ["## Linked issues", ""]
+            for rel_key, rel_summary, label in links:
+                lines.append(f"- {label}: [{rel_key}] {rel_summary}")
+            lines.append("")
 
         if raw_comments:
             lines += ["## Comments", ""]
             for c in raw_comments:
                 author = (c.get("author") or {}).get("displayName", "Unknown")
-                created = (c.get("created") or "")[:10]
+                c_created = (c.get("created") or "")[:10]
                 body = (c.get("body") or "").strip()
-                lines += [f"### {author} — {created}", "", body, ""]
+                lines += [f"### {author} — {c_created}", "", body, ""]
 
         filename = f"{_safe_filename(key)}.md"
-        return self._write(filename, "\n".join(lines))
+        return self._write(filename, render_frontmatter(meta, "\n".join(lines)))
