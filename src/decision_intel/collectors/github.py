@@ -17,7 +17,9 @@ def _is_bot(login: str | None) -> bool:
 
 
 class GitHubCollector(BaseCollector):
-    """Collects GitHub issues and pull requests and writes them as markdown."""
+    """
+    Collects GitHub issues and pull requests and writes them as markdown.
+    """
 
     _required_env_vars = ["GITHUB_TOKEN"]
 
@@ -31,11 +33,13 @@ class GitHubCollector(BaseCollector):
     # ── repo listing (used by CLI picker) ─────────────────────────────────────
 
     # Owners whose repos are hidden from the interactive picker and --all-repos.
-    _EXCLUDED_OWNERS: frozenset[str] = frozenset({"panjiyudasetya"})
+    _EXCLUDED_OWNERS: frozenset[str] = frozenset({"panjiyudasetya", "senseobservationsystems"})
 
     def list_all_repos(self, max_repos: int = 200) -> list[tuple[str, str, str]]:
-        """Return (full_name, last_pushed_date, description) for every accessible repo,
-        excluding repos owned by _EXCLUDED_OWNERS."""
+        """
+        Return (full_name, last_pushed_date, description) for every accessible repo,
+        excluding repos owned by _EXCLUDED_OWNERS.
+        """
         gh = self._client()
         results: list[tuple[str, str, str]] = []
         for repo in gh.get_user().get_repos(sort="pushed", direction="desc"):

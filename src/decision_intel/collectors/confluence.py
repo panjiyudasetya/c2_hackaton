@@ -24,7 +24,9 @@ PAGE_SIZE = 50
 
 
 class ConfluenceCollector(BaseCollector):
-    """Collects every page in the given Confluence spaces and writes them as markdown."""
+    """
+    Collects every page in the given Confluence spaces and writes them as markdown.
+    """
 
     _required_env_vars = ["CONFLUENCE_URL", "CONFLUENCE_USER", "CONFLUENCE_API_TOKEN"]
 
