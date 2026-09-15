@@ -1,5 +1,8 @@
 """
-Notion collector — fetches pages from a database or page tree and writes them as markdown.
+Notion collector — fetches pages from a database or page tree and writes
+them as markdown, tagged with YAML frontmatter (id/source/type/.../
+explicit_links), matching the convention already used for GitHub/JIRA/
+Confluence docs — see collectors/base.py's render_frontmatter.
 """
 
 from __future__ import annotations
@@ -9,7 +12,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from .base import BaseCollector
+from .base import BaseCollector, render_frontmatter
 
 
 def _safe_filename(text: str) -> str:
@@ -140,9 +143,7 @@ def _prop_to_str(prop: dict) -> str:
 
 
 class NotionCollector(BaseCollector):
-    """
-    Collects Notion pages from one or more database IDs and writes them as markdown.
-    """
+    """Collects Notion pages from one or more database IDs and writes them as markdown."""
 
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "notion")
@@ -178,7 +179,7 @@ class NotionCollector(BaseCollector):
             db_dir.mkdir(parents=True, exist_ok=True)
             pages = self._query_database(notion, db_id, max_pages)
             for page in pages:
-                path = self._write_page(notion, page, db_dir)
+                path = self._write_page(notion, page, db_dir, database_id=db_id)
                 created.append(path)
 
         for page_id in (page_ids or []):
@@ -230,13 +231,28 @@ class NotionCollector(BaseCollector):
 
         return blocks
 
-    def _write_page(self, notion, page: dict, out_dir: Path) -> Path:
+    def _write_page(self, notion, page: dict, out_dir: Path, database_id: str | None = None) -> Path:
         page_id = page["id"]
         title = _page_title(page)
         url = page.get("url", "")
         created_at = (page.get("created_time") or "")[:10]
         updated_at = (page.get("last_edited_time") or "")[:10]
         props = page.get("properties", {})
+
+        # No "author" field: the Notion API only exposes a `created_by` user
+        # id on the page object, not a display name, without an extra
+        # per-user API call.
+        meta = {
+            "id":             f"notion:{page_id}",
+            "source":         "notion",
+            "type":           "page",
+            "database_id":    database_id,
+            "title":          title,
+            "date":           created_at,
+            "updated_at":     updated_at,
+            "url":            url,
+            "explicit_links": [],
+        }
 
         lines: list[str] = [
             f"# {title}",
@@ -266,5 +282,5 @@ class NotionCollector(BaseCollector):
 
         filename = f"{_safe_filename(title or page_id)}.md"
         path = out_dir / filename
-        path.write_text("\n".join(lines), encoding="utf-8")
+        path.write_text(render_frontmatter(meta, "\n".join(lines)), encoding="utf-8")
         return path

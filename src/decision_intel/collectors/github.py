@@ -12,7 +12,7 @@ from pathlib import Path
 from .base import BaseCollector, render_frontmatter
 
 
-def _safe(text: str) -> str:
+def _safe_filename(text: str) -> str:
     return re.sub(r"[^\w\-]", "_", text).strip("_")[:60]
 
 
@@ -21,6 +21,8 @@ def _is_bot(login: str | None) -> bool:
 
 
 class GitHubCollector(BaseCollector):
+    """Collects GitHub issues and pull requests and writes them as markdown."""
+
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "github")
 
@@ -74,7 +76,7 @@ class GitHubCollector(BaseCollector):
         created: list[Path] = []
         for repo_name in repos:
             repo = gh.get_repo(repo_name)
-            repo_dir = self.output_dir / _safe(repo_name)
+            repo_dir = self.output_dir / _safe_filename(repo_name)
             (repo_dir / "issues").mkdir(parents=True, exist_ok=True)
             (repo_dir / "prs").mkdir(parents=True, exist_ok=True)
 
@@ -141,7 +143,7 @@ class GitHubCollector(BaseCollector):
         if labels:
             body_lines.append(f"**Labels:** {', '.join(labels)}  ")
 
-        body_lines += ["", "## Body", "", issue.body or "_No body._", ""]
+        body_lines += ["", "## Description", "", issue.body or "_No description._", ""]
 
         comments = list(issue.get_comments())
         if comments:
@@ -156,7 +158,7 @@ class GitHubCollector(BaseCollector):
                     "",
                 ]
 
-        filename = f"issue_{issue.number}_{_safe(issue.title)}.md"
+        filename = f"issue_{issue.number}_{_safe_filename(issue.title)}.md"
         path = out_dir / filename
         path.write_text(render_frontmatter(meta, "\n".join(body_lines)), encoding="utf-8")
         return path
@@ -272,7 +274,7 @@ class GitHubCollector(BaseCollector):
                     "",
                 ]
 
-        filename = f"pr_{pr.number}_{_safe(pr.title)}.md"
+        filename = f"pr_{pr.number}_{_safe_filename(pr.title)}.md"
         path = out_dir / filename
         path.write_text(render_frontmatter(meta, "\n".join(body_lines)), encoding="utf-8")
         return path
