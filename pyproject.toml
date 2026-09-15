@@ -5,12 +5,23 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "decision-intel"
 version = "0.1.0"
-description = "Collect JIRA, GitHub, and Notion data and save them as markdown files"
+description = "Collect JIRA, GitHub, Confluence, and Notion data and explain decisions with an AI agent"
 requires-python = ">=3.11"
 dependencies = [
+    # sources
     "atlassian-python-api>=3.41",
     "PyGithub>=2.4",
     "notion-client>=2.2",
+    # interactive picker
+    "questionary>=2.0",
+    # embedding + vector store (Phase 3)
+    "sentence-transformers>=2.7",
+    "chromadb>=0.5",
+    # metadata graph (Phase 4) — uses stdlib sqlite3, no extra dep
+    # AI agent (Phase 5) — Claude Code SDK uses your existing Claude Code credentials
+    "claude-code-sdk>=0.0.25",
+    # shared utilities
+    "pyyaml>=6.0",
     "python-dotenv>=1.0",
     "click>=8.1",
     "rich>=13.7",
