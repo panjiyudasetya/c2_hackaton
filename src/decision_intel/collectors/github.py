@@ -32,10 +32,10 @@ class GitHubCollector(BaseCollector):
 
     # ── repo listing (used by CLI picker) ─────────────────────────────────────
 
-    # Owners whose repos are hidden from the interactive picker and --all-repos.
-    _EXCLUDED_OWNERS: frozenset[str] = frozenset({"panjiyudasetya", "senseobservationsystems"})
+    # Only repos belonging to these owners appear in the picker and --all-repos.
+    _ALLOWED_OWNERS: frozenset[str] = frozenset({"ofiniti", "teqplay"})
 
-    def list_all_repos(self, max_repos: int = 200) -> list[tuple[str, str, str]]:
+    def list_all_repos(self, max_repos: int = 1000) -> list[tuple[str, str, str]]:
         """
         Return (full_name, last_pushed_date, description) for every accessible repo,
         excluding repos owned by _EXCLUDED_OWNERS.
@@ -44,7 +44,7 @@ class GitHubCollector(BaseCollector):
         results: list[tuple[str, str, str]] = []
         for repo in gh.get_user().get_repos(sort="pushed", direction="desc"):
             owner = repo.full_name.split("/")[0]
-            if owner in self._EXCLUDED_OWNERS:
+            if owner not in self._ALLOWED_OWNERS:
                 continue
             pushed = str(repo.pushed_at.date()) if repo.pushed_at else ""
             desc = repo.description or ""
@@ -59,9 +59,9 @@ class GitHubCollector(BaseCollector):
         self,
         repos: list[str],
         state: str = "all",
-        max_issues: int = 50,
-        max_prs: int = 50,
-        max_commits: int = 50,
+        max_issues: int = 1000,
+        max_prs: int = 1000,
+        max_commits: int = 1000,
         since: str | None = None,
         **kwargs,
     ) -> list[Path]:
