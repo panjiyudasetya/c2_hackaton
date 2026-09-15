@@ -184,6 +184,20 @@ def add_heuristic_edges(output_dir: Path, db_path: Path | None = None) -> int:
     return added
 
 
+# ── document lookup ───────────────────────────────────────────────────────────
+
+def get_document_file_path(doc_id: str, output_dir: Path, db_path: Path | None = None) -> str | None:
+    """Return the on-disk file_path for *doc_id*, or None if not found."""
+    if db_path is None:
+        db_path = output_dir / ".graph.db"
+    if not db_path.exists():
+        return None
+    conn = _open_db(db_path)
+    row = conn.execute("SELECT file_path FROM documents WHERE id = ?", (doc_id,)).fetchone()
+    conn.close()
+    return row["file_path"] if row else None
+
+
 # ── query ──────────────────────────────────────────────────────────────────────
 
 class LinkedDocument:

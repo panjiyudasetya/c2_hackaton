@@ -24,7 +24,9 @@ console = Console()
 )
 @click.pass_context
 def cli(ctx: click.Context, output_dir: str) -> None:
-    """decision-intel: collect, enrich, index, and query engineering documents."""
+    """
+    decision-intel: collect, enrich, index, and query engineering documents.
+    """
     ctx.ensure_object(dict)
     ctx.obj["output_dir"] = Path(output_dir)
 
@@ -55,8 +57,10 @@ def github(
     max_commits: int,
     since: str | None,
 ) -> None:
-    """Fetch GitHub issues and pull requests and write one markdown file each."""
-    from .collectors import GitHubCollector
+    """
+    Fetch GitHub issues and pull requests and write one markdown file each.
+    """
+    from decision_intel.collectors import GitHubCollector
 
     collector = GitHubCollector(ctx.obj["output_dir"])
     if not collector.is_configured():
@@ -125,8 +129,10 @@ def github(
 @click.option("--max", "max_results", default=50, show_default=True)
 @click.pass_context
 def jira(ctx: click.Context, jql: str, max_results: int) -> None:
-    """Fetch JIRA issues and write one markdown file per issue."""
-    from .collectors import JiraCollector
+    """
+    Fetch JIRA issues and write one markdown file per issue.
+    """
+    from decision_intel.collectors import JiraCollector
 
     collector = JiraCollector(ctx.obj["output_dir"])
     if not collector.is_configured():
@@ -147,7 +153,9 @@ def jira(ctx: click.Context, jql: str, max_results: int) -> None:
 @click.option("--max-pages", default=100, show_default=True, help="Max pages per space.")
 @click.pass_context
 def confluence(ctx: click.Context, space_keys: tuple[str, ...], max_pages: int) -> None:
-    """Fetch every page in the given Confluence spaces and write one markdown file each."""
+    """
+    Fetch every page in the given Confluence spaces and write one markdown file each.
+    """
     from .collectors import ConfluenceCollector
 
     collector = ConfluenceCollector(ctx.obj["output_dir"])
@@ -177,7 +185,9 @@ def notion(
     page_ids: tuple[str, ...],
     max_pages: int,
 ) -> None:
-    """Fetch Notion pages from databases or by ID and write one markdown file each."""
+    """
+    Fetch Notion pages from databases or by ID and write one markdown file each.
+    """
     from .collectors import NotionCollector
 
     if not database_ids and not page_ids:
@@ -208,7 +218,7 @@ def enrich(ctx: click.Context) -> None:
     Scan all collected markdown files for cross-source links and write them
     into each file's frontmatter explicit_links field.
     """
-    from .enricher import enrich_all
+    from decision_intel.enricher import enrich_all
 
     output_dir = ctx.obj["output_dir"]
     if not output_dir.exists():
@@ -238,7 +248,7 @@ def index(ctx: click.Context) -> None:
 
     Downloads the all-MiniLM-L6-v2 model on first run (~90 MB).
     """
-    from .indexer import build_index
+    from decision_intel.indexer import build_index
 
     output_dir = ctx.obj["output_dir"]
     console.print("Building vector index (may download embedding model on first run)…")
@@ -260,7 +270,7 @@ def graph(ctx: click.Context, no_heuristics: bool) -> None:
     Build the cross-source metadata graph from frontmatter explicit_links
     and (optionally) temporal/author proximity heuristics.
     """
-    from .graph import add_heuristic_edges, build_graph
+    from decision_intel.graph import add_heuristic_edges, build_graph
 
     output_dir = ctx.obj["output_dir"]
 
@@ -285,9 +295,12 @@ def graph(ctx: click.Context, no_heuristics: bool) -> None:
 @click.option("--since", default=None, metavar="YYYY-MM-DD")
 @click.pass_context
 def search_cmd(ctx: click.Context, query: str, top_k: int, source: str | None, since: str | None) -> None:
-    """Semantic search over collected documents. Outputs JSON."""
+    """
+    Semantic search over collected documents. Outputs JSON.
+    """
     import json
-    from .indexer import search_documents
+
+    from decision_intel.indexer import search_documents
     output_dir = ctx.obj["output_dir"]
     results = search_documents(query=query, output_dir=output_dir, top_k=top_k, source=source, since=since)
     click.echo(json.dumps([r.to_dict() for r in results], indent=2) if results else "[]")
@@ -299,9 +312,12 @@ def search_cmd(ctx: click.Context, query: str, top_k: int, source: str | None, s
 @click.option("--depth", default=2, show_default=True)
 @click.pass_context
 def links_cmd(ctx: click.Context, doc_id: str, min_confidence: float, depth: int) -> None:
-    """Follow cross-source links from a document. Outputs JSON."""
+    """
+    Follow cross-source links from a document. Outputs JSON.
+    """
     import json
-    from .graph import get_linked_documents
+
+    from decision_intel.graph import get_linked_documents
     output_dir = ctx.obj["output_dir"]
     results = get_linked_documents(doc_id=doc_id, output_dir=output_dir, min_confidence=min_confidence, depth=depth)
     click.echo(json.dumps([r.to_dict() for r in results], indent=2) if results else "[]")
@@ -310,7 +326,9 @@ def links_cmd(ctx: click.Context, doc_id: str, min_confidence: float, depth: int
 @cli.command("read-doc")
 @click.argument("file_path")
 def read_doc_cmd(file_path: str) -> None:
-    """Read the full content of a collected markdown file."""
+    """
+    Read the full content of a collected markdown file.
+    """
     path = Path(file_path)
     if not path.exists():
         click.echo(f"File not found: {file_path}", err=True)
@@ -332,7 +350,7 @@ def ask(ctx: click.Context, question: str, save: bool) -> None:
 
     Example: decision-intel ask "Why was Kafka chosen for the streaming pipeline?"
     """
-    from .agent import DecisionAgent
+    from decision_intel.agent import DecisionAgent
 
     output_dir = ctx.obj["output_dir"]
     chroma_dir = output_dir / ".chromadb"
@@ -372,7 +390,9 @@ def ask(ctx: click.Context, question: str, save: bool) -> None:
 @cli.command()
 @click.pass_context
 def build(ctx: click.Context) -> None:
-    """Run enrich → index → graph in sequence (convenience command after collection)."""
+    """
+    Run enrich → index → graph in sequence (convenience command after collection).
+    """
     ctx.invoke(enrich)
     ctx.invoke(index)
     ctx.invoke(graph)

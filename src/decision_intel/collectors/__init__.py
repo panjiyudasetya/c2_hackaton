@@ -1,4 +1,5 @@
-"""Collector package.
+"""
+Collector package.
 
 All collectors are `BaseCollector` subclasses with a `.collect()` that
 returns `list[Path]`, and write frontmatter-tagged markdown via
@@ -6,9 +7,9 @@ returns `list[Path]`, and write frontmatter-tagged markdown via
 (enrich/index/graph) can build the link graph and vector index on top of
 them.
 """
-from .confluence import ConfluenceCollector
-from .github import GitHubCollector
-from .jira import JiraCollector
-from .notion import NotionCollector
+from decision_intel.collectors.confluence import ConfluenceCollector
+from decision_intel.collectors.github import GitHubCollector
+from decision_intel.collectors.jira import JiraCollector
+from decision_intel.collectors.notion import NotionCollector
 
 __all__ = ["ConfluenceCollector", "GitHubCollector", "JiraCollector", "NotionCollector"]

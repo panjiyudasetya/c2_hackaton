@@ -8,7 +8,6 @@ sees the answer building up in real time.
 
 from __future__ import annotations
 
-import os
 from pathlib import Path
 
 import anthropic
@@ -28,7 +27,7 @@ When answering:
 2. Be explicit about gaps — where the evidence is missing or ambiguous, say so.
 
 Structure your final answer with:
-- Summary (2–3 sentences)
+- Summary (2-3 sentences)
 - Decisions made (bullet list: decision → reason)
 - Rationale (paragraph explaining the "why" behind the decisions)
 - Supporting evidence (list of doc ids with one-line description)
@@ -37,9 +36,11 @@ Structure your final answer with:
 
 
 def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
-    """Run semantic search + graph traversal locally; return a formatted evidence block."""
-    from ..indexer import search_documents
-    from ..graph import get_linked_documents
+    """
+    Run semantic search + graph traversal locally; return a formatted evidence block.
+    """
+    from decision_intel.graph import get_document_file_path, get_linked_documents
+    from decision_intel.indexer import search_documents
 
     results = search_documents(query=question, output_dir=output_dir, top_k=top_k)
     if not results:
@@ -61,13 +62,6 @@ def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
 
     # Follow graph links from the top-3 results
     linked_lines: list[str] = []
-    db_path = output_dir / ".graph.db"
-    _db_conn = None
-    if db_path.exists():
-        import sqlite3
-        _db_conn = sqlite3.connect(str(db_path))
-        _db_conn.row_factory = sqlite3.Row
-
     for r in results[:3]:
         try:
             linked = get_linked_documents(
@@ -77,12 +71,7 @@ def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
                 depth=2,
             )
             for lnk in linked:
-                lnk_path = ""
-                if _db_conn:
-                    row = _db_conn.execute(
-                        "SELECT file_path FROM documents WHERE id = ?", (lnk.doc_id,)
-                    ).fetchone()
-                    lnk_path = row["file_path"] if row and row["file_path"] else ""
+                lnk_path = get_document_file_path(lnk.doc_id, output_dir) or ""
                 if not lnk_path or lnk_path in seen_files:
                     continue
                 seen_files.add(lnk_path)
@@ -97,9 +86,6 @@ def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
                 linked_lines.append("")
         except Exception:
             pass
-
-    if _db_conn:
-        _db_conn.close()
 
     if linked_lines:
         lines += ["## Linked Documents (via metadata graph)", ""] + linked_lines

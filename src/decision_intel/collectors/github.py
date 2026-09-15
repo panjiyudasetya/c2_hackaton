@@ -9,11 +9,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-from .base import BaseCollector, render_frontmatter
-
-
-def _safe_filename(text: str) -> str:
-    return re.sub(r"[^\w\-]", "_", text).strip("_")[:60]
+from .base import BaseCollector, render_frontmatter, safe_filename
 
 
 def _is_bot(login: str | None) -> bool:
@@ -23,11 +19,10 @@ def _is_bot(login: str | None) -> bool:
 class GitHubCollector(BaseCollector):
     """Collects GitHub issues and pull requests and writes them as markdown."""
 
+    _required_env_vars = ["GITHUB_TOKEN"]
+
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "github")
-
-    def is_configured(self) -> bool:
-        return bool(os.environ.get("GITHUB_TOKEN"))
 
     def _client(self):
         from github import Github
@@ -76,9 +71,6 @@ class GitHubCollector(BaseCollector):
         created: list[Path] = []
         for repo_name in repos:
             repo = gh.get_repo(repo_name)
-            repo_dir = self.output_dir / _safe_filename(repo_name)
-            (repo_dir / "issues").mkdir(parents=True, exist_ok=True)
-            (repo_dir / "prs").mkdir(parents=True, exist_ok=True)
 
             # Issues (skip PRs and bot authors)
             issue_kwargs: dict = {"state": state}
@@ -90,7 +82,7 @@ class GitHubCollector(BaseCollector):
                     break
                 if issue.pull_request or _is_bot(issue.user.login if issue.user else None):
                     continue
-                created.append(self._write_issue(issue, repo_name, repo_dir / "issues"))
+                created.append(self._write_issue(issue, repo_name))
                 count += 1
 
             # Pull requests
@@ -103,14 +95,14 @@ class GitHubCollector(BaseCollector):
                     continue
                 if since_dt and pr.updated_at and pr.updated_at < since_dt:
                     break
-                created.append(self._write_pr(pr, repo_name, repo_dir / "prs", max_commits))
+                created.append(self._write_pr(pr, repo_name, max_commits))
                 count += 1
 
         return created
 
     # ── issue ──────────────────────────────────────────────────────────────────
 
-    def _write_issue(self, issue, repo_name: str, out_dir: Path) -> Path:
+    def _write_issue(self, issue, repo_name: str) -> Path:
         author = issue.user.login if issue.user else "unknown"
         labels = [lb.name for lb in issue.labels]
         date = str(issue.created_at)[:10] if issue.created_at else ""
@@ -158,14 +150,12 @@ class GitHubCollector(BaseCollector):
                     "",
                 ]
 
-        filename = f"issue_{issue.number}_{_safe_filename(issue.title)}.md"
-        path = out_dir / filename
-        path.write_text(render_frontmatter(meta, "\n".join(body_lines)), encoding="utf-8")
-        return path
+        rel = f"{safe_filename(repo_name, max_len=60)}/issues/issue_{issue.number}_{safe_filename(issue.title, max_len=60)}.md"
+        return self._write(rel, render_frontmatter(meta, "\n".join(body_lines)))
 
     # ── pull request ───────────────────────────────────────────────────────────
 
-    def _write_pr(self, pr, repo_name: str, out_dir: Path, max_commits: int) -> Path:
+    def _write_pr(self, pr, repo_name: str, max_commits: int) -> Path:
         author = pr.user.login if pr.user else "unknown"
         labels = [lb.name for lb in pr.labels]
         date = str(pr.created_at)[:10] if pr.created_at else ""
@@ -274,7 +264,5 @@ class GitHubCollector(BaseCollector):
                     "",
                 ]
 
-        filename = f"pr_{pr.number}_{_safe_filename(pr.title)}.md"
-        path = out_dir / filename
-        path.write_text(render_frontmatter(meta, "\n".join(body_lines)), encoding="utf-8")
-        return path
+        rel = f"{safe_filename(repo_name, max_len=60)}/prs/pr_{pr.number}_{safe_filename(pr.title, max_len=60)}.md"
+        return self._write(rel, render_frontmatter(meta, "\n".join(body_lines)))

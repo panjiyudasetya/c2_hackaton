@@ -69,6 +69,22 @@ def chunk_document(path: Path) -> list[dict[str, Any]]:
     return chunks
 
 
+# ── chroma factory ────────────────────────────────────────────────────────────
+
+def _get_chroma_collection(chroma_dir: Path):
+    """Return (or create) the persistent ChromaDB collection."""
+    import chromadb
+    from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+
+    ef = SentenceTransformerEmbeddingFunction(model_name=_EMBED_MODEL)
+    client = chromadb.PersistentClient(path=str(chroma_dir))
+    return client.get_or_create_collection(
+        name=_CHROMA_COLLECTION,
+        embedding_function=ef,
+        metadata={"hnsw:space": "cosine"},
+    )
+
+
 # ── indexing ──────────────────────────────────────────────────────────────────
 
 def build_index(output_dir: Path, chroma_dir: Path | None = None) -> int:
@@ -78,19 +94,10 @@ def build_index(output_dir: Path, chroma_dir: Path | None = None) -> int:
 
     Returns total number of chunks indexed.
     """
-    import chromadb
-    from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
-
     if chroma_dir is None:
         chroma_dir = output_dir / ".chromadb"
 
-    ef = SentenceTransformerEmbeddingFunction(model_name=_EMBED_MODEL)
-    client = chromadb.PersistentClient(path=str(chroma_dir))
-    collection = client.get_or_create_collection(
-        name=_CHROMA_COLLECTION,
-        embedding_function=ef,
-        metadata={"hnsw:space": "cosine"},
-    )
+    collection = _get_chroma_collection(chroma_dir)
 
     all_chunks: list[dict[str, Any]] = []
     for md_file in sorted(output_dir.rglob("*.md")):
@@ -160,19 +167,10 @@ def search_documents(
         source:     Filter by source (``github``, ``jira``, ``notion``, ``confluence``).
         since:      Filter to documents with date >= this string (``YYYY-MM-DD``).
     """
-    import chromadb
-    from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
-
     if chroma_dir is None:
         chroma_dir = output_dir / ".chromadb"
 
-    ef = SentenceTransformerEmbeddingFunction(model_name=_EMBED_MODEL)
-    client = chromadb.PersistentClient(path=str(chroma_dir))
-    collection = client.get_or_create_collection(
-        name=_CHROMA_COLLECTION,
-        embedding_function=ef,
-        metadata={"hnsw:space": "cosine"},
-    )
+    collection = _get_chroma_collection(chroma_dir)
 
     where_clauses: list[dict] = []
     if source:

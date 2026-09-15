@@ -16,28 +16,20 @@ token in this file or paste one into a chat:
 from __future__ import annotations
 
 import os
-import re
 from pathlib import Path
 
-from .base import BaseCollector, render_frontmatter
+from .base import BaseCollector, render_frontmatter, safe_filename
 
 PAGE_SIZE = 50
-
-
-def _safe_filename(text: str) -> str:
-    return re.sub(r"[^\w\-]", "_", text).strip("_")[:80]
 
 
 class ConfluenceCollector(BaseCollector):
     """Collects every page in the given Confluence spaces and writes them as markdown."""
 
+    _required_env_vars = ["CONFLUENCE_URL", "CONFLUENCE_USER", "CONFLUENCE_API_TOKEN"]
+
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "confluence")
-
-    def is_configured(self) -> bool:
-        return all(
-            os.environ.get(k) for k in ("CONFLUENCE_URL", "CONFLUENCE_USER", "CONFLUENCE_API_TOKEN")
-        )
 
     def _client(self):
         from atlassian import Confluence  # lazy import — not installed until needed
@@ -61,7 +53,6 @@ class ConfluenceCollector(BaseCollector):
 
         created: list[Path] = []
         for space_key in space_keys:
-            (self.output_dir / space_key).mkdir(parents=True, exist_ok=True)
             for page in self._iter_pages(confluence, space_key, max_pages):
                 created.append(self._write_page(confluence, page, space_key))
         return created
@@ -121,5 +112,5 @@ class ConfluenceCollector(BaseCollector):
             body,
         ]
 
-        filename = f"{space_key}/{page_id}_{_safe_filename(title)}.md"
+        filename = f"{space_key}/{page_id}_{safe_filename(title)}.md"
         return self._write(filename, render_frontmatter(meta, "\n".join(lines)))

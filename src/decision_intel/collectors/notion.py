@@ -8,15 +8,10 @@ Confluence docs — see collectors/base.py's render_frontmatter.
 from __future__ import annotations
 
 import os
-import re
 from pathlib import Path
 from typing import Any
 
-from .base import BaseCollector, render_frontmatter
-
-
-def _safe_filename(text: str) -> str:
-    return re.sub(r"[^\w\-]", "_", text).strip("_")[:80]
+from .base import BaseCollector, render_frontmatter, safe_filename
 
 
 def _extract_rich_text(rich_texts: list[dict]) -> str:
@@ -145,11 +140,10 @@ def _prop_to_str(prop: dict) -> str:
 class NotionCollector(BaseCollector):
     """Collects Notion pages from one or more database IDs and writes them as markdown."""
 
+    _required_env_vars = ["NOTION_TOKEN"]
+
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "notion")
-
-    def is_configured(self) -> bool:
-        return bool(os.environ.get("NOTION_TOKEN"))
 
     def _client(self):
         from notion_client import Client  # lazy import
@@ -175,16 +169,15 @@ class NotionCollector(BaseCollector):
         created: list[Path] = []
 
         for db_id in (database_ids or []):
-            db_dir = self.output_dir / _safe_filename(db_id)
-            db_dir.mkdir(parents=True, exist_ok=True)
+            db_subdir = safe_filename(db_id)
             pages = self._query_database(notion, db_id, max_pages)
             for page in pages:
-                path = self._write_page(notion, page, db_dir, database_id=db_id)
+                path = self._write_page(notion, page, subdir=db_subdir, database_id=db_id)
                 created.append(path)
 
         for page_id in (page_ids or []):
             page = notion.pages.retrieve(page_id=page_id)
-            path = self._write_page(notion, page, self.output_dir)
+            path = self._write_page(notion, page)
             created.append(path)
 
         return created
@@ -231,7 +224,7 @@ class NotionCollector(BaseCollector):
 
         return blocks
 
-    def _write_page(self, notion, page: dict, out_dir: Path, database_id: str | None = None) -> Path:
+    def _write_page(self, notion, page: dict, subdir: str = "", database_id: str | None = None) -> Path:
         page_id = page["id"]
         title = _page_title(page)
         url = page.get("url", "")
@@ -280,7 +273,6 @@ class NotionCollector(BaseCollector):
         except Exception:
             lines.append("_Content could not be fetched._\n")
 
-        filename = f"{_safe_filename(title or page_id)}.md"
-        path = out_dir / filename
-        path.write_text(render_frontmatter(meta, "\n".join(lines)), encoding="utf-8")
-        return path
+        name = safe_filename(title or page_id)
+        rel = f"{subdir}/{name}.md" if subdir else f"{name}.md"
+        return self._write(rel, render_frontmatter(meta, "\n".join(lines)))

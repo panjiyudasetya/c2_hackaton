@@ -4,6 +4,7 @@ Abstract base collector with shared frontmatter helpers.
 
 from __future__ import annotations
 
+import os
 import re
 from abc import ABC, abstractmethod
 from pathlib import Path
@@ -28,14 +29,22 @@ def render_frontmatter(meta: dict[str, Any], body: str) -> str:
     return f"---\n{fm}---\n{body}"
 
 
+def safe_filename(text: str, max_len: int = 80) -> str:
+    """Sanitize *text* into a filesystem-safe filename segment."""
+    return re.sub(r"[^\w\-]", "_", text).strip("_")[:max_len]
+
+
 class BaseCollector(ABC):
+    # Subclasses declare which env vars must be present for the collector to work.
+    _required_env_vars: list[str] = []
+
     def __init__(self, output_dir: Path) -> None:
         self.output_dir = output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-    @abstractmethod
     def is_configured(self) -> bool:
-        """Return True if required credentials are present."""
+        """Return True if all required environment variables are set."""
+        return all(os.environ.get(k) for k in self._required_env_vars)
 
     @abstractmethod
     def collect(self, **kwargs) -> list[Path]:
@@ -43,5 +52,6 @@ class BaseCollector(ABC):
 
     def _write(self, filename: str, content: str) -> Path:
         path = self.output_dir / filename
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content, encoding="utf-8")
         return path

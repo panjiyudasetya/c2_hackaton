@@ -8,19 +8,15 @@ already do for GitHub docs — see collectors/base.py's render_frontmatter.
 from __future__ import annotations
 
 import os
-import re
 from pathlib import Path
 
-from .base import BaseCollector, render_frontmatter
-
-
-def _safe_filename(text: str) -> str:
-    return re.sub(r"[^\w\-]", "_", text).strip("_")[:80]
+from .base import BaseCollector, render_frontmatter, safe_filename
 
 
 def _issue_links(fields: dict) -> list[tuple[str, str, str]]:
-    """Return (related_key, related_summary, relation_label) for every
-    issuelink on a raw fields dict."""
+    """
+    Return (related_key, related_summary, relation_label) for every issuelink on a raw fields dict.
+    """
     out = []
     for link in fields.get("issuelinks", []) or []:
         if "inwardIssue" in link:
@@ -36,15 +32,14 @@ def _issue_links(fields: dict) -> list[tuple[str, str, str]]:
 
 
 class JiraCollector(BaseCollector):
-    """Collects JIRA issues matching a JQL query and writes them as markdown."""
+    """
+    Collects JIRA issues matching a JQL query and writes them as markdown.
+    """
+
+    _required_env_vars = ["JIRA_URL", "JIRA_USER", "JIRA_API_TOKEN"]
 
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "jira")
-
-    def is_configured(self) -> bool:
-        return all(
-            os.environ.get(k) for k in ("JIRA_URL", "JIRA_USER", "JIRA_API_TOKEN")
-        )
 
     def _client(self):
         from atlassian import Jira  # lazy import — not installed until needed
@@ -161,6 +156,5 @@ class JiraCollector(BaseCollector):
                 body = (c.get("body") or "").strip()
                 lines += [f"### {author} — {c_created}", "", body, ""]
 
-        (self.output_dir / project_key).mkdir(parents=True, exist_ok=True)
-        filename = f"{project_key}/{_safe_filename(key)}.md"
+        filename = f"{project_key}/{safe_filename(key)}.md"
         return self._write(filename, render_frontmatter(meta, "\n".join(lines)))
