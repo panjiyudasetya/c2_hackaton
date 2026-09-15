@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decision-intel"
+version = "0.1.0"
+description = "Collect JIRA, GitHub, and Notion data and save them as markdown files"
+requires-python = ">=3.11"
+dependencies = [
+    "atlassian-python-api>=3.41",
+    "PyGithub>=2.4",
+    "notion-client>=2.2",
+    "python-dotenv>=1.0",
+    "click>=8.1",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "ruff>=0.6"]
+
+[project.scripts]
+decision-intel = "decision_intel.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
