@@ -95,6 +95,7 @@ class GitHubCollector(BaseCollector):
                     continue
                 created.append(self._write_issue(issue, repo_name))
                 count += 1
+                self._report(count, None, "Issues")
 
             # Pull requests
             pr_kwargs: dict = {"state": state}
@@ -108,6 +109,7 @@ class GitHubCollector(BaseCollector):
                     break
                 created.append(self._write_pr(pr, repo_name, max_commits))
                 count += 1
+                self._report(count, None, "PRs")
 
         return created
 

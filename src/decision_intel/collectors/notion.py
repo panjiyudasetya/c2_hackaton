@@ -171,14 +171,16 @@ class NotionCollector(BaseCollector):
         for db_id in (database_ids or []):
             db_subdir = safe_filename(db_id)
             pages = self._query_database(notion, db_id, max_pages)
-            for page in pages:
+            for n, page in enumerate(pages, start=1):
                 path = self._write_page(notion, page, subdir=db_subdir, database_id=db_id)
                 created.append(path)
+                self._report(n, len(pages), "Pages")
 
-        for page_id in (page_ids or []):
+        for n, page_id in enumerate(page_ids or [], start=1):
             page = notion.pages.retrieve(page_id=page_id)
             path = self._write_page(notion, page)
             created.append(path)
+            self._report(n, len(page_ids), "Pages")
 
         return created
 

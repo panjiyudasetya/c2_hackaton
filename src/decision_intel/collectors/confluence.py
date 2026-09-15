@@ -55,8 +55,9 @@ class ConfluenceCollector(BaseCollector):
 
         created: list[Path] = []
         for space_key in space_keys:
-            for page in self._iter_pages(confluence, space_key, max_pages):
+            for n, page in enumerate(self._iter_pages(confluence, space_key, max_pages), start=1):
                 created.append(self._write_page(confluence, page, space_key))
+                self._report(n, None, "Pages")
         return created
 
     def _iter_pages(self, confluence, space_key: str, max_pages: int) -> list[dict]:

@@ -9,10 +9,24 @@ from pathlib import Path
 import click
 from dotenv import load_dotenv
 from rich.console import Console
+from rich.live import Live
+from rich.spinner import Spinner
 from rich.table import Table
 
 load_dotenv()
 console = Console()
+
+
+def _make_progress_collector(collector, label_override: str | None = None):
+    """Attach a Live progress display to a collector and return a context manager."""
+    spinner = Spinner("dots", text="Starting…")
+
+    def on_progress(n: int, total: int | None, label: str) -> None:
+        tag = label_override or label
+        spinner.text = f"Collecting ({n}/{total}) {tag}…" if total else f"Collecting {n} {tag}…"
+
+    collector._on_progress = on_progress
+    return Live(spinner, console=console, refresh_per_second=10)
 
 
 @click.group()
@@ -113,7 +127,7 @@ def github(
 
         selected_repos = selected
 
-    with console.status(f"Collecting from {len(selected_repos)} repo(s)…"):
+    with _make_progress_collector(collector):
         paths = collector.collect(
             repos=selected_repos,
             state=state,
@@ -159,7 +173,7 @@ def jira(ctx: click.Context, projects: tuple[str, ...], jql: str, max_results: i
         project_clause = f"project in ({keys})"
         effective_jql = f"{project_clause} AND ({effective_jql})" if effective_jql else project_clause
 
-    with console.status("Fetching JIRA issues…"):
+    with _make_progress_collector(collector):
         paths = collector.collect(jql=effective_jql, max_results=max_results)
 
     _print_results("JIRA", paths)
@@ -186,7 +200,7 @@ def confluence(ctx: click.Context, space_keys: tuple[str, ...], max_pages: int) 
         )
         raise SystemExit(1)
 
-    with console.status(f"Fetching Confluence spaces {list(space_keys)}…"):
+    with _make_progress_collector(collector):
         paths = collector.collect(space_keys=list(space_keys), max_pages=max_pages)
 
     _print_results("Confluence", paths)
@@ -219,7 +233,7 @@ def notion(
         console.print("[red]Notion not configured.[/red] Set NOTION_TOKEN.")
         raise SystemExit(1)
 
-    with console.status("Fetching Notion pages…"):
+    with _make_progress_collector(collector):
         paths = collector.collect(
             database_ids=list(database_ids),
             page_ids=list(page_ids),

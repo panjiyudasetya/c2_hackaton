@@ -79,12 +79,15 @@ class JiraCollector(BaseCollector):
             jql = "updated >= -30d ORDER BY updated DESC"
 
         jira = self._client()
-        issues = jira.jql(jql, limit=max_results).get("issues", [])
+        result = jira.jql(jql, limit=max_results)
+        issues = result.get("issues", [])
+        total = min(result.get("total", len(issues)), max_results)
 
         created: list[Path] = []
-        for raw in issues:
+        for n, raw in enumerate(issues, start=1):
             path = self._write_issue(jira, raw)
             created.append(path)
+            self._report(n, total, "Cards")
         return created
 
     def _write_issue(self, jira, raw: dict) -> Path:

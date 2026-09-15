@@ -8,7 +8,7 @@ import os
 import re
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import yaml
 
@@ -47,6 +47,11 @@ class BaseCollector(ABC):
     def __init__(self, output_dir: Path) -> None:
         self.output_dir = output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self._on_progress: Callable[[int, int | None, str], None] | None = None
+
+    def _report(self, n: int, total: int | None, label: str) -> None:
+        if self._on_progress:
+            self._on_progress(n, total, label)
 
     def is_configured(self) -> bool:
         """
