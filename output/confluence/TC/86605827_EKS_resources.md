@@ -7,7 +7,8 @@ title: EKS resources
 author: Darius Wattimena
 date: '2022-01-11'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/86605827
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/86605827
 ---
 # EKS resources
 

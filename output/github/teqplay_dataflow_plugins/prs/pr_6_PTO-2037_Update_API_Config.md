@@ -14,7 +14,8 @@ head_branch: PTO-2037
 url: https://github.com/teqplay/dataflow_plugins/pull/6
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2037
 ---
 # PR #6: PTO-2037 Update API Config
 

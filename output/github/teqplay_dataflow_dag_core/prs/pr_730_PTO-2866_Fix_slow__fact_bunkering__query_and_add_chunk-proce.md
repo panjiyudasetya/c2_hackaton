@@ -14,7 +14,8 @@ head_branch: fix/fact-bunkering
 url: https://github.com/teqplay/dataflow_dag_core/pull/730
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2866
 ---
 # PR #730: PTO-2866 Fix slow `fact_bunkering` query and add chunk-processing logs
 

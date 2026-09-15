@@ -14,7 +14,8 @@ head_branch: hotfix/1.54.1
 url: https://github.com/teqplay/dataflow_dag_core/pull/731
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2866
 ---
 # PR #731: Release 1.54.1 to develop
 

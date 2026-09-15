@@ -14,7 +14,8 @@ head_branch: PTO-2930
 url: https://github.com/teqplay/dataflow_dag_core/pull/742
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2930
 ---
 # PR #742: PTO-2930 Remove PostgreSQL Foreign Data Wrapper left-over experiment
 

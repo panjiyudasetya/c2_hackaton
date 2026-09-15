@@ -7,7 +7,8 @@ title: How to deal with Locations in the backend
 author: Wouter Naloop (Unlicensed)
 date: '2023-03-08'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/172785687
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/172785687
 ---
 # How to deal with Locations in the backend
 

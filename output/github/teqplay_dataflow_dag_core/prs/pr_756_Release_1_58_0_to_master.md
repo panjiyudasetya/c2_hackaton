@@ -14,7 +14,10 @@ head_branch: release/1.58.0
 url: https://github.com/teqplay/dataflow_dag_core/pull/756
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2967
+- jira:PTO-2981
+- jira:PTO-2819
 ---
 # PR #756: Release 1.58.0 to master
 

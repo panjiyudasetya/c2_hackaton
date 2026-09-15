@@ -14,7 +14,8 @@ head_branch: PTO-2819-pt1
 url: https://github.com/teqplay/dataflow_dag_core/pull/752
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2819
 ---
 # PR #752: PTO-2819 Delivery 1: TUG/BUNKER vessel types, NULL-safe end-time predicates
 

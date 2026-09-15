@@ -7,7 +7,8 @@ title: AIS history application architecture
 author: Michel Wilson
 date: '2022-07-08'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/123404289
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/123404289
 ---
 # AIS history application architecture
 

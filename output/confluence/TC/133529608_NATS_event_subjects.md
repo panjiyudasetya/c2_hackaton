@@ -7,7 +7,8 @@ title: NATS event subjects
 author: Darius Wattimena
 date: '2022-08-16'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/133529608
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/133529608
 ---
 # NATS event subjects
 

@@ -15,7 +15,8 @@ head_branch: PTO-2873
 url: https://github.com/teqplay/dataflow_dag_core/pull/735
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2873
 ---
 # PR #735: fix(fact-berth-visit): Guard mooring/unmooring duration against inverted terminal visit timestamps
 

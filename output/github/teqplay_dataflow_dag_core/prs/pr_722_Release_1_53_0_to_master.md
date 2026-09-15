@@ -14,7 +14,8 @@ head_branch: release/1.53.0
 url: https://github.com/teqplay/dataflow_dag_core/pull/722
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2818
 ---
 # PR #722: Release 1.53.0 to master
 

@@ -14,7 +14,8 @@ head_branch: PTO-2561
 url: https://github.com/teqplay/dataflow_plugins/pull/29
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2561
 ---
 # PR #29: PTO-2561 Add Bulk Retrieval Methods to InternalCsiAPI and PomaAPI
 

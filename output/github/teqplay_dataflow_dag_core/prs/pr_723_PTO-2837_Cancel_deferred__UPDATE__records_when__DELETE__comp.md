@@ -15,7 +15,8 @@ head_branch: fix/orphan-deferred-records
 url: https://github.com/teqplay/dataflow_dag_core/pull/723
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2837
 ---
 # PR #723: PTO-2837 Cancel deferred `UPDATE` records when `DELETE` completes for the same `entry_id`
 

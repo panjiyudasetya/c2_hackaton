@@ -11,7 +11,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/355
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2375
 ---
 # Issue #355: Spv-2375 Adjusted Urls So The Processing Backend Has A New Url And The Api Backend Gets The Old Url
 

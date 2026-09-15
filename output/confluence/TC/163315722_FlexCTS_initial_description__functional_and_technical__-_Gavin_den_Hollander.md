@@ -7,7 +7,8 @@ title: FlexCTS initial description (functional and technical) - Gavin den Hollan
 author: Daan Spikker (Unlicensed)
 date: '2023-01-23'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/163315722
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/163315722
 ---
 # FlexCTS initial description (functional and technical) - Gavin den Hollander
 

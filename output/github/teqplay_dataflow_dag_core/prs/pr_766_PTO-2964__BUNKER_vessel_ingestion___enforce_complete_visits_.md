@@ -14,7 +14,10 @@ head_branch: PTO-2964
 url: https://github.com/teqplay/dataflow_dag_core/pull/766
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2964
+- jira:PTO-2819
+- jira:PTO-2963
 ---
 # PR #766: PTO-2964  BUNKER vessel ingestion + enforce complete visits for TUG and BUNKER
 

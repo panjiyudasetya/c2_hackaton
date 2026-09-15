@@ -7,7 +7,8 @@ title: Chorus Functional Design Description
 author: Daan Spikker (Unlicensed)
 date: '2022-09-23'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/102236161
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/102236161
 ---
 # Chorus Functional Design Description
 

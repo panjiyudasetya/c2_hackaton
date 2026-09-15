@@ -219,4 +219,4 @@ __marimo__/
 
 # decision-intel: generated artifacts (rebuildable with `decision-intel build`)
 output/.chromadb/
-output/.graph.db
+output/.graph.dboutput/github/.DS_Store

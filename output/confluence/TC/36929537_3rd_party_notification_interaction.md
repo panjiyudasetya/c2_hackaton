@@ -7,7 +7,8 @@ title: 3rd party notification interaction
 author: Daan Spikker (Unlicensed)
 date: '2021-09-02'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/36929537
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/36929537
 ---
 # 3rd party notification interaction
 

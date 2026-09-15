@@ -14,7 +14,8 @@ head_branch: claude/encounter-api-ship-id-524529
 url: https://github.com/teqplay/vesselvoyage-backend/pull/836
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1153
 ---
 # PR #836: TCC-1153 Expose the encounter id in the ship encounter API
 

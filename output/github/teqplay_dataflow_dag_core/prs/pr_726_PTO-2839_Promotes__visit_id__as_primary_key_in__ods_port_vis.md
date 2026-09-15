@@ -14,7 +14,8 @@ head_branch: chore/set-visit-id-as-pk
 url: https://github.com/teqplay/dataflow_dag_core/pull/726
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2839
 ---
 # PR #726: PTO-2839 Promotes `visit_id` as primary key in `ods_port_visit`
 

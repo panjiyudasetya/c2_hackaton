@@ -14,7 +14,8 @@ head_branch: PTO-2898
 url: https://github.com/teqplay/dataflow_dag_core/pull/739
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2898
 ---
 # PR #739: PTO-2898 Add monthly terminal occupancy
 

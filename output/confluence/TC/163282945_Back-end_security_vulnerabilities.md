@@ -7,7 +7,24 @@ title: Back-end security vulnerabilities
 author: Leon Joosse (Unlicensed)
 date: '2023-02-02'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/163282945
-explicit_links: []
+explicit_links:
+- jira:CVE-2022
+- jira:CWE-502
+- jira:CWE-178
+- jira:CWE-770
+- jira:CWE-400
+- jira:CWE-787
+- jira:CVE-2016
+- jira:CWE-683
+- jira:CVE-2020
+- jira:CWE-330
+- jira:CWE-190
+- jira:CVE-2021
+- jira:CWE-295
+- jira:CVE-2017
+- jira:CWE-74
+- jira:CWE-113
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/163282945
 ---
 # Back-end security vulnerabilities
 

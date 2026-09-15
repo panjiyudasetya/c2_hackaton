@@ -14,7 +14,9 @@ head_branch: PTO-2819-pt3
 url: https://github.com/teqplay/dataflow_dag_core/pull/765
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2819
+- github:teqplay/dataflow_dag_core:pr:766
 ---
 # PR #765: PTO-2819 Delivery 3: Enable TUG vessel ingestion in the batching pipeline
 

@@ -14,7 +14,8 @@ head_branch: PTO-2990
 url: https://github.com/teqplay/dataflow_dag_core/pull/758
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2990
 ---
 # PR #758: PTO-2990 Resolve RabbitMQ connection resets on `staging_sof` stream DAGs
 

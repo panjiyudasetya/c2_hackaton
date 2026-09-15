@@ -14,7 +14,8 @@ head_branch: PTO-3002
 url: https://github.com/teqplay/dataflow_dag_core/pull/764
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-3002
 ---
 # PR #764: PTO-3002 Bypass `FULLY_MAPPED` port filter for SOF stream in CM environment
 

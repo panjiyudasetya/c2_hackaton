@@ -14,7 +14,8 @@ head_branch: develop
 url: https://github.com/teqplay/vesselvoyage-backend/pull/846
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1158
 ---
 # PR #846: Hotfix release 6 Aug 2026
 

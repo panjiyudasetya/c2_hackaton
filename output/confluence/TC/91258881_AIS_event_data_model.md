@@ -7,7 +7,8 @@ title: AIS event data model
 author: Darius Wattimena
 date: '2022-07-18'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/91258881
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/91258881
 ---
 # AIS event data model
 

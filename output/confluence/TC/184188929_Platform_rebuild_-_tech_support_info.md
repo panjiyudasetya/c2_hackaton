@@ -7,7 +7,8 @@ title: Platform rebuild - tech support info
 author: Darius Wattimena
 date: '2023-05-22'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/184188929
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/184188929
 ---
 # Platform rebuild - tech support info
 

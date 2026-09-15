@@ -14,7 +14,9 @@ head_branch: TCC-1213-encounter-list
 url: https://github.com/teqplay/vesselvoyage-backend/pull/868
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1213
+- jira:ISO-8601
 ---
 # PR #868: TCC-1213: Add worldwide encounter list endpoint
 

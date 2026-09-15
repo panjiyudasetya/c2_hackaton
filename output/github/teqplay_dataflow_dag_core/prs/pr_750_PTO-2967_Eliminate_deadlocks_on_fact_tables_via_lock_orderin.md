@@ -15,7 +15,8 @@ head_branch: PTO-2967
 url: https://github.com/teqplay/dataflow_dag_core/pull/750
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2967
 ---
 # PR #750: PTO-2967 Eliminate deadlocks on fact tables via lock ordering, pool consolidation, and retries
 

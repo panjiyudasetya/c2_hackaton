@@ -7,7 +7,8 @@ title: Network policies EKS + grouping apps
 author: Minh Trang Nguyen (Unlicensed)
 date: '2024-03-13'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/196313089
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/196313089
 ---
 # Network policies EKS + grouping apps
 

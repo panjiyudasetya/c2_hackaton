@@ -14,7 +14,8 @@ head_branch: TCC-1121
 url: https://github.com/teqplay/vesselvoyage-backend/pull/841
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1121
 ---
 # PR #841: Include logging for barges
 

@@ -7,7 +7,8 @@ title: Portcall Structure Refactor
 author: Richard van Klaveren
 date: '2022-10-23'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/147357697
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/147357697
 ---
 # Portcall Structure Refactor
 

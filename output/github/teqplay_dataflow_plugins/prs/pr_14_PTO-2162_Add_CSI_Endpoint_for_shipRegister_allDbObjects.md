@@ -14,7 +14,8 @@ head_branch: PTO-2162_add_csi_endpoint_allDbObjects
 url: https://github.com/teqplay/dataflow_plugins/pull/14
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2162
 ---
 # PR #14: PTO-2162 Add CSI Endpoint for shipRegister allDbObjects
 

@@ -7,7 +7,8 @@ title: VesselVoyage
 author: Richard van Klaveren
 date: '2024-10-25'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/206766081
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/206766081
 ---
 # VesselVoyage
 

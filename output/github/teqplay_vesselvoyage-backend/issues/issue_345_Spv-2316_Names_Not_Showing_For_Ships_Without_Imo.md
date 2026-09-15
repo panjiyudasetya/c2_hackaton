@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/345
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2316
 ---
 # Issue #345: Spv-2316 Names Not Showing For Ships Without Imo
 

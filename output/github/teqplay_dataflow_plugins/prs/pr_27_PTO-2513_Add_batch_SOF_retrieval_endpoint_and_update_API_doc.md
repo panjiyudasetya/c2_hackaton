@@ -14,7 +14,8 @@ head_branch: PTO-2513
 url: https://github.com/teqplay/dataflow_plugins/pull/27
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2513
 ---
 # PR #27: PTO-2513 Add batch SOF retrieval endpoint and update API documentation
 

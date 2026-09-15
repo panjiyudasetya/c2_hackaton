@@ -14,7 +14,8 @@ head_branch: PTO-2967
 url: https://github.com/teqplay/dataflow_dag_core/pull/749
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:PTO-2967
 ---
 # PR #749: PTO-2967 Fix deadlock on fact performance analytics
 

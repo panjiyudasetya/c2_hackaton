@@ -14,7 +14,8 @@ head_branch: TCC-1158
 url: https://github.com/teqplay/vesselvoyage-backend/pull/845
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1158
 ---
 # PR #845: TCC-1158 Upsert instead of insert new normalized documents
 
