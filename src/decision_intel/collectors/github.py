@@ -213,16 +213,26 @@ class GitHubCollector(BaseCollector):
 
         body_lines += ["", "## Description", "", pr.body or "_No description._", ""]
 
-        # Commits — full messages (subject + body), no diffs.
-        # Iterate lazily so we only make as many API calls as needed.
-        shown: list = []
-        for c in pr.get_commits():
-            shown.append(c)
-            if len(shown) >= max_commits:
-                break
+        # Commits — most recent first, no diffs.
+        # GitHub returns commits oldest-first; we fetch from the last page(s)
+        # so we always show the newest max_commits without fetching everything.
+        total = pr.commits
+        _PAGE = 30  # GitHub's default page size for commits
+        if total <= max_commits:
+            shown = list(pr.get_commits())
+        else:
+            shown = []
+            page = (total - 1) // _PAGE  # last page index (0-based)
+            paginator = pr.get_commits()
+            while len(shown) < max_commits and page >= 0:
+                shown = list(paginator.get_page(page)) + shown
+                page -= 1
+            shown = shown[-max_commits:]
+
         if shown:
-            total = pr.commits  # GitHub provides the total count without extra calls
             body_lines += ["## Commits", ""]
+            if total > max_commits:
+                body_lines.append(f"- _… {total - max_commits} earlier commits not shown_")
             for c in shown:
                 sha = c.sha[:8]
                 full_msg = (c.commit.message or "").strip()
@@ -233,8 +243,6 @@ class GitHubCollector(BaseCollector):
                 if body.strip():
                     for line in body.strip().splitlines():
                         body_lines.append(f"  {line}")
-            if total > max_commits:
-                body_lines.append(f"- _… {total - max_commits} more commits not shown_")
             body_lines.append("")
 
         # Reviews (summary-level — APPROVED / CHANGES_REQUESTED with top-level comment)
