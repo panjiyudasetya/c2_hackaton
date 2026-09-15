@@ -13,6 +13,21 @@ from pathlib import Path
 from .base import BaseCollector, render_frontmatter, safe_filename
 
 
+def _adf_to_text(node) -> str:
+    """Extract plain text from an Atlassian Document Format (ADF) node or plain string."""
+    if isinstance(node, str):
+        return node
+    if not isinstance(node, dict):
+        return ""
+    if node.get("type") == "text":
+        return node.get("text", "")
+    parts = [_adf_to_text(child) for child in node.get("content", [])]
+    sep = "\n" if node.get("type") in ("doc", "paragraph", "heading", "listItem",
+                                        "bulletList", "orderedList", "blockquote",
+                                        "codeBlock", "rule", "panel") else ""
+    return sep.join(parts)
+
+
 def _issue_links(fields: dict) -> list[tuple[str, str, str]]:
     """
     Return (related_key, related_summary, relation_label) for every issuelink on a raw fields dict.
@@ -77,7 +92,7 @@ class JiraCollector(BaseCollector):
         fields = raw.get("fields", {})
 
         title = fields.get("summary", "")
-        description = fields.get("description") or ""
+        description = _adf_to_text(fields.get("description") or "")
         issuetype_fields = fields.get("issuetype") or {}
         issue_type = issuetype_fields.get("name", "")
         is_subtask = bool(issuetype_fields.get("subtask"))
@@ -153,7 +168,7 @@ class JiraCollector(BaseCollector):
             for c in raw_comments:
                 author = (c.get("author") or {}).get("displayName", "Unknown")
                 c_created = (c.get("created") or "")[:10]
-                body = (c.get("body") or "").strip()
+                body = _adf_to_text(c.get("body") or "").strip()
                 lines += [f"### {author} — {c_created}", "", body, ""]
 
         filename = f"{project_key}/{safe_filename(key)}.md"
