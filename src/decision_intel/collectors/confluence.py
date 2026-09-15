@@ -100,7 +100,10 @@ class ConfluenceCollector(BaseCollector):
         url = f"{base_url}/wiki/spaces/{space_key}/pages/{page_id}"
 
         # Fetch body separately — keeps listing fast and progress responsive.
-        full = confluence.get_page_by_id(page_id, expand="body.storage")
+        full = confluence.get(
+            f"wiki/rest/api/content/{page_id}",
+            params={"expand": "body.storage"},
+        )
         html_content = (full.get("body") or {}).get("storage", {}).get("value", "")
         body = md(html_content, heading_style="ATX").strip() if html_content else ""
 
