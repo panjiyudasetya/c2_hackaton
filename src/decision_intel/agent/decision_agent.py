@@ -54,16 +54,25 @@ def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
     seen_files: set[str] = set()
 
     for r in results:
+        file_path: str = r.metadata.get("file_path", "")
         lines.append(f"### {r.doc_id}  (score: {r.score:.3f})")
-        lines.append(f"**File:** {r.file_path}")
+        if file_path:
+            lines.append(f"**File:** {file_path}")
         lines.append("")
         lines.append(r.text[:2000])
         lines.append("")
-        if r.file_path:
-            seen_files.add(r.file_path)
+        if file_path:
+            seen_files.add(file_path)
 
     # Follow graph links from the top-3 results
     linked_lines: list[str] = []
+    db_path = output_dir / ".graph.db"
+    _db_conn = None
+    if db_path.exists():
+        import sqlite3
+        _db_conn = sqlite3.connect(str(db_path))
+        _db_conn.row_factory = sqlite3.Row
+
     for r in results[:3]:
         try:
             linked = get_linked_documents(
@@ -73,19 +82,29 @@ def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
                 depth=2,
             )
             for lnk in linked:
-                if lnk.file_path and lnk.file_path not in seen_files:
-                    seen_files.add(lnk.file_path)
-                    linked_lines.append(f"### {lnk.doc_id}  (linked, confidence: {lnk.score:.3f})")
-                    linked_lines.append(f"**File:** {lnk.file_path}")
-                    linked_lines.append("")
-                    try:
-                        content = Path(lnk.file_path).read_text(encoding="utf-8")
-                        linked_lines.append(content[:2000])
-                    except OSError:
-                        linked_lines.append("_(could not read file)_")
-                    linked_lines.append("")
+                lnk_path = ""
+                if _db_conn:
+                    row = _db_conn.execute(
+                        "SELECT file_path FROM documents WHERE id = ?", (lnk.doc_id,)
+                    ).fetchone()
+                    lnk_path = row["file_path"] if row and row["file_path"] else ""
+                if not lnk_path or lnk_path in seen_files:
+                    continue
+                seen_files.add(lnk_path)
+                linked_lines.append(f"### {lnk.doc_id}  (linked, confidence: {lnk.confidence:.3f})")
+                linked_lines.append(f"**File:** {lnk_path}")
+                linked_lines.append("")
+                try:
+                    content = Path(lnk_path).read_text(encoding="utf-8")
+                    linked_lines.append(content[:2000])
+                except OSError:
+                    linked_lines.append("_(could not read file)_")
+                linked_lines.append("")
         except Exception:
             pass
+
+    if _db_conn:
+        _db_conn.close()
 
     if linked_lines:
         lines += ["## Linked Documents (via metadata graph)", ""] + linked_lines
