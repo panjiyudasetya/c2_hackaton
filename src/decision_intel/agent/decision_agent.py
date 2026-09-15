@@ -12,6 +12,7 @@ call three decision-intel CLI subcommands:
 from __future__ import annotations
 
 import asyncio
+import os
 import shutil
 from pathlib import Path
 
@@ -64,6 +65,15 @@ class DecisionAgent:
         return asyncio.run(self._ask_async(question))
 
     async def _ask_async(self, question: str) -> str:
+        # ANTHROPIC_API_KEY (loaded from .env) takes precedence over the
+        # Claude.ai OAuth session that claude-code-sdk needs. Remove it for
+        # the duration of this call, then restore it afterwards.
+        removed: dict[str, str] = {}
+        for key in ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN"):
+            val = os.environ.pop(key, None)
+            if val:
+                removed[key] = val
+
         options = ClaudeCodeOptions(
             allowed_tools=["Bash"],
             append_system_prompt=self._system,
@@ -72,15 +82,16 @@ class DecisionAgent:
         )
 
         last_text = ""
-        async for message in query(prompt=question, options=options):
-            if isinstance(message, ResultMessage):
-                # ResultMessage.result holds the final plain-text answer
-                if message.result:
-                    return message.result
-            elif isinstance(message, AssistantMessage):
-                # Accumulate text blocks in case ResultMessage has no result
-                for block in message.content:
-                    if isinstance(block, TextBlock):
-                        last_text = block.text
+        try:
+            async for message in query(prompt=question, options=options):
+                if isinstance(message, ResultMessage):
+                    if message.result:
+                        return message.result
+                elif isinstance(message, AssistantMessage):
+                    for block in message.content:
+                        if isinstance(block, TextBlock):
+                            last_text = block.text
+        finally:
+            os.environ.update(removed)
 
         return last_text or "No answer produced."
