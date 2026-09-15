@@ -30,11 +30,18 @@ class GitHubCollector(BaseCollector):
 
     # ── repo listing (used by CLI picker) ─────────────────────────────────────
 
+    # Owners whose repos are hidden from the interactive picker and --all-repos.
+    _EXCLUDED_OWNERS: frozenset[str] = frozenset({"panjiyudasetya"})
+
     def list_all_repos(self, max_repos: int = 200) -> list[tuple[str, str, str]]:
-        """Return (full_name, last_pushed_date, description) for every accessible repo."""
+        """Return (full_name, last_pushed_date, description) for every accessible repo,
+        excluding repos owned by _EXCLUDED_OWNERS."""
         gh = self._client()
         results: list[tuple[str, str, str]] = []
         for repo in gh.get_user().get_repos(sort="pushed", direction="desc"):
+            owner = repo.full_name.split("/")[0]
+            if owner in self._EXCLUDED_OWNERS:
+                continue
             pushed = str(repo.pushed_at.date()) if repo.pushed_at else ""
             desc = repo.description or ""
             results.append((repo.full_name, pushed, desc))
