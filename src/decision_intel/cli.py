@@ -91,13 +91,17 @@ def github(
             console.print("No repositories found.")
             raise SystemExit(0)
 
-        choices = [
-            questionary.Choice(
-                title=f"{name}  ({pushed})  {desc}" if desc else f"{name}  ({pushed})",
-                value=name,
-            )
-            for name, pushed, desc in available
-        ]
+        # Group by owner and insert a Separator header for each group.
+        from itertools import groupby
+        by_owner = sorted(available, key=lambda t: t[0].split("/")[0].lower())
+        choices: list = []
+        for owner, group in groupby(by_owner, key=lambda t: t[0].split("/")[0]):
+            choices.append(questionary.Separator(f"── {owner} ──"))
+            for name, pushed, desc in group:
+                repo_name = name.split("/", 1)[1]
+                title = f"  {repo_name}  ({pushed})  {desc}" if desc else f"  {repo_name}  ({pushed})"
+                choices.append(questionary.Choice(title=title, value=name))
+
         selected = questionary.checkbox(
             "Select repositories to collect (space to select, enter to confirm):",
             choices=choices,
