@@ -25,8 +25,8 @@ All data is local. The only outbound calls are to GitHub/JIRA/Confluence/Notion 
 ## Requirements
 
 - Python 3.11+
-- [Claude Code](https://claude.ai/code) installed and signed in (`claude auth login`)
-- Credentials for whichever sources you want to collect (see `.env.example`) — e.g. a GitHub personal access token for GitHub collection, an Atlassian API token for JIRA/Confluence
+- An Anthropic API key (`ANTHROPIC_API_KEY`) — used by the `ask` command to call `claude-opus-5`
+- Credentials for whichever sources you want to collect — e.g. a GitHub personal access token, an Atlassian API token for JIRA/Confluence
 
 ---
 
@@ -41,13 +41,18 @@ pip install -e .
 Create a `.env` file in the project root:
 
 ```env
+ANTHROPIC_API_KEY=sk-ant-...
+
 GITHUB_TOKEN=ghp_...
+
 JIRA_URL=https://yourorg.atlassian.net
 JIRA_USER=you@yourorg.com
 JIRA_API_TOKEN=...
-CONFLUENCE_URL=https://yourorg.atlassian.net
+
+CONFLUENCE_URL=https://yourorg.atlassian.net   # no /wiki suffix
 CONFLUENCE_USER=you@yourorg.com
 CONFLUENCE_API_TOKEN=...     # can reuse JIRA_API_TOKEN — same Atlassian Cloud auth
+
 NOTION_TOKEN=secret_...
 ```
 
@@ -56,7 +61,7 @@ NOTION_TOKEN=secret_...
 ## Quick start
 
 ```bash
-# 1. Collect GitHub data (interactive repo picker)
+# 1. Collect GitHub data — interactive picker shows ofiniti/teqplay repos grouped by org
 decision-intel github
 
 # 2. Build the index and graph in one step
@@ -130,8 +135,11 @@ decision-intel github --repo owner/repo1 --repo owner/repo2
 # Collect only recent items
 decision-intel github --since 2026-01-01 --max-prs 100
 
-# Collect JIRA issues matching a JQL query
-decision-intel jira --jql "project = PTO AND updated >= -30d"
+# Collect JIRA issues by project key (repeatable)
+decision-intel jira --project TCC --project PTO
+
+# Combine with a JQL filter
+decision-intel jira --project TCC --jql "sprint in openSprints()" --max 200
 
 # Collect one or more Confluence spaces
 decision-intel confluence --space TC --space PTO
@@ -173,9 +181,9 @@ Each collected `.md` file has a YAML frontmatter block with at least `id`, `sour
 
 ## Authentication
 
-The agent uses your existing **Claude Code** session — the same credentials used by the `claude` CLI. No separate `ANTHROPIC_API_KEY` is needed. If you have one set in `.env` it is temporarily removed before the agent call and restored afterwards.
+The `ask` command calls Claude directly via the **Anthropic SDK** (`claude-opus-5` with streaming). Set `ANTHROPIC_API_KEY` in your `.env` file — no Claude Code installation required for collection or asking questions.
 
-To sign in: `claude auth login`
+Collection commands (GitHub, JIRA, Confluence, Notion) use their own API tokens and make no Anthropic calls.
 
 ---
 
