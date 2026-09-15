@@ -326,12 +326,11 @@ def ask(ctx: click.Context, question: str, save: bool) -> None:
 
     agent = DecisionAgent(output_dir)
     console.print(f"\n[bold]Question:[/bold] {question}\n")
+    console.rule(style="dim")
 
-    with console.status("Agent is reasoning…"):
-        answer = agent.ask(question)
+    answer = agent.ask(question)  # streams tokens to stdout as they arrive
 
-    console.print(answer)
-
+    console.rule(style="dim")
     if save:
         answers_dir = output_dir / "answers"
         answers_dir.mkdir(exist_ok=True)

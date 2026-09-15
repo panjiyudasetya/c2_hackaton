@@ -1,24 +1,19 @@
 """
-Phase 5 — AI agent using the Claude Code SDK.
+Phase 5 — AI agent using the Anthropic SDK with streaming.
 
-Runs under your existing Claude Code session credentials — no separate
-Anthropic API key required.
-
-Strategy: search and graph calls are made locally in Python first, then the
-collected evidence is embedded into a single prompt sent to Claude with no
-tool calls.  This avoids the multi-turn tool loop that triggers rate-limit
-events before a text answer is produced.
+Evidence is gathered locally (vector search + graph), then sent to Claude
+in a single prompt.  Tokens stream to stdout as they arrive so the user
+sees the answer building up in real time.
 """
 
 from __future__ import annotations
 
-import asyncio
 import os
 from pathlib import Path
 
-from claude_code_sdk import ClaudeCodeOptions, query
-from claude_code_sdk._errors import MessageParseError
-from claude_code_sdk.types import AssistantMessage, ResultMessage, TextBlock
+import anthropic
+
+_MODEL = "claude-opus-5"
 
 _SYSTEM = """\
 You are a decision-intelligence assistant for an engineering team. Your job is to explain
@@ -26,7 +21,7 @@ WHY technical decisions were made by analysing evidence collected from GitHub, J
 Confluence, and Notion.
 
 The user's question and all relevant evidence have already been collected for you below.
-Do NOT call any external tools — answer solely from the provided evidence.
+Answer solely from the provided evidence — do not make up facts not present in it.
 
 When answering:
 1. Cite every claim with the document id (e.g. github:org/repo:pr:42).
@@ -42,7 +37,7 @@ Structure your final answer with:
 
 
 def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
-    """Search + graph locally; return a formatted evidence block."""
+    """Run semantic search + graph traversal locally; return a formatted evidence block."""
     from ..indexer import search_documents
     from ..graph import get_linked_documents
 
@@ -113,60 +108,36 @@ def _build_context(output_dir: Path, question: str, top_k: int = 15) -> str:
 
 
 class DecisionAgent:
-    """Answers decision-reasoning questions using the Claude Code SDK."""
+    """Answers decision-reasoning questions with streaming output via the Anthropic SDK."""
 
     def __init__(self, output_dir: Path) -> None:
         self.output_dir = output_dir
 
     def ask(self, question: str) -> str:
-        """Run the agent and return the final answer as markdown."""
-        return asyncio.run(self._ask_async(question))
+        """
+        Stream the answer to stdout token-by-token and return the full text.
 
-    async def _ask_async(self, question: str) -> str:
-        # ANTHROPIC_API_KEY (loaded from .env) takes precedence over the
-        # Claude.ai OAuth session that claude-code-sdk needs. Remove it for
-        # the duration of this call, then restore it afterwards.
-        removed: dict[str, str] = {}
-        for key in ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN"):
-            val = os.environ.pop(key, None)
-            if val:
-                removed[key] = val
-
-        # Gather evidence locally — no tool calls needed.
+        Reads ANTHROPIC_API_KEY from the environment (set in .env or shell).
+        """
         context = _build_context(self.output_dir, question)
-
         prompt = (
             f"## Question\n\n{question}\n\n"
             f"{context}\n\n"
             "Please answer the question using only the evidence above."
         )
 
-        options = ClaudeCodeOptions(
-            allowed_tools=[],          # no tools — single-turn answer
-            append_system_prompt=_SYSTEM,
-            cwd=str(self.output_dir.parent),
-            max_turns=1,
-        )
+        client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
-        last_text = ""
-        try:
-            aiter = query(prompt=prompt, options=options).__aiter__()
-            while True:
-                try:
-                    message = await aiter.__anext__()
-                except StopAsyncIteration:
-                    break
-                except MessageParseError:
-                    continue
+        chunks: list[str] = []
+        with client.messages.stream(
+            model=_MODEL,
+            max_tokens=8192,
+            system=_SYSTEM,
+            messages=[{"role": "user", "content": prompt}],
+        ) as stream:
+            for text in stream.text_stream:
+                print(text, end="", flush=True)
+                chunks.append(text)
 
-                if isinstance(message, ResultMessage):
-                    if message.result:
-                        return message.result
-                elif isinstance(message, AssistantMessage):
-                    for block in message.content:
-                        if isinstance(block, TextBlock):
-                            last_text = block.text
-        finally:
-            os.environ.update(removed)
-
-        return last_text or "No answer produced."
+        print()  # final newline after streaming finishes
+        return "".join(chunks)
