@@ -7,7 +7,7 @@ see collectors/base.py's render_frontmatter.
 Credentials are read from environment variables only - never hardcode a
 token in this file or paste one into a chat:
 
-    CONFLUENCE_URL         e.g. https://your-org.atlassian.net/wiki
+    CONFLUENCE_URL         e.g. https://your-org.atlassian.net  (no /wiki suffix)
     CONFLUENCE_USER        your Atlassian account email
     CONFLUENCE_API_TOKEN   an Atlassian API token (can reuse the JIRA one —
                             Jira and Confluence share Atlassian Cloud auth)
@@ -78,7 +78,7 @@ class ConfluenceCollector(BaseCollector):
         page_id = stub["id"]
         title = stub.get("title", "Untitled")
         base_url = confluence.url.rstrip("/")
-        url = f"{base_url}/spaces/{space_key}/pages/{page_id}"
+        url = f"{base_url}/wiki/spaces/{space_key}/pages/{page_id}"
 
         # Fetch body separately — keeps listing fast and progress responsive.
         full = confluence.get_page_by_id(page_id, expand="body.storage")
