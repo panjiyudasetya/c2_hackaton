@@ -1,4 +1,6 @@
-"""Notion collector — fetches pages from a database or page tree and writes them as markdown."""
+"""
+Notion collector — fetches pages from a database or page tree and writes them as markdown.
+"""
 
 from __future__ import annotations
 
@@ -19,7 +21,9 @@ def _extract_rich_text(rich_texts: list[dict]) -> str:
 
 
 def _page_title(page: dict) -> str:
-    """Extract the title from a page's properties."""
+    """
+    Extract the title from a page's properties.
+    """
     props = page.get("properties", {})
     for prop in props.values():
         if prop.get("type") == "title":
@@ -28,7 +32,9 @@ def _page_title(page: dict) -> str:
 
 
 def _blocks_to_markdown(blocks: list[dict]) -> str:
-    """Convert a flat list of Notion blocks to markdown text."""
+    """
+    Convert a flat list of Notion blocks to markdown text.
+    """
     lines: list[str] = []
     for block in blocks:
         btype = block.get("type", "")
@@ -84,7 +90,9 @@ def _blocks_to_markdown(blocks: list[dict]) -> str:
 
 
 def _prop_to_str(prop: dict) -> str:
-    """Convert a Notion property value to a plain string."""
+    """
+    Convert a Notion property value to a plain string.
+    """
     ptype = prop.get("type", "")
     val = prop.get(ptype, None)
 
@@ -132,7 +140,9 @@ def _prop_to_str(prop: dict) -> str:
 
 
 class NotionCollector(BaseCollector):
-    """Collects Notion pages from one or more database IDs and writes them as markdown."""
+    """
+    Collects Notion pages from one or more database IDs and writes them as markdown.
+    """
 
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "notion")
@@ -200,7 +210,9 @@ class NotionCollector(BaseCollector):
         return results
 
     def _fetch_blocks(self, notion, block_id: str) -> list[dict]:
-        """Fetch all top-level blocks for a page (no recursion into nested children)."""
+        """
+        Fetch all top-level blocks for a page (no recursion into nested children).
+        """
         blocks: list[dict] = []
         cursor: str | None = None
 

@@ -1,4 +1,6 @@
-"""JIRA collector — fetches issues (and their comments) and writes one markdown file each."""
+"""
+JIRA collector — fetches issues (and their comments) and writes one markdown file each.
+"""
 
 from __future__ import annotations
 
@@ -18,7 +20,9 @@ def _md_escape(text: str | None) -> str:
 
 
 class JiraCollector(BaseCollector):
-    """Collects JIRA issues matching a JQL query and writes them as markdown."""
+    """
+    Collects JIRA issues matching a JQL query and writes them as markdown.
+    """
 
     def __init__(self, output_dir: Path) -> None:
         super().__init__(output_dir / "jira")
