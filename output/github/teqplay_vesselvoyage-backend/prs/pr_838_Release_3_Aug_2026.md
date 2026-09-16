@@ -14,7 +14,10 @@ head_branch: develop
 url: https://github.com/teqplay/vesselvoyage-backend/pull/838
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1061
+- jira:TCC-1062
+- jira:TCC-1153
 ---
 # PR #838: Release 3 Aug 2026
 

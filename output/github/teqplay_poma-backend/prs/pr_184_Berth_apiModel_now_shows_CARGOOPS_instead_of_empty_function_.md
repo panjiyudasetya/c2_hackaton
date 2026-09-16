@@ -14,7 +14,8 @@ head_branch: CC-122-function-types-for-berth
 url: https://github.com/teqplay/poma-backend/pull/184
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:CC-122
 ---
 # PR #184: Berth apiModel now shows CARGOOPS instead of empty function type sets…
 
@@ -54,10 +55,14 @@ Lol, Wouter English
 
 ### TeqJoostD — 2025-02-26
 
-> …, changed enum typo: REPARE->REPAIR (Change DB!)
-
-How would you see this working in a deployment? Maybe better to deprecate `REPARE` and add `REPAIR` and when the migration is done remove the old field?
-
+> …, changed enum typo: REPARE->REPAIR (Change DB!)
+
+
+
+How would you see this working in a deployment? Maybe better to deprecate `REPARE` and add `REPAIR` and when the migration is done remove the old field?
+
+
+
 Or a solution where we add some sort of @JsonProperty annotation so repare gets deserialized to repair to avoid downtime of the system. And we can do the migration after the deployment. What are your thoughts on this?
 
 ### PimTeqplay — 2025-02-27

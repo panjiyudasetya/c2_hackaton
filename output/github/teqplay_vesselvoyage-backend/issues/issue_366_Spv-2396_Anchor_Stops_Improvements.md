@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/366
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2396
 ---
 # Issue #366: Spv-2396 Anchor Stops Improvements
 

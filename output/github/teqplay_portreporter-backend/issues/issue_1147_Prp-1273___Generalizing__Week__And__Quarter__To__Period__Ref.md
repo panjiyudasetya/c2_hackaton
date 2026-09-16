@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1147
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1273
 ---
 # Issue #1147: Prp-1273 : Generalizing 'Week' And 'Quarter' To 'Period' Refactoring Classes 'Invoiceweeklyinfo' And 'Invoicequarterinfo' To 'Invoiceinfobyperiod' For The Frontend Convenience.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1025
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-424
 ---
 # Issue #1025: Spv-424: Expose Vesselvoyage Esof Via Smartfleet
 

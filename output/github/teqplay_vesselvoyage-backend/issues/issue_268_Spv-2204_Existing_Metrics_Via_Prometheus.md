@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/268
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2204
 ---
 # Issue #268: Spv-2204 Existing Metrics Via Prometheus
 

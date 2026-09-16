@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/74
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SVP-2153
 ---
 # Issue #74: Svp-2153 Imo Mmsi Mapping Editing
 

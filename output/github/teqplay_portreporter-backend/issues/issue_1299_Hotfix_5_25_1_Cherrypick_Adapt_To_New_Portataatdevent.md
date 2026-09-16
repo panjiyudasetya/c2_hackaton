@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1299
 labels: []
-explicit_links: []
+explicit_links:
+- github:teqplay/portreporter-backend:issue:653
 ---
 # Issue #1299: Hotfix/5.25.1/Cherrypick Adapt To New Portataatdevent
 

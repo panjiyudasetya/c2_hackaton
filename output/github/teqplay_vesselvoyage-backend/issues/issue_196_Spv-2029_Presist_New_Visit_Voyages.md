@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/196
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2029
 ---
 # Issue #196: Spv-2029 Presist New Visit Voyages
 

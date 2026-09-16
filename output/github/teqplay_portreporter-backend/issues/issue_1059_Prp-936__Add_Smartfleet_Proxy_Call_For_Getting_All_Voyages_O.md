@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1059
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-936
 ---
 # Issue #1059: Prp-936: Add Smartfleet Proxy Call For Getting All Voyages Of Ships Heading To A Certain Port
 

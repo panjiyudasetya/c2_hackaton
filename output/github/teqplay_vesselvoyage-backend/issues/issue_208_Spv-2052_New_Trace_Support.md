@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/208
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2052
 ---
 # Issue #208: Spv-2052 New Trace Support
 

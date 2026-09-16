@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/998
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-217
 ---
 # Issue #998: Prp-217 : Reverting Commit 81Fb6E8 About Refactoring The Method 'Subscriptionlogic.Isshipknown()'
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1064
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-681
 ---
 # Issue #1064: Prp-681 : Include Tug Operators By Event Category In The Portcall
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1185
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1549
 ---
 # Issue #1185: Prp-1549 : Subscription Update Endpoint And Logic Returning The Updated Object.
 

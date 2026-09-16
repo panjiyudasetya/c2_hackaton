@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1307
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2121
 ---
 # Issue #1307: Cherry Pick - Merged In Feat/Prp-2121/Set_A_Flag_To_Disable_Smartfleet_Notifications_For_A_Smartfleet_Company (Pull Request #666)
 

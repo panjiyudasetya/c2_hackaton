@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/190
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2025
+- jira:SPV-1985
 ---
 # Issue #190: Spv-2025 New Definitions Encounter Events
 

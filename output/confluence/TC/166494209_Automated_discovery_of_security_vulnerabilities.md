@@ -7,7 +7,8 @@ title: Automated discovery of security vulnerabilities
 author: Leon Joosse (Unlicensed)
 date: '2023-02-09'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/166494209
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/166494209
 ---
 # Automated discovery of security vulnerabilities
 

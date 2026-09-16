@@ -10,7 +10,9 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/36
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-927
+- jira:SPV-928
 ---
 # Issue #36: Spv-927 / Spv-928 Vessel Classifications
 

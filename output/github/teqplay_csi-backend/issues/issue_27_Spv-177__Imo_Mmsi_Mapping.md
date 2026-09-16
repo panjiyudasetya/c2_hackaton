@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/27
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-177
 ---
 # Issue #27: Spv-177: Imo/Mmsi Mapping
 

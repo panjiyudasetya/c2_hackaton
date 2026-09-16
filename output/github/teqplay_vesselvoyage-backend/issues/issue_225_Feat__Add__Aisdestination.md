@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/225
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2107
+- jira:SPV-2108
 ---
 # Issue #225: Feat: Add 'Aisdestination'
 

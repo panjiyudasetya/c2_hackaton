@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1252
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1865
 ---
 # Issue #1252: Prp-1865 : Enhance Control And Logging In Vopak_Portcall_Details Queue Processing.
 

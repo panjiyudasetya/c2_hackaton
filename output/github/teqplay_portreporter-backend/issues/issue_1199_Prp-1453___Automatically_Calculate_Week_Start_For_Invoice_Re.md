@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1199
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1453
 ---
 # Issue #1199: Prp-1453 : Automatically Calculate Week Start For Invoice Reporting Based On The Cron Expression In 'Schedule.Invoicing' Property.
 

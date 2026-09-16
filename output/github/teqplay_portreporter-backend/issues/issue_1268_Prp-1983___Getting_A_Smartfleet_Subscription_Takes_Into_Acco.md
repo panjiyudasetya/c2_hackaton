@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1268
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1983
 ---
 # Issue #1268: Prp-1983 : Getting A Smartfleet Subscription Takes Into Account The Requesting User (Logged-In Or Impersonated).
 

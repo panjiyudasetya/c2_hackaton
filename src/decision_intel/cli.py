@@ -4,6 +4,7 @@ CLI entry point for decision-intel.
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 import click
@@ -12,6 +13,15 @@ from rich.console import Console
 from rich.live import Live
 from rich.spinner import Spinner
 from rich.table import Table
+
+# Windows' legacy console defaults to cp1252, which can't represent every
+# character Claude's free-form output (or Rich's own glyphs) might contain --
+# without this, an em-dash variant, arrow, or box-drawing character an LLM
+# response happens to include can crash the whole command with a raw
+# UnicodeEncodeError instead of just substituting the one character.
+if sys.platform == "win32":
+    sys.stdout.reconfigure(errors="replace")
+    sys.stderr.reconfigure(errors="replace")
 
 load_dotenv()
 console = Console()
@@ -414,11 +424,11 @@ def ask(ctx: click.Context, question: str, save: bool) -> None:
 
     agent = DecisionAgent(output_dir)
     console.print(f"\n[bold]Question:[/bold] {question}\n")
-    console.rule(style="dim")
+    console.rule(style="dim", characters="-")
 
     answer = agent.ask(question)  # streams tokens to stdout as they arrive
 
-    console.rule(style="dim")
+    console.rule(style="dim", characters="-")
     if save:
         answers_dir = output_dir / "answers"
         answers_dir.mkdir(exist_ok=True)
@@ -428,6 +438,83 @@ def ask(ctx: click.Context, question: str, save: bool) -> None:
         out = answers_dir / f"{ts}_{slug}.md"
         out.write_text(f"# {question}\n\n{answer}", encoding="utf-8")
         console.print(f"\n[dim]Saved to {out}[/dim]")
+
+
+# ── Jira ticket readiness review ────────────────────────────────────────────────
+
+@cli.command("jira-readiness")
+@click.argument("issue_key")
+@click.option("--save/--no-save", default=True, show_default=True,
+              help="Save the report to output/answers/.")
+@click.option("--post-comment", is_flag=True,
+              help="Also post the report as a comment on the ticket itself. Off by "
+                   "default -- this is the one write Jira operation this project does, "
+                   "and it only happens when you explicitly ask for it.")
+@click.pass_context
+def jira_readiness(ctx: click.Context, issue_key: str, save: bool, post_comment: bool) -> None:
+    """
+    Score a single JIRA ticket's implementation readiness (missing acceptance
+    criteria, edge cases, dependencies, etc.) from its collected content and
+    linked artifacts. Does not need the vector index -- only `decision-intel
+    jira` to have collected the ticket (and ideally `enrich`/`graph` so its
+    explicit_links point at whatever it references).
+
+    Re-running this on the same ticket compares against its last review, so
+    you can tell whether readiness actually improved and what's still blocking.
+
+    Example: decision-intel jira-readiness PTO-123
+    """
+    from decision_intel.agent import TicketReadinessReviewer
+    from decision_intel.agent.readiness_reviewer import save_and_diff
+
+    output_dir = ctx.obj["output_dir"]
+    reviewer = TicketReadinessReviewer(output_dir)
+
+    console.print(f"\n[bold]Reviewing:[/bold] {issue_key}\n")
+    console.rule(style="dim", characters="-")
+
+    try:
+        report = reviewer.review(issue_key)  # streams tokens to stdout as they arrive
+    except Exception as exc:  # noqa: BLE001 -- print cleanly instead of a raw traceback
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+    console.rule(style="dim", characters="-")
+
+    diff = save_and_diff(output_dir, issue_key, report)
+    if diff:
+        console.print(
+            f"\n[bold]Since last check:[/bold] {diff['previous_percentage']}% "
+            f"({diff['previous_classification']}) -> {diff['new_percentage']}% ({diff['new_classification']})"
+        )
+        if diff["changed_criteria"]:
+            for name, change in diff["changed_criteria"].items():
+                console.print(f"  {name}: {change['from']} -> {change['to']}")
+        else:
+            console.print("  No criteria changed.")
+
+    if save:
+        answers_dir = output_dir / "answers"
+        answers_dir.mkdir(exist_ok=True)
+        from datetime import datetime
+        ts = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+        out = answers_dir / f"{ts}_readiness_{issue_key}.md"
+        out.write_text(f"# Readiness review: {issue_key}\n\n{report}", encoding="utf-8")
+        console.print(f"\n[dim]Saved to {out}[/dim]")
+
+    if post_comment:
+        from decision_intel.collectors import JiraCollector
+
+        collector = JiraCollector(output_dir)
+        if not collector.is_configured():
+            console.print("[red]JIRA not configured — can't post the comment.[/red]")
+            raise SystemExit(1)
+        try:
+            url = collector.post_comment(issue_key, report)
+        except Exception as exc:  # noqa: BLE001
+            console.print(f"[red]Failed to post comment: {exc}[/red]")
+            raise SystemExit(1)
+        console.print(f"\n[dim]Posted to {url}[/dim]")
 
 
 # ── convenience: build = enrich + index + graph ───────────────────────────────

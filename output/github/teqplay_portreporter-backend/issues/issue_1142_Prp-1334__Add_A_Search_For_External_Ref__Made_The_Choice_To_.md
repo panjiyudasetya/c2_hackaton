@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1142
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1334
 ---
 # Issue #1142: Prp-1334: Add A Search For External Ref, Made The Choice To Only Use The Search For When Someone Starts Typing From The Start. Added Several Indexes To Improve The Search Speed
 

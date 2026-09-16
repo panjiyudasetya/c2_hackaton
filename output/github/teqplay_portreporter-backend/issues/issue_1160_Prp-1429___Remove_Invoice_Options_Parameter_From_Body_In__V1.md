@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1160
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1429
 ---
 # Issue #1160: Prp-1429 : Remove Invoice_Options Parameter From Body In /V1/Invoices/Generatenew Endpoint.
 

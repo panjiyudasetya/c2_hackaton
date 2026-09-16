@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1115
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-848
 ---
 # Issue #1115: Prp-848 : Avoiding Race Condition For Creating Subscriptions For The Same User.
 

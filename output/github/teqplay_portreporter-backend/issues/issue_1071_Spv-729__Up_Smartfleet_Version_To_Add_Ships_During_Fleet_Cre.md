@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1071
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-729
 ---
 # Issue #1071: Spv-729: Up Smartfleet Version To Add Ships During Fleet Creation + Updating And Expose Esof Light Changes
 

@@ -14,7 +14,8 @@ head_branch: DEV-1153-setup-oidc-for-aws
 url: https://github.com/teqplay/poma-backend/pull/221
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:DEV-1153
 ---
 # PR #221: DEV-1153-setup-oidc-for-aws
 

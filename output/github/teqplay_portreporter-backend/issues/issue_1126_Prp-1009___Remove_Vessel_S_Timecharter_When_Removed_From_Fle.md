@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1126
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1009
 ---
 # Issue #1126: Prp-1009 : Remove Vessel'S Timecharter When Removed From Fleet.
 

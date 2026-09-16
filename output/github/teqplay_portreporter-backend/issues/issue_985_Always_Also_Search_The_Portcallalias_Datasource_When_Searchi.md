@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/985
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CV-5800
 ---
 # Issue #985: Always Also Search The Portcallalias Datasource When Searching For Portcalls, Small Refactor To Make Sure We Request Each Portcall From The Database In 1 Calls Instead Of Separately
 

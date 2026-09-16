@@ -14,9 +14,7 @@ head_branch: release/1.6.0
 url: https://github.com/teqplay/dataflow_plugins/pull/31
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-2513
-- jira:PTO-2561
+explicit_links: []
 ---
 # PR #31: Release 1.6.0 to master
 

@@ -27,8 +27,8 @@ explicit_links: []
 
 ## Description
 
-### Description
-
+### Description
+
 This patch sets the default log level to "warning" (default).
 
 ## Commits

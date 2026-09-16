@@ -7,7 +7,8 @@ title: Keycloak user-based authentication proposal
 author: Darius Wattimena
 date: '2023-07-07'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/192315393
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/192315393
 ---
 # Keycloak user-based authentication proposal
 

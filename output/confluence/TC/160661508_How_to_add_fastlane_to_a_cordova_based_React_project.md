@@ -7,7 +7,11 @@ title: How to add fastlane to a cordova based React project
 author: Damon Asberg
 date: '2023-01-19'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160661508
-explicit_links: []
+explicit_links:
+- github:CocoaPods/CocoaPods:issue:11402
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160661508
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160727044/Rotating+all+secrets+for+a+fastlane+project#Google-Play-Store-API-key
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160727044/Rotating+all+secrets+for+a+fastlane+project#App-Store-API-key
 ---
 # How to add fastlane to a cordova based React project
 

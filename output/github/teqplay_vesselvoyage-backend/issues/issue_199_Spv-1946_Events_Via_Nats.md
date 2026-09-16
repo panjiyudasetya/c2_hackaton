@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/199
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1946
 ---
 # Issue #199: Spv-1946 Events Via Nats
 

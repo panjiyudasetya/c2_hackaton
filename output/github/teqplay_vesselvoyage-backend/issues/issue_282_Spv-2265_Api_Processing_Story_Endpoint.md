@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/282
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2265
 ---
 # Issue #282: Spv-2265 Api Processing Story Endpoint
 

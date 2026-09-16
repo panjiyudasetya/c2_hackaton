@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1031
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-587
 ---
 # Issue #1031: Prp-587 : Display Invoicerow'S Externalreference As Customer Reference In The Invoice Pdf Generated (Rel. [Prp-244])
 

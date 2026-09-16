@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1072
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-992
 ---
 # Issue #1072: Prp-992 : Selecting The Correct Shippingcompany
 

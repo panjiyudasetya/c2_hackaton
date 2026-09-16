@@ -14,7 +14,8 @@ head_branch: add-support-for-keycloak-users
 url: https://github.com/teqplay/poma-backend/pull/181
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2459
 ---
 # PR #181: Add support for keycloak users
 

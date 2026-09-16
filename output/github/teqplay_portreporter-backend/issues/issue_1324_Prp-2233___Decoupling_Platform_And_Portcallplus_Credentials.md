@@ -10,7 +10,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1324
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2233
+- jira:PRP-2196
 ---
 # Issue #1324: Prp-2233 : Decoupling Platform And Portcallplus Credentials.
 

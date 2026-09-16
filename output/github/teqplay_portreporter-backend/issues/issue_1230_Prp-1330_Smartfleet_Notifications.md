@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1230
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1330
 ---
 # Issue #1230: Prp-1330/Smartfleet Notifications
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1014
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-404
 ---
 # Issue #1014: Prp-404 : Preventing Emails And Expectedcallin From Being Deleted When They'Re Null
 

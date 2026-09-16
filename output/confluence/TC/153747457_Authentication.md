@@ -7,7 +7,8 @@ title: Authentication
 author: Leon Joosse (Unlicensed)
 date: '2022-11-24'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/153747457
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/153747457
 ---
 # Authentication
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1200
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1454
 ---
 # Issue #1200: Prp-1454 : Extending Portinvoicetotalsummary Class And Update Its Content (Separate Portcall Invoices And Portcall Order Invoices).
 

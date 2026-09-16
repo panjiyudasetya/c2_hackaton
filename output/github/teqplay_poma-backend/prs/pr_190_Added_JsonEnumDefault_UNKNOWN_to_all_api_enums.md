@@ -14,7 +14,8 @@ head_branch: Default-unknown-api-enums
 url: https://github.com/teqplay/poma-backend/pull/190
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:CC-122
 ---
 # PR #190: Added JsonEnumDefault UNKNOWN to all api enums
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1047
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-704
 ---
 # Issue #1047: Prp-704 : Shippingcompany.Nominationcollaborative Flag Into Two Independent Flags
 

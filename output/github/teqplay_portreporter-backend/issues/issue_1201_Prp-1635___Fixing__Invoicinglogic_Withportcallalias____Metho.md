@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1201
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1635
 ---
 # Issue #1201: Prp-1635 : Fixing 'Invoicinglogic.Withportcallalias()' Method Failed When Invoice Relates To A Non-Existent Company.
 

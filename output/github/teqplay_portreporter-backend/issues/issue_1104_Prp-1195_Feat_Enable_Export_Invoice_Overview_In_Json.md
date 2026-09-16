@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1104
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1195
 ---
 # Issue #1104: Prp-1195/Feat/Enable Export Invoice Overview In Json
 

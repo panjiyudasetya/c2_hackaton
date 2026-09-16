@@ -11,7 +11,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/28
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-430
 ---
 # Issue #28: Spv-430: Add Deploy To Kubernetes Option To Circleci Config & Adjust Probes, Requests And Limits To Support Fast Startup
 

@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/179
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2007
 ---
 # Issue #179: Spv-2007 Recalculation By Ship Should Expand To Take The Voyages Into Account
 

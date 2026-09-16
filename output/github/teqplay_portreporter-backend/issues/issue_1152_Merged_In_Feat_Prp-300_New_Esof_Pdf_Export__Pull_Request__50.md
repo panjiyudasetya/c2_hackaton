@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1152
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-300
 ---
 # Issue #1152: Merged In Feat/Prp-300/New_Esof_Pdf_Export (Pull Request #502)
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1248
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1822
 ---
 # Issue #1248: Prp-1822 : Modify Notification Search Endpoint Parameter Eventtype To A List Of Eventtypes.
 

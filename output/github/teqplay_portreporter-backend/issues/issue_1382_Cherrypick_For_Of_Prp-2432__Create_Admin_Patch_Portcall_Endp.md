@@ -11,7 +11,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1382
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2432
+- jira:PRP-2413
 ---
 # Issue #1382: Cherrypick For Of Prp-2432: Create Admin Patch Portcall Endpoint (Pull Request #760)
 

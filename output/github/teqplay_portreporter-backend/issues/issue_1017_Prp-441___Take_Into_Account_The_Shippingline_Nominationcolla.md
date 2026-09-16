@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1017
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-441
 ---
 # Issue #1017: Prp-441 : Take Into Account The Shippingline.Nominationcollaborative Flag Differently For Invoicing Csv Export
 

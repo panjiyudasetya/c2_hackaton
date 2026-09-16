@@ -7,7 +7,8 @@ title: Guidelines
 author: Damon Asberg
 date: '2023-05-09'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181108752
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181108752
 ---
 # Guidelines
 

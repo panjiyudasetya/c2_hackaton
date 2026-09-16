@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/262
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2180
 ---
 # Issue #262: Feat: Remove Stops <5 Minutes & Merge Stops Within <5 Minutes
 

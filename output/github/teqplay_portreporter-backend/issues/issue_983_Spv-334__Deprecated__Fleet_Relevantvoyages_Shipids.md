@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/983
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-334
 ---
 # Issue #983: Spv-334: Deprecated 'Fleet.Relevantvoyages.Shipids'
 

@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/161
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1939
 ---
 # Issue #161: Spv-1939 Split Processing
 

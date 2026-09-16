@@ -10,7 +10,9 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/30
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-430
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/88145921/Setup\+Backend\+Repo](https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/88145921/Setup+Backend+Repo
 ---
 # Issue #30: Spv-430: Improve Circleci Config & Small Jib Improvement
 

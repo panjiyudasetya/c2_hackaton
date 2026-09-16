@@ -15,7 +15,8 @@ head_branch: TCC-377-implement-controller-level-validation-for-main-port
 url: https://github.com/teqplay/poma-backend/pull/205
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-377
 ---
 # PR #205: TCC-377: Implement controller-level validation for mainPort in Berth, Port, and Terminal controllers
 
@@ -58,12 +59,18 @@ Copilot reviewed 5 out of 5 changed files in this pull request and generated 2 c
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| BerthController.kt | Adds mainPort validation to check for blank values and valid port references |
-| BerthService.kt | Implements validateMainPort helper method for port existence validation |
-| PortController.kt | Adds mainPort validation with direct port existence check |
-| TerminalController.kt | Adds mainPort validation to check for blank values and valid port references |
+| File | Description |
+
+| ---- | ----------- |
+
+| BerthController.kt | Adds mainPort validation to check for blank values and valid port references |
+
+| BerthService.kt | Implements validateMainPort helper method for port existence validation |
+
+| PortController.kt | Adds mainPort validation with direct port existence check |
+
+| TerminalController.kt | Adds mainPort validation to check for blank values and valid port references |
+
 | TerminalService.kt | Implements validateMainPort helper method for port existence validation |
 </details>
 

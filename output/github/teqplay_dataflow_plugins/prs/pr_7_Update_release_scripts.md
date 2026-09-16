@@ -27,7 +27,7 @@ explicit_links: []
 
 ## Description
 
-### Description
+### Description
 This patch modifies the script to create a new GitHub release.
 
 ## Commits

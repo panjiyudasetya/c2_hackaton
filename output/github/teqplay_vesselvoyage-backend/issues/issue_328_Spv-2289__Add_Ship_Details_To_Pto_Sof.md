@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/328
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2289
 ---
 # Issue #328: Spv-2289: Add Ship Details To Pto Sof
 

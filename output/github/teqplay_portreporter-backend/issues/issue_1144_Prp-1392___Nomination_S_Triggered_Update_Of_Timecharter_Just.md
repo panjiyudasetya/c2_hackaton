@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1144
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1392
 ---
 # Issue #1144: Prp-1392 : Nomination'S Triggered Update Of Timecharter Just When Enddate Is Decreased.
 

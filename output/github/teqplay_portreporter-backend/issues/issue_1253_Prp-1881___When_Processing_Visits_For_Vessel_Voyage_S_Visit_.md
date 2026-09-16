@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1253
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1881
 ---
 # Issue #1253: Prp-1881 : When Processing Visits For Vessel Voyage'S Visit Wheel For A Portcall, Handle Visits With No Port Areas.
 

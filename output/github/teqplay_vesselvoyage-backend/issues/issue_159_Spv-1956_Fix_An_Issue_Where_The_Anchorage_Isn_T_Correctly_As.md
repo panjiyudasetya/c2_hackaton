@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/159
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1956
 ---
 # Issue #159: Spv-1956 Fix An Issue Where The Anchorage Isn'T Correctly Assigned To A Stop
 

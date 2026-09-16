@@ -14,7 +14,8 @@ head_branch: TCC-285-fix-syncing
 url: https://github.com/teqplay/poma-backend/pull/199
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-285
 ---
 # PR #199: TCC-285 fix syncing
 

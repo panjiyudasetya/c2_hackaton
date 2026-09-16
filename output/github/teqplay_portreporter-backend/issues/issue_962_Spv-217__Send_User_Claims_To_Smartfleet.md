@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/962
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-217
 ---
 # Issue #962: Spv-217: Send User Claims To Smartfleet
 

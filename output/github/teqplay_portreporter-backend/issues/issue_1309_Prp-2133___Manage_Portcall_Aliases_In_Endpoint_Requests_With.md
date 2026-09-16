@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1309
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2133
 ---
 # Issue #1309: Prp-2133 : Manage Portcall Aliases In Endpoint Requests With Portcallids.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1130
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1240
 ---
 # Issue #1130: Feat/Upgrade Spring Boot
 

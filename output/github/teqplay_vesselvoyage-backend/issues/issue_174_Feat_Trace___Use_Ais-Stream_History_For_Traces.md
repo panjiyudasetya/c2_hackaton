@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/174
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1992
 ---
 # Issue #174: Feat(Trace): Use Ais-Stream:History For Traces
 

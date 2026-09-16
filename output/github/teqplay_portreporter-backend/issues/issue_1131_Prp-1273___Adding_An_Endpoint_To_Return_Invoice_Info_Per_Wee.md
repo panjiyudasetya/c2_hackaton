@@ -11,7 +11,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1131
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1273
+- jira:PRP-1272
 ---
 # Issue #1131: Prp-1273 : Adding An Endpoint To Return Invoice Info Per Week And Company(Id And Type).
 

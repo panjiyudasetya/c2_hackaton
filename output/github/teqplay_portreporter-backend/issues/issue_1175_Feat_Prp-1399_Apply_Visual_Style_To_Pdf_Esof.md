@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1175
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1399
 ---
 # Issue #1175: Feat/Prp-1399/Apply Visual Style To Pdf Esof
 

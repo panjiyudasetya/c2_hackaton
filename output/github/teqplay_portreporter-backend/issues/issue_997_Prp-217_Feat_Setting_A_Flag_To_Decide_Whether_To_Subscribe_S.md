@@ -11,7 +11,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/997
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-217
+- jira:PRP-271
 ---
 # Issue #997: Prp-217/Feat/Setting A Flag To Decide Whether To Subscribe Shippingcompany Agents
 

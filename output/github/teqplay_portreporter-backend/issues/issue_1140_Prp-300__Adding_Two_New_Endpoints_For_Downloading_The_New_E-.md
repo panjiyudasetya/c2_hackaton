@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1140
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-300
 ---
 # Issue #1140: Prp-300: Adding Two New Endpoints For Downloading The New E-Sof In Pdf And Json Format (First Version).
 

@@ -1,3 +1,8 @@
+---
+id: file:20260916_105119_what_blocker_happen_in_tcc_board_
+source: unknown
+explicit_links: []
+---
 # what blocker happen in TCC board?
 
 ## Summary

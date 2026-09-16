@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1232
 labels: []
-explicit_links: []
+explicit_links:
+- github:teqplay/portreporter-backend:issue:594
 ---
 # Issue #1232: Hotfix V5.22.1 - Prp-1453 : Cherry Pick To Parametrize The Spring Schedule Timezone To Be Able To Calculate The Week Shifted Seconds After Cron-Job Expressions (For Invoice Stats Purposes).
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1136
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1380
 ---
 # Issue #1136: Prp-1380 : Increase Logs In Nomination Message Handling.
 

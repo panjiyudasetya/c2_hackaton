@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/382
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2418
 ---
 # Issue #382: Spv-2418 Rework Trace Loading
 

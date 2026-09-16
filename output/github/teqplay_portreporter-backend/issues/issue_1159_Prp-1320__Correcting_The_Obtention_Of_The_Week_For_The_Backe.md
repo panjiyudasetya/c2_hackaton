@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1159
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1320
 ---
 # Issue #1159: Prp-1320: Correcting The Obtention Of The Week For The Backend Stats Generation.
 

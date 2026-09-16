@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1113
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1251
 ---
 # Issue #1113: Prp-1251 - Allow Users With Admin And Read_All Roles To Get Changelogentries Regardless The Roles.
 

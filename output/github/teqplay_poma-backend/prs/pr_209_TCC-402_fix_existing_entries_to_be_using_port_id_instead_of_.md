@@ -14,7 +14,8 @@ head_branch: TCC-402-fix-existing-entries-to-be-using-port-id-instead-of-unlocod
 url: https://github.com/teqplay/poma-backend/pull/209
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-402
 ---
 # PR #209: TCC-402 fix existing entries to be using port id instead of unlocode
 
@@ -55,17 +56,28 @@ Copilot reviewed 10 out of 10 changed files in this pull request and generated 8
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortService.kt | Adds migration function to replace UNLOCODE with port IDs |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Adds mainPort validation and migration endpoint |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalService.kt | Adds port validation using UNLOCODE lookup |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalController.kt | Adds mainPort validation logic |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthService.kt | Adds port validation using UNLOCODE lookup |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthController.kt | Adds mainPort validation logic |
-| src/test/kotlin/nl/teqplay/poma/feature/terminal/TerminalControllerTest.kt | Comprehensive test coverage for terminal validation |
-| src/test/kotlin/nl/teqplay/poma/feature/port/PortControllerTest.kt | Comprehensive test coverage for port validation |
-| src/test/kotlin/nl/teqplay/poma/feature/berth/BerthControllerTest.kt | Comprehensive test coverage for berth validation |
+| File | Description |
+
+| ---- | ----------- |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortService.kt | Adds migration function to replace UNLOCODE with port IDs |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Adds mainPort validation and migration endpoint |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalService.kt | Adds port validation using UNLOCODE lookup |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalController.kt | Adds mainPort validation logic |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthService.kt | Adds port validation using UNLOCODE lookup |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthController.kt | Adds mainPort validation logic |
+
+| src/test/kotlin/nl/teqplay/poma/feature/terminal/TerminalControllerTest.kt | Comprehensive test coverage for terminal validation |
+
+| src/test/kotlin/nl/teqplay/poma/feature/port/PortControllerTest.kt | Comprehensive test coverage for port validation |
+
+| src/test/kotlin/nl/teqplay/poma/feature/berth/BerthControllerTest.kt | Comprehensive test coverage for berth validation |
+
 | helm/values.yaml | Reduces replica count from 2 to 1 |
 </details>
 

@@ -14,7 +14,10 @@ head_branch: develop
 url: https://github.com/teqplay/poma-backend/pull/220
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:DEV-1282
+- jira:TCC-552
+- jira:UTF-8
 ---
 # PR #220: Release 16 Dec 2025
 
@@ -73,24 +76,42 @@ Copilot reviewed 17 out of 17 changed files in this pull request and generated 7
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| `src/main/kotlin/nl/teqplay/poma/model/basemodels/CustomerArea.kt` | New domain model for customer areas with location, area boundaries, and customer association |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaService.kt` | Service layer implementing business logic for customer area CRUD operations |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaController.kt` | REST controller exposing customer area endpoints with search and filtering capabilities |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/AbstractCustomerAreaDatasource.kt` | Base datasource with MongoDB indexes and query filters for customer areas |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaDatasource.kt` | Teqplay database implementation for customer areas |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaMergedDatasource.kt` | Merged database implementation for customer areas |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaExternalDatasource.kt` | External database implementation for customer areas |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/Config.kt` | Type aliases and configuration constants for customer area feature |
-| `api/src/main/kotlin/nl/teqplay/poma/api/v1/CustomerArea.kt` | API model for customer area with serialization support |
-| `api/src/main/kotlin/nl/teqplay/poma/api/v1/InfrastructureModelType.kt` | Added CUSTOMER enum value to infrastructure model types |
-| `api/src/main/kotlin/nl/teqplay/poma/api/v1/ApiModel.kt` | Registered CustomerArea in JsonSubTypes for polymorphic deserialization |
-| `src/main/kotlin/nl/teqplay/poma/feature/synchronize/SyncService.kt` | Integrated CustomerAreaService into infrastructure synchronization system |
-| `src/test/kotlin/nl/teqplay/poma/feature/synchronize/SyncServiceTest.kt` | Updated sync service tests to mock CustomerAreaService |
-| `src/main/kotlin/nl/teqplay/poma/feature/combined/GlobalController.kt` | Added customer area support to global infrastructure search |
-| `helm/values.yaml` | Increased CPU request from 0.01 to 0.1 for better resource allocation |
-| `.github/workflows/pr-review.yml` | New workflow for automated PR reviews |
+| File | Description |
+
+| ---- | ----------- |
+
+| `src/main/kotlin/nl/teqplay/poma/model/basemodels/CustomerArea.kt` | New domain model for customer areas with location, area boundaries, and customer association |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaService.kt` | Service layer implementing business logic for customer area CRUD operations |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaController.kt` | REST controller exposing customer area endpoints with search and filtering capabilities |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/AbstractCustomerAreaDatasource.kt` | Base datasource with MongoDB indexes and query filters for customer areas |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaDatasource.kt` | Teqplay database implementation for customer areas |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaMergedDatasource.kt` | Merged database implementation for customer areas |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaExternalDatasource.kt` | External database implementation for customer areas |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/Config.kt` | Type aliases and configuration constants for customer area feature |
+
+| `api/src/main/kotlin/nl/teqplay/poma/api/v1/CustomerArea.kt` | API model for customer area with serialization support |
+
+| `api/src/main/kotlin/nl/teqplay/poma/api/v1/InfrastructureModelType.kt` | Added CUSTOMER enum value to infrastructure model types |
+
+| `api/src/main/kotlin/nl/teqplay/poma/api/v1/ApiModel.kt` | Registered CustomerArea in JsonSubTypes for polymorphic deserialization |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/synchronize/SyncService.kt` | Integrated CustomerAreaService into infrastructure synchronization system |
+
+| `src/test/kotlin/nl/teqplay/poma/feature/synchronize/SyncServiceTest.kt` | Updated sync service tests to mock CustomerAreaService |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/combined/GlobalController.kt` | Added customer area support to global infrastructure search |
+
+| `helm/values.yaml` | Increased CPU request from 0.01 to 0.1 for better resource allocation |
+
+| `.github/workflows/pr-review.yml` | New workflow for automated PR reviews |
+
 | `.github/workflows/main.yml` | Added Slack notification configuration for deployment pipelines |
 </details>
 

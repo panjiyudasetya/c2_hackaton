@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1227
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1552
 ---
 # Issue #1227: Feat/Prp-1552/Invoice Summarized Search Endpoint
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/50
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRA-480
 ---
 # Issue #50: Add Ship Role Field
 

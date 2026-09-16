@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1153
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1404
 ---
 # Issue #1153: Prp-1404 : Upgrading Platform Version (Currently Snapshot) To Use New Eks Nexmo Gateway. To Be Updated After Platform Version Is Live Released).
 

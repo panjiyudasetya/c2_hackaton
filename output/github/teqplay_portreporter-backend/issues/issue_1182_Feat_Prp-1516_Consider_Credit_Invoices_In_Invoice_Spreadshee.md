@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1182
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1516
 ---
 # Issue #1182: Feat/Prp-1516/Consider Credit Invoices In Invoice Spreadsheet Overview
 

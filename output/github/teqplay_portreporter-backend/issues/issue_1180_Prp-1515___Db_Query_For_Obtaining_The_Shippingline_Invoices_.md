@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1180
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1515
 ---
 # Issue #1180: Prp-1515 : Db Query For Obtaining The Shippingline Invoices For The Kickback Overview Includes All Cases.
 

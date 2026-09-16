@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1372
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2397
 ---
 # Issue #1372: Prp-2397 : Smartfleet Pilotboardingplace'S Scheduled Notification.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/38
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1017
 ---
 # Issue #38: Expose Dimensions In Cached Ship Object
 

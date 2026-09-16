@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1056
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-485
 ---
 # Issue #1056: Spv-695 Invoice Overview Export Feedback
 

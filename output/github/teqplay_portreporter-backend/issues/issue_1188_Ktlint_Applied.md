@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1188
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1549
 ---
 # Issue #1188: Ktlint Applied
 

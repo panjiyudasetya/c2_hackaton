@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/211
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2073
 ---
 # Issue #211: Spv-2073 Ais Trace Processing For V2
 

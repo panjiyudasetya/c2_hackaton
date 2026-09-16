@@ -14,7 +14,8 @@ head_branch: TCC-1171-keycloak-login
 url: https://github.com/teqplay/vesselvoyage-backend/pull/849
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1171
 ---
 # PR #849: TCC-1171 keycloak login
 

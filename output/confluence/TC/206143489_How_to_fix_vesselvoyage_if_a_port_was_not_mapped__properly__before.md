@@ -7,7 +7,8 @@ title: How to fix vesselvoyage if a port was not mapped (properly) before
 author: Richard van Klaveren
 date: '2023-08-20'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/206143489
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/206143489
 ---
 # How to fix vesselvoyage if a port was not mapped (properly) before
 

@@ -10,7 +10,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1141
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1272
+- github:teqplay/portreporter-backend:issue:489
 ---
 # Issue #1141: Feat/Prp-1272/Kickback Not Reflected In Final Price
 

@@ -359,6 +359,60 @@ def create_api_app(output_dir: str | Path = "output") -> Flask:
             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
         )
 
+    @app.post("/jira/readiness")
+    def jira_readiness():
+        from .agent import TicketReadinessReviewer
+        from .agent.readiness_reviewer import save_and_diff
+
+        body = request.get_json(silent=True) or {}
+        issue_key = (body.get("issue_key") or "").strip()
+        if not issue_key:
+            return jsonify({"error": "issue_key is required"}), 400
+
+        reviewer = TicketReadinessReviewer(output_dir)
+
+        def generate():
+            chunks: list[str] = []
+            try:
+                for chunk in reviewer.review_stream(issue_key):
+                    chunks.append(chunk)
+                    yield f"data: {json.dumps({'token': chunk})}\n\n"
+            except Exception as exc:  # noqa: BLE001 -- surface to the chat UI, don't 500 mid-stream
+                yield f"data: {json.dumps({'error': str(exc)})}\n\n"
+                return
+
+            report = "".join(chunks)
+            diff = save_and_diff(output_dir, issue_key, report)
+            yield f"data: {json.dumps({'history': diff})}\n\n"
+            yield f"data: {json.dumps({'done': True})}\n\n"
+
+        return Response(
+            generate(),
+            mimetype="text/event-stream",
+            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+        )
+
+    @app.post("/jira/comment")
+    def jira_comment():
+        from .collectors import JiraCollector
+
+        body = request.get_json(silent=True) or {}
+        issue_key = (body.get("issue_key") or "").strip()
+        comment = (body.get("comment") or "").strip()
+        if not issue_key or not comment:
+            return jsonify({"error": "issue_key and comment are required"}), 400
+
+        collector = JiraCollector(output_dir)
+        if not collector.is_configured():
+            return jsonify({"error": "JIRA not configured"}), 503
+
+        try:
+            url = collector.post_comment(issue_key, comment)
+        except Exception as exc:  # noqa: BLE001
+            return jsonify({"error": str(exc)}), 502
+
+        return jsonify({"posted": True, "url": url})
+
     return app
 
 

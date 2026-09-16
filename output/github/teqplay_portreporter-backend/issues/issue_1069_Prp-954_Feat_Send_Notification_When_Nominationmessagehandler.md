@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1069
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-954
 ---
 # Issue #1069: Prp-954/Feat/Send Notification When Nominationmessagehandler Fails
 

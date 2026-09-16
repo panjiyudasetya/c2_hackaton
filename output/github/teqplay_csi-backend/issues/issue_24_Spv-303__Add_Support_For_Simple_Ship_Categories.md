@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/24
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-303
 ---
 # Issue #24: Spv-303: Add Support For Simple Ship Categories
 

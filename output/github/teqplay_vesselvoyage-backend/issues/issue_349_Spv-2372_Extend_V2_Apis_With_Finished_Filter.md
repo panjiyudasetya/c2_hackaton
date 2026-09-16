@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/349
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2372
 ---
 # Issue #349: Spv-2372 Extend V2 Apis With Finished Filter
 

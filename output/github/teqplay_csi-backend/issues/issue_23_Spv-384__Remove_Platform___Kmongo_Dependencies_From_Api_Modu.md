@@ -11,7 +11,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/23
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-384
 ---
 # Issue #23: Spv-384: Remove Platform & Kmongo Dependencies From Api Module, Remove 'Dead' Platform Specific Types
 

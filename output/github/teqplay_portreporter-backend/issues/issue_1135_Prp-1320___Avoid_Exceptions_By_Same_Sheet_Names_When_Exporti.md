@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1135
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1320
 ---
 # Issue #1135: Prp-1320 : Avoid Exceptions By Same Sheet Names When Exporting Backend Usage Stats.
 

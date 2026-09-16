@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1163
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1436
 ---
 # Issue #1163: Adding Specific Email Address For Vopak Edi Invoices For The Port Of Vlissingen.
 

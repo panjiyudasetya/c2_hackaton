@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1032
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-592
 ---
 # Issue #1032: Prp-592 : Add Parameter 'Vesselinfo' To Search Nominations By Vesselname Or Imo And Clean Up
 

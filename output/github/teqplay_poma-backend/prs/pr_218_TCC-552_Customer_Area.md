@@ -14,7 +14,8 @@ head_branch: TCC-552
 url: https://github.com/teqplay/poma-backend/pull/218
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-552
 ---
 # PR #218: TCC-552 Customer Area
 
@@ -63,21 +64,36 @@ Copilot reviewed 14 out of 14 changed files in this pull request and generated 3
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| `src/main/kotlin/nl/teqplay/poma/model/basemodels/CustomerArea.kt` | Defines the database model for CustomerArea with location, area, and port properties |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaService.kt` | Implements service layer with CRUD operations and model conversion logic |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/AbstractCustomerAreaDatasource.kt` | Abstract datasource with MongoDB indexing and search query implementations |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaDatasource.kt` | Teqplay database datasource implementation |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaMergedDatasource.kt` | Merged database datasource implementation |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaExternalDatasource.kt` | External database datasource implementation |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaController.kt` | REST controller for CustomerArea endpoints with validation logic |
-| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/Config.kt` | Type aliases and collection name configuration |
-| `src/main/kotlin/nl/teqplay/poma/feature/synchronize/SyncService.kt` | Adds CustomerAreaService integration to sync service routing |
-| `src/main/kotlin/nl/teqplay/poma/feature/combined/GlobalController.kt` | Adds CustomerArea handling to global infrastructure controller |
-| `api/src/main/kotlin/nl/teqplay/poma/api/v1/CustomerArea.kt` | API model definition for CustomerArea |
-| `api/src/main/kotlin/nl/teqplay/poma/api/v1/InfrastructureModelType.kt` | Adds CUSTOMER enum value to infrastructure model types |
-| `api/src/main/kotlin/nl/teqplay/poma/api/v1/ApiModel.kt` | Adds JSON subtype mapping for CustomerArea |
+| File | Description |
+
+| ---- | ----------- |
+
+| `src/main/kotlin/nl/teqplay/poma/model/basemodels/CustomerArea.kt` | Defines the database model for CustomerArea with location, area, and port properties |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaService.kt` | Implements service layer with CRUD operations and model conversion logic |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/AbstractCustomerAreaDatasource.kt` | Abstract datasource with MongoDB indexing and search query implementations |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaDatasource.kt` | Teqplay database datasource implementation |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaMergedDatasource.kt` | Merged database datasource implementation |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaExternalDatasource.kt` | External database datasource implementation |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/CustomerAreaController.kt` | REST controller for CustomerArea endpoints with validation logic |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customerarea/Config.kt` | Type aliases and collection name configuration |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/synchronize/SyncService.kt` | Adds CustomerAreaService integration to sync service routing |
+
+| `src/main/kotlin/nl/teqplay/poma/feature/combined/GlobalController.kt` | Adds CustomerArea handling to global infrastructure controller |
+
+| `api/src/main/kotlin/nl/teqplay/poma/api/v1/CustomerArea.kt` | API model definition for CustomerArea |
+
+| `api/src/main/kotlin/nl/teqplay/poma/api/v1/InfrastructureModelType.kt` | Adds CUSTOMER enum value to infrastructure model types |
+
+| `api/src/main/kotlin/nl/teqplay/poma/api/v1/ApiModel.kt` | Adds JSON subtype mapping for CustomerArea |
+
 | `src/test/kotlin/nl/teqplay/poma/feature/synchronize/SyncServiceTest.kt` | Updates test to include CustomerAreaService mock in SyncService constructor |
 </details>
 

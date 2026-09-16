@@ -14,7 +14,8 @@ head_branch: TCC-233
 url: https://github.com/teqplay/poma-backend/pull/225
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-233
 ---
 # PR #225: TCC-233 Poma swagger documentation
 
@@ -67,20 +68,34 @@ Copilot reviewed 13 out of 13 changed files in this pull request and generated 2
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/main/kotlin/nl/teqplay/poma/common/ApiRequestBody.kt | Introduces type alias to resolve annotation naming conflicts |
-| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureController.kt | Adds comprehensive Swagger documentation for base CRUD operations |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalController.kt | Documents terminal management endpoints with search, filtering, and administrative operations |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Documents port management endpoints with extensive filtering and data maintenance operations |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/pilotboardingplace/PilotBoardingPlaceController.kt | Documents pilot boarding place endpoints with filtering and import capabilities |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/lock/LockController.kt | Documents lock management endpoints with comprehensive filtering |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customarea/CustomAreaController.kt | Documents custom area endpoints with import from VesselMatcher |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/breakwater/BreakWaterAreaController.kt | Documents breakwater area endpoints with platform import |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthController.kt | Documents berth management endpoints with import and maintenance operations |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/basin/BasinController.kt | Documents basin endpoints with filtering and import capabilities |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approachroute/ApproachRouteController.kt | Documents approach route endpoints with data science import |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approacharea/ApproachAreaController.kt | Documents approach area endpoints with platform import |
+| File | Description |
+
+| ---- | ----------- |
+
+| src/main/kotlin/nl/teqplay/poma/common/ApiRequestBody.kt | Introduces type alias to resolve annotation naming conflicts |
+
+| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureController.kt | Adds comprehensive Swagger documentation for base CRUD operations |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalController.kt | Documents terminal management endpoints with search, filtering, and administrative operations |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Documents port management endpoints with extensive filtering and data maintenance operations |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/pilotboardingplace/PilotBoardingPlaceController.kt | Documents pilot boarding place endpoints with filtering and import capabilities |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/lock/LockController.kt | Documents lock management endpoints with comprehensive filtering |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customarea/CustomAreaController.kt | Documents custom area endpoints with import from VesselMatcher |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/breakwater/BreakWaterAreaController.kt | Documents breakwater area endpoints with platform import |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthController.kt | Documents berth management endpoints with import and maintenance operations |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/basin/BasinController.kt | Documents basin endpoints with filtering and import capabilities |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approachroute/ApproachRouteController.kt | Documents approach route endpoints with data science import |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approacharea/ApproachAreaController.kt | Documents approach area endpoints with platform import |
+
 | src/main/kotlin/nl/teqplay/poma/feature/infrastructure/anchorage/AnchorageController.kt | Documents anchorage endpoints with multiple import sources |
 </details>
 

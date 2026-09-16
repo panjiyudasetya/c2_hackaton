@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/72
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-716
 ---
 # Issue #72: Spv-716 V2 Csi Categories
 

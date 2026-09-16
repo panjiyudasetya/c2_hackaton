@@ -10,7 +10,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1416
 labels: []
-explicit_links: []
+explicit_links:
+- jira:DEV-448
+- jira:PRP-2515
 ---
 # Issue #1416: Dev-448 Updating To Spring 3.1 Bitbucket Pipeline Fix
 

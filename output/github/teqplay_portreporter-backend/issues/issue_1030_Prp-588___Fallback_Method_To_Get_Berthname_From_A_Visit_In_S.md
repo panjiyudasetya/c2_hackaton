@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1030
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-588
 ---
 # Issue #1030: Prp-588 : Fallback Method To Get Berthname From A Visit In Subscriptionlogic
 

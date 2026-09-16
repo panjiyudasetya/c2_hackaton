@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1243
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1764
 ---
 # Issue #1243: Feat/Prp-1764 Line Up Service Use In Portreporter
 

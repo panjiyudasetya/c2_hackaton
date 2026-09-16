@@ -7,7 +7,8 @@ title: CSS / SASS code style guide
 author: Damon Asberg
 date: '2025-11-03'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181862476
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181862476
 ---
 # CSS / SASS code style guide
 

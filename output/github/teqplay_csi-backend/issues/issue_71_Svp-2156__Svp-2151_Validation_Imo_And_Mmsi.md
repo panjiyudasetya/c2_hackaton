@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/71
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SVP-2156
 ---
 # Issue #71: Svp-2156, Svp-2151 Validation Imo And Mmsi
 

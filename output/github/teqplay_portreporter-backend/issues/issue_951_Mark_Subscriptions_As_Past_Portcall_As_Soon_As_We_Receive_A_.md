@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/951
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-37
 ---
 # Issue #951: Mark Subscriptions As Past Portcall As Soon As We Receive A Finished Event
 

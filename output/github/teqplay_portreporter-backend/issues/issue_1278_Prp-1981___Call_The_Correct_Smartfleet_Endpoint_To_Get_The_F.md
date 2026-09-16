@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1278
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1981
 ---
 # Issue #1278: Prp-1981 : Call The Correct Smartfleet Endpoint To Get The Fleets Depending On The User Role (Admin Or Regular).
 

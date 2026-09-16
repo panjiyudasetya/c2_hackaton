@@ -10,7 +10,9 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/21
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-315
+- jira:SPV-344
 ---
 # Issue #21: Spv-315 Import All Calculated Vesselspee
 

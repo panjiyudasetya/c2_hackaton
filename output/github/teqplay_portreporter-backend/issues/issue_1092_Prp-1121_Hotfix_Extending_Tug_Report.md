@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1092
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1121
 ---
 # Issue #1092: Prp-1121/Hotfix/Extending Tug Report
 

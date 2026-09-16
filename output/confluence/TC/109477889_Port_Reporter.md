@@ -7,7 +7,8 @@ title: Port Reporter
 author: Richard van Klaveren
 date: '2025-06-16'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/109477889
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/109477889
 ---
 # Port Reporter
 

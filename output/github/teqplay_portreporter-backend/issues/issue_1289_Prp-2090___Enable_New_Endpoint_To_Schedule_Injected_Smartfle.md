@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1289
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2090
 ---
 # Issue #1289: Prp-2090 : Enable New Endpoint To Schedule Injected Smartfleet Events.
 

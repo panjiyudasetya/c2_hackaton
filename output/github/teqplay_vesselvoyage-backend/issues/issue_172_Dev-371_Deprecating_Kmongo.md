@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/172
 labels: []
-explicit_links: []
+explicit_links:
+- jira:DEV-371
 ---
 # Issue #172: Dev-371 Deprecating Kmongo
 

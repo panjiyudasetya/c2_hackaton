@@ -14,7 +14,8 @@ head_branch: TCC-1076-background-ship-state-loading
 url: https://github.com/teqplay/vesselvoyage-backend/pull/822
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1076
 ---
 # PR #822: TCC-1076: background ship state loading
 

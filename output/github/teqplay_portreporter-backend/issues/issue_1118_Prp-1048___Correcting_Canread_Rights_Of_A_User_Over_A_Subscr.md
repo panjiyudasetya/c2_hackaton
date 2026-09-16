@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1118
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1048
 ---
 # Issue #1118: Prp-1048 : Correcting Canread Rights Of A User Over A Subscriptionprofile.
 

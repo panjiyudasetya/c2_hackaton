@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/188
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2016
 ---
 # Issue #188: Feat: Support Recalculation By Port
 

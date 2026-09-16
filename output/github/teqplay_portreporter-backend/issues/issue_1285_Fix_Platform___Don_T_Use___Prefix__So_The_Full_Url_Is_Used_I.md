@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1285
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRA-649
 ---
 # Issue #1285: Fix(Platform): Don'T Use / Prefix, So The Full Url Is Used Instead Of Just The Base
 

@@ -14,7 +14,8 @@ head_branch: DEV-1282-add-augment-pr-review
 url: https://github.com/teqplay/poma-backend/pull/217
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:DEV-1282
 ---
 # PR #217: DEV-1282: Add augment PR review workflow
 

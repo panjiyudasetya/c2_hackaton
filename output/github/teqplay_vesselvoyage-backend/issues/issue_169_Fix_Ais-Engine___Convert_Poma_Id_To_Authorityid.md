@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/169
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1990
 ---
 # Issue #169: Fix(Ais-Engine): Convert Poma Id To Authorityid
 

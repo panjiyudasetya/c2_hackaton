@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1186
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1553
 ---
 # Issue #1186: Prp-1553: Replace Old Sof By New Esof
 

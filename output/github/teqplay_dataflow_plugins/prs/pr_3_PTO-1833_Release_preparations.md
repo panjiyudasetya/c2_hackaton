@@ -14,8 +14,7 @@ head_branch: PTO-1833-prepare-release-scripts
 url: https://github.com/teqplay/dataflow_plugins/pull/3
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-1833
+explicit_links: []
 ---
 # PR #3: PTO-1833 Release preparations
 
@@ -28,8 +27,8 @@ explicit_links:
 
 ## Description
 
-### Description
-
+### Description
+
 This patch added a shell script to create a new release/hotfixes.
 
 ## Commits

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/958
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-34
 ---
 # Issue #958: Prp-34 Updatenominationendpoint
 

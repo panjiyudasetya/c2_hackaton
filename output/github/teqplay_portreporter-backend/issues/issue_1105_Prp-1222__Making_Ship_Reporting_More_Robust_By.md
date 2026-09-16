@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1105
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1222
 ---
 # Issue #1105: Prp-1222: Making Ship Reporting More Robust By
 

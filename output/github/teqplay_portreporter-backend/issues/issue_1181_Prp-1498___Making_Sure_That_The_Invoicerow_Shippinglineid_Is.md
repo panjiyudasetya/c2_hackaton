@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1181
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1498
 ---
 # Issue #1181: Prp-1498 : Making Sure That The Invoicerow.Shippinglineid Is Set To A Valid Value Also When A Ship Is Found In The Shipregistry.
 

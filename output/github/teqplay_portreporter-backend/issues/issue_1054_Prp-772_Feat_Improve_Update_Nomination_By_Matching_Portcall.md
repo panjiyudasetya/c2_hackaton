@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1054
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-772
 ---
 # Issue #1054: Prp-772/Feat/Improve Update Nomination By Matching Portcall
 

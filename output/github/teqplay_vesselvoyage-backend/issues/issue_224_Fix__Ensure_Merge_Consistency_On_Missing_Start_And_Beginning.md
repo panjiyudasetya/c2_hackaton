@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/224
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2059
+- jira:SPV-2076
 ---
 # Issue #224: Fix: Ensure Merge Consistency On Missing Start And Beginning With A Visit
 

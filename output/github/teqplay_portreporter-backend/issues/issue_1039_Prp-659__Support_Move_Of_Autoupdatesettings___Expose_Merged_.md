@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1039
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-659
 ---
 # Issue #1039: Prp-659: Support Move Of Autoupdatesettings & Expose Merged Settings Object
 

@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MAP.ANSWER",
+  title: "Ofiniti ● Map.answer",
   description: "Ask why a technical decision was made.",
 };
 

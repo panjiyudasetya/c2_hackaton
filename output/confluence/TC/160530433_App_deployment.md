@@ -7,7 +7,8 @@ title: App deployment
 author: Damon Asberg
 date: '2023-01-10'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160530433
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160530433
 ---
 # App deployment
 

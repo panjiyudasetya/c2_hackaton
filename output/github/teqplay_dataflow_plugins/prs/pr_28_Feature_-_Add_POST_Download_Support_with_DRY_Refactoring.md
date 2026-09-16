@@ -27,29 +27,29 @@ explicit_links: []
 
 ## Description
 
-### Description
-Implements download-to-file functionality for `POST` requests in the Vessel Voyage API while refactoring existing download methods to eliminate code duplication.
-
-### Key Changes
-- **New Feature**: `_download_with_post()` method for downloading large resources via POST endpoints
-- **DRY Refactoring**: Extracted 3 helper methods to eliminate ~42 lines of duplicate code
-  - `_validate_download_params()` - Parameter validation
-  - `_construct_download_url()` - URL construction with version override
-  - `_write_response_to_file()` - Streaming file writer
-- **Enhanced API**: `VesselVoyage.get_sof_by_ports()` now supports optional download options
-- **Test Coverage**: Added 3 comprehensive unit tests for download functionality
-
-### Impact
-- **Code Reduction**: 111 → 84 lines (24% reduction)
-- **Zero Duplication**: Eliminated 100% of duplicate code between download methods
-- **Backward Compatible**: All 15 existing tests pass
-- **Follows Guidelines**: Adheres to DRY and SRP principles
-
-### Testing
-```bash
-✅ All 15 tests passing (14 VesselVoyage + 1 Internal)
-✅ No linting issues
-```
+### Description
+Implements download-to-file functionality for `POST` requests in the Vessel Voyage API while refactoring existing download methods to eliminate code duplication.
+
+### Key Changes
+- **New Feature**: `_download_with_post()` method for downloading large resources via POST endpoints
+- **DRY Refactoring**: Extracted 3 helper methods to eliminate ~42 lines of duplicate code
+  - `_validate_download_params()` - Parameter validation
+  - `_construct_download_url()` - URL construction with version override
+  - `_write_response_to_file()` - Streaming file writer
+- **Enhanced API**: `VesselVoyage.get_sof_by_ports()` now supports optional download options
+- **Test Coverage**: Added 3 comprehensive unit tests for download functionality
+
+### Impact
+- **Code Reduction**: 111 → 84 lines (24% reduction)
+- **Zero Duplication**: Eliminated 100% of duplicate code between download methods
+- **Backward Compatible**: All 15 existing tests pass
+- **Follows Guidelines**: Adheres to DRY and SRP principles
+
+### Testing
+```bash
+✅ All 15 tests passing (14 VesselVoyage + 1 Internal)
+✅ No linting issues
+```
 
 
 ## Commits
@@ -162,59 +162,59 @@ Addressed by 87e21e8.
 
 ### panjiyudasetya — 2026-02-24
 
-Here is the script to test the download function.
-
-```python
-
-# Create test file on: /dataflow_plugins/test.py
-
-import os
-
-from dotenv import load_dotenv
-from dataflow_plugins.api_clients.teqplay_api.vessel_voyage import VesselVoyageAPI
-
-load_dotenv()
-
-
-if __name__ == "__main__":
-    token = "<put-your-token-here>"
-    download_opts = {
-        'to_dirs': os.getcwd(),
-        'as_filename': 'sof-by-ports.json',
-        'resource_type': 'json'
-    }
-
-    from pdb import set_trace; set_trace()
-
-    api = VesselVoyageAPI()
-    result = api.get_sof_by_ports(token=token, payload=[
-        {
-            "view": "pto",
-            "unlocode": "NLRTM",
-            "start": "2026-01-01T00:00:00Z",
-            "end": "2026-01-07T00:00:00Z",
-            "vesselType": ["SEA_VESSEL"],
-            "finished": True,
-            "limit": 10
-        },
-        {
-            "view": "pto",
-            "unlocode": "NLRTM",
-            "start": "2026-01-01T00:00:00Z",
-            "end": "2026-01-07T00:00:00Z",
-            "vesselType": ["BARGE"],
-            "finished": True,
-            "limit": 10
-        },
-        {
-            "view": "pto",
-            "unlocode": "NLAMS",
-            "start": "2026-01-01T00:00:00Z",
-            "end": "2026-01-07T00:00:00Z",
-            "vesselType": ["SEA_VESSEL"],
-            "finished": True,
-            "limit": 10
-        }
-    ], download_opts=download_opts)
-
+Here is the script to test the download function.
+
+```python
+
+# Create test file on: /dataflow_plugins/test.py
+
+import os
+
+from dotenv import load_dotenv
+from dataflow_plugins.api_clients.teqplay_api.vessel_voyage import VesselVoyageAPI
+
+load_dotenv()
+
+
+if __name__ == "__main__":
+    token = "<put-your-token-here>"
+    download_opts = {
+        'to_dirs': os.getcwd(),
+        'as_filename': 'sof-by-ports.json',
+        'resource_type': 'json'
+    }
+
+    from pdb import set_trace; set_trace()
+
+    api = VesselVoyageAPI()
+    result = api.get_sof_by_ports(token=token, payload=[
+        {
+            "view": "pto",
+            "unlocode": "NLRTM",
+            "start": "2026-01-01T00:00:00Z",
+            "end": "2026-01-07T00:00:00Z",
+            "vesselType": ["SEA_VESSEL"],
+            "finished": True,
+            "limit": 10
+        },
+        {
+            "view": "pto",
+            "unlocode": "NLRTM",
+            "start": "2026-01-01T00:00:00Z",
+            "end": "2026-01-07T00:00:00Z",
+            "vesselType": ["BARGE"],
+            "finished": True,
+            "limit": 10
+        },
+        {
+            "view": "pto",
+            "unlocode": "NLAMS",
+            "start": "2026-01-01T00:00:00Z",
+            "end": "2026-01-07T00:00:00Z",
+            "vesselType": ["SEA_VESSEL"],
+            "finished": True,
+            "limit": 10
+        }
+    ], download_opts=download_opts)
+
 ```

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1021
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-244
 ---
 # Issue #1021: Prp-244/Feat/Add Customer Reference To Nomination And Use It To Match Portcall Alias
 

@@ -15,7 +15,8 @@ head_branch: TCC-442-Fix-an-issue-in-Poma-DATA-where-the-Display-Name-of-a-port-
 url: https://github.com/teqplay/poma-backend/pull/214
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-442
 ---
 # PR #214: TCC-442 Fix an issue in Poma DATA where the Display Name of a port is always blank
 

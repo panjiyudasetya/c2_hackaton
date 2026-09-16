@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1019
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-442
 ---
 # Issue #1019: Prp-442 : Adding A Flag To The Method Invoicegroupinglogic.Fetchgroupingbyportcalls(...) So To Returns Portcalls To Invoice With The Portcall Liases Or Teqplay Portcalls
 

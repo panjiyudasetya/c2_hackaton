@@ -1,7 +1,48 @@
 ---
 id: file:20260916_104257_tell_me_what_tcc_team_doing_now
 source: unknown
-explicit_links: []
+explicit_links:
+- jira:TCC-619
+- jira:TCC-490
+- jira:TCC-492
+- jira:TCC-478
+- jira:TCC-526
+- jira:TCC-530
+- jira:TCC-534
+- jira:TCC-506
+- jira:TCC-618
+- jira:TCC-491
+- jira:TCC-531
+- jira:TCC-481
+- jira:TCC-514
+- jira:TCC-515
+- jira:TCC-516
+- jira:TCC-528
+- jira:TCC-508
+- jira:TCC-587
+- jira:TCC-517
+- jira:TCC-511
+- jira:TCC-512
+- jira:TCC-480
+- jira:TCC-522
+- jira:TCC-520
+- jira:TCC-529
+- jira:TCC-493
+- jira:TCC-518
+- jira:TCC-502
+- jira:TCC-523
+- jira:TCC-312
+- jira:TCC-152
+- jira:TCC-464
+- jira:TCC-206
+- jira:TCC-314
+- jira:TCC-426
+- jira:TCC-5
+- jira:TCC-238
+- jira:TCC-181
+- jira:TCC-483
+- jira:TCC-321
+- jira:TCC-313
 ---
 # tell me what TCC team doing now
 

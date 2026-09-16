@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1128
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-694
 ---
 # Issue #1128: Prp-694 : Make Optional Port Search Backend Endpoint.
 

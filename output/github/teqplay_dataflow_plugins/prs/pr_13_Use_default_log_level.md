@@ -26,7 +26,7 @@ explicit_links: []
 
 ## Description
 
-### Description
+### Description
 This patch is required to reduce the amount of log files written in the pod's ephemeral storage.
 
 ## Commits

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1266
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1981
 ---
 # Issue #1266: Prp-1981 : New Endpoint To Get Smartfleet Subscriptions By User (With Metadata).
 

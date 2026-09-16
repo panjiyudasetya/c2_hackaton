@@ -10,7 +10,10 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1237
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1761
+- jira:PRP-1800
+- github:teqplay/portreporter-backend:issue:599
 ---
 # Issue #1237: Feat/Prp-1761/Enable Csi Advance Search
 

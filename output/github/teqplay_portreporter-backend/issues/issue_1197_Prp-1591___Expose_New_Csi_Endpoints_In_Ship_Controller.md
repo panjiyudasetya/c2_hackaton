@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1197
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1591
 ---
 # Issue #1197: Prp-1591 : Expose New Csi Endpoints In Ship Controller.
 

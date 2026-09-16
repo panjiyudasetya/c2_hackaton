@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/127
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1896
 ---
 # Issue #127: Merged In Feat/Prp-1896/Visitvoyage_Should_Be_A_Data_Class (Pull Request #134)
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1257
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1865
 ---
 # Issue #1257: Prp-1865 : Send Slack Message Via Logs When Any Vopakportcalldetail Don'T Process Properly.
 

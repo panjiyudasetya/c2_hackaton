@@ -10,7 +10,14 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/171
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1986
+- jira:SPV-2002
+- jira:SPV-2003
+- jira:SPV-2004
+- jira:SPV-2005
+- jira:SPV-2006
+- jira:SPV-2007
 ---
 # Issue #171: Feat: Implement Initial Requesting And Merging Of Data Based On (R)Events
 

@@ -7,7 +7,8 @@ title: Safety Checklists (IAPH, Gothenburg, TR56)
 author: Leon Joosse (Unlicensed)
 date: '2022-09-13'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/139788289
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/139788289
 ---
 # Safety Checklists (IAPH, Gothenburg, TR56)
 

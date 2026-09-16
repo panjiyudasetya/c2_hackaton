@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1271
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1881
 ---
 # Issue #1271: [Prp-1881] : Hotfix V5.24.1 - Prevent A 500 Error When Processing Visit Wheel (From Vessel Voyage) By Setting A Getport() Fallback.
 

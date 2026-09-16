@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1233
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1453
 ---
 # Issue #1233: Prp-1453 : Hotfix V5.22.2 : Updating Unittests From V5.22.1
 

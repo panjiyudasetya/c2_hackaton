@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/222
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1983
 ---
 # Issue #222: Spv-1983 Api V2 Voyages By Port (Part 2 Of 2)
 

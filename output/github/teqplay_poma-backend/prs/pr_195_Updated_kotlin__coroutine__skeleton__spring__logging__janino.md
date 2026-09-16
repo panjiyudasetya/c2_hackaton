@@ -14,7 +14,8 @@ head_branch: dependency-updates
 url: https://github.com/teqplay/poma-backend/pull/195
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- github:teqplay/poma-backend:pr:194
 ---
 # PR #195: Updated kotlin, coroutine, skeleton, spring, logging, janino, jts, ja…
 
@@ -27,9 +28,12 @@ explicit_links: []
 
 ## Description
 
-…ckson, junit, mockito, springdoc, test logger, mongo and the publish plugin
-
-ktlint update is separate in https://github.com/teqplay/poma-backend/pull/194
+…ckson, junit, mockito, springdoc, test logger, mongo and the publish plugin
+
+
+
+ktlint update is separate in https://github.com/teqplay/poma-backend/pull/194
+
 
 
 ## Commits

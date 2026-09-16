@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1294
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2092
 ---
 # Issue #1294: Prp-2092 : Restrict Autoupdatesettings.Percategoryfilter Not Empty If Set And Autoupdate Is True.
 

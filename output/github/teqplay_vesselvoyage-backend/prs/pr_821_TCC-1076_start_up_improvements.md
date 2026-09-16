@@ -14,7 +14,8 @@ head_branch: TCC-1076-start-up
 url: https://github.com/teqplay/vesselvoyage-backend/pull/821
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1076
 ---
 # PR #821: TCC-1076 start up improvements
 
@@ -27,13 +28,20 @@ explicit_links: []
 
 ## Description
 
-Cuts processing/API startup from ~56s to ~11s.
-
-- **Lazy ship statuses**: no bulk preload at startup anymore; `ProcessingShipStatusService` loads each ship's status (identifiers → snapshot/entries) from the database on first access.
-- **Parallel startup**: ships, infra, and the two CSI payloads are fetched concurrently instead of sequentially.
-- **Streaming JSON**: CSI/Poma list endpoints are parsed via a streaming `getForStreamedList` instead of buffering the full ~233 MB ship register in memory.
-- **Gzip**: CSI/Poma rest templates now send `Accept-Encoding: gzip` and transparently decompress (`GzipResponseInterceptor`). Requires server-side compression to be enabled (done now only on CSI/Poma DEV, I will do PROD monday)
-
+Cuts processing/API startup from ~56s to ~11s.
+
+
+
+- **Lazy ship statuses**: no bulk preload at startup anymore; `ProcessingShipStatusService` loads each ship's status (identifiers → snapshot/entries) from the database on first access.
+
+- **Parallel startup**: ships, infra, and the two CSI payloads are fetched concurrently instead of sequentially.
+
+- **Streaming JSON**: CSI/Poma list endpoints are parsed via a streaming `getForStreamedList` instead of buffering the full ~233 MB ship register in memory.
+
+- **Gzip**: CSI/Poma rest templates now send `Accept-Encoding: gzip` and transparently decompress (`GzipResponseInterceptor`). Requires server-side compression to be enabled (done now only on CSI/Poma DEV, I will do PROD monday)
+
+
+
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
 ## Commits

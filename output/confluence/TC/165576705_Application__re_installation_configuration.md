@@ -7,7 +7,8 @@ title: Application (re)installation/configuration
 author: Michel Wilson
 date: '2023-02-03'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/165576705
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/165576705
 ---
 # Application (re)installation/configuration
 

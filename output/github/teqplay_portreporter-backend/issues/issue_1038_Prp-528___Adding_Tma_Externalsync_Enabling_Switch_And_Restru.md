@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1038
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-528
 ---
 # Issue #1038: Prp-528 : Adding Tma Externalsync Enabling Switch And Restructure Related Config
 

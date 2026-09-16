@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1110
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1242
 ---
 # Issue #1110: Feat/Prp-1242/Regular Job To Send Backendusagestats By Mail
 

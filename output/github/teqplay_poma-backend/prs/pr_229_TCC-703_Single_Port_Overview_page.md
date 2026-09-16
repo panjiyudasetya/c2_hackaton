@@ -14,7 +14,9 @@ head_branch: TCC-703
 url: https://github.com/teqplay/poma-backend/pull/229
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-703
+- jira:TCC-705
 ---
 # PR #229: TCC-703 Single Port Overview page
 
@@ -85,13 +87,20 @@ Copilot reviewed 6 out of 6 changed files in this pull request and generated 8 c
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| api/src/main/kotlin/nl/teqplay/poma/api/v1/PortMappingOverview.kt | New API model for port mapping overview with entity validation data |
-| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingController.kt | Added new endpoint for retrieving detailed port mapping overview |
-| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingService.kt | Implemented getPortMappingOverview method and buildEntityList helper, removed infrastructure service dependencies |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorService.kt | Added constructor dependencies for infrastructure services, new validate and validateAndReturnEntities methods |
-| src/test/kotlin/nl/teqplay/poma/feature/mapping/MappingServiceTest.kt | New comprehensive test suite for MappingService.getPortMappingOverview |
+| File | Description |
+
+| ---- | ----------- |
+
+| api/src/main/kotlin/nl/teqplay/poma/api/v1/PortMappingOverview.kt | New API model for port mapping overview with entity validation data |
+
+| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingController.kt | Added new endpoint for retrieving detailed port mapping overview |
+
+| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingService.kt | Implemented getPortMappingOverview method and buildEntityList helper, removed infrastructure service dependencies |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorService.kt | Added constructor dependencies for infrastructure services, new validate and validateAndReturnEntities methods |
+
+| src/test/kotlin/nl/teqplay/poma/feature/mapping/MappingServiceTest.kt | New comprehensive test suite for MappingService.getPortMappingOverview |
+
 | src/test/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorServiceTest.kt | Updated to mock new constructor dependencies |
 </details>
 

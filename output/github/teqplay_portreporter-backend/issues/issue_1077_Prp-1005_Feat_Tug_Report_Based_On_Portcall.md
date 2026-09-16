@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1077
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1005
 ---
 # Issue #1077: Prp-1005/Feat/Tug Report Based On Portcall
 

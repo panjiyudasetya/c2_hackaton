@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1076
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1036
 ---
 # Issue #1076: Prp-1036: Add Resource Call To Update Invoice Row With Vessel Name
 

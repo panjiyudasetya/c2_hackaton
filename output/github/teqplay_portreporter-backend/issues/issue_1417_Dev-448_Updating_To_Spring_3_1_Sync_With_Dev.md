@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1417
 labels: []
-explicit_links: []
+explicit_links:
+- jira:DEV-448
 ---
 # Issue #1417: Dev-448 Updating To Spring 3.1 Sync With Dev
 

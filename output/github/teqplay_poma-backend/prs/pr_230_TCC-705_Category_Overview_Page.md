@@ -14,7 +14,9 @@ head_branch: TCC-705
 url: https://github.com/teqplay/poma-backend/pull/230
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-705
+- jira:TCC-703
 ---
 # PR #230: TCC-705 Category Overview Page
 

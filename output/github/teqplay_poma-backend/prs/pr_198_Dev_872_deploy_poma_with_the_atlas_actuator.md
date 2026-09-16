@@ -14,7 +14,8 @@ head_branch: DEV-872-deploy-poma-with-the-atlas-actuator
 url: https://github.com/teqplay/poma-backend/pull/198
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:DEV-872
 ---
 # PR #198: Dev 872 deploy poma with the atlas actuator
 

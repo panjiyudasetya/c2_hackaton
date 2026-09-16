@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1274
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1929
 ---
 # Issue #1274: Prp-1929 : Extend Vesselvoyage Endpoints With Ship Visits History By Imo.
 

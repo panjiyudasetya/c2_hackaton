@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1211
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1522
 ---
 # Issue #1211: Fix/Prp-1522/Take Port Displayname From Poma Instead Of Name
 

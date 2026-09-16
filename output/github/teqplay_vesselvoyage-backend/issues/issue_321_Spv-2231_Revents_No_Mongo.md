@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/321
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2231
 ---
 # Issue #321: Spv-2231 Revents No Mongo
 

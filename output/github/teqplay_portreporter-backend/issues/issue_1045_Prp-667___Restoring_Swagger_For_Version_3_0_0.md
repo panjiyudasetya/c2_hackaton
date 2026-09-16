@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1045
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-667
 ---
 # Issue #1045: Prp-667 : Restoring Swagger For Version 3.0.0
 

@@ -14,8 +14,7 @@ head_branch: PTO-2162_add_csi_endpoint_allDbObjects
 url: https://github.com/teqplay/dataflow_plugins/pull/14
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-2162
+explicit_links: []
 ---
 # PR #14: PTO-2162 Add CSI Endpoint for shipRegister allDbObjects
 
@@ -107,59 +106,59 @@ Please avoid using the term DAG.
 
 ### ryan-kharisma — 2025-11-03
 
-already tested in local and check the expected results as below: 
-
-python3 tests/dataflow_plugins/api_clients/test_download_methods_api.py
-🧪 CSI API Download Methods Test
-Time: 2025-11-03 14:45:57
-Environment: dev
-🚀 Testing Download Methods - API Integration
-============================================================
-
-1️⃣  Setting up authentication...
-   ✅ Client ID: data-engineering
-   ✅ Client Secret: ********************************
-INFO:dataflow_plugins.api_clients.teqplay_api.auth:Requesting a new keycloak token...
-INFO:dataflow_plugins.api_clients.teqplay_api.auth:Keycloak token expires at 2025-11-04T14:45:57.523455 ...
-   ✅ Token obtained: eyJhbGciOiJSUzI1NiIs...
-
-2️⃣  Initializing CSI API...
-   ✅ API initialized
-   ✅ Base URL: https://csibackend-internal.dev.teqplay.com
-   ✅ API Version: 1
-   ✅ Constructed URL: https://csibackend-internal.dev.teqplay.com/v1
-
-3️⃣  Created temp directory: /var/folders/0c/_rp987dd6qq3d83ggtgffmw80000gn/T/tmpds42m1ow
-
-4️⃣  Testing download_registered_ships (v1 endpoint)...
-   📥 Downloading to: /var/folders/0c/_rp987dd6qq3d83ggtgffmw80000gn/T/tmpds42m1ow/registered_ships_v1.json
-   🌐 Expected URL: https://csibackend-internal.dev.teqplay.com/v1/shipRegister/list/cache
-   ✅ File created: registered_ships_v1.json
-   ✅ File size: 130,000,988 bytes
-   ✅ Valid JSON array with 160,711 records
-   ✅ Sample fields: ['_id', 'identifiers', 'types', 'categories', 'dimensions']...
-
-5️⃣  Testing download_registered_ships_all_dbo (v2 endpoint)...
-   📥 Downloading to: /var/folders/0c/_rp987dd6qq3d83ggtgffmw80000gn/T/tmpds42m1ow/registered_ships_all_dbo_v2.json
-   🌐 Expected URL: https://csibackend-internal.dev.teqplay.com/v2/shipRegister/allDbObjects
-   ✅ File created: registered_ships_all_dbo_v2.json
-   ✅ File size: 207,591,726 bytes
-   ✅ Valid JSON array with 160,711 records
-   ✅ Sample fields: ['identifiers', 'types', 'categories', 'dimensions', 'administration']...
-
-6️⃣  Comparing results...
-   📊 V1 endpoint records: 160,711
-   📊 V2 endpoint records: 160,711
-   📊 V1 endpoint fields: 10 fields
-   📊 V2 endpoint fields: 14 fields
-   📊 Common fields: 9
-   📊 V1 unique fields: ['nameUpperCase']
-   📊 V2 unique fields: ['administration', 'communication', 'scores', 'syncedAt', 'ticketId']
-
-✅ API Integration Test Completed Successfully!
-   ✅ Both download methods work correctly
-   ✅ V1 endpoint: download_registered_ships
-   ✅ V2 endpoint: download_registered_ships_all_dbo
-   ✅ DRY implementation verified
-
+already tested in local and check the expected results as below: 
+
+python3 tests/dataflow_plugins/api_clients/test_download_methods_api.py
+🧪 CSI API Download Methods Test
+Time: 2025-11-03 14:45:57
+Environment: dev
+🚀 Testing Download Methods - API Integration
+============================================================
+
+1️⃣  Setting up authentication...
+   ✅ Client ID: data-engineering
+   ✅ Client Secret: ********************************
+INFO:dataflow_plugins.api_clients.teqplay_api.auth:Requesting a new keycloak token...
+INFO:dataflow_plugins.api_clients.teqplay_api.auth:Keycloak token expires at 2025-11-04T14:45:57.523455 ...
+   ✅ Token obtained: eyJhbGciOiJSUzI1NiIs...
+
+2️⃣  Initializing CSI API...
+   ✅ API initialized
+   ✅ Base URL: https://csibackend-internal.dev.teqplay.com
+   ✅ API Version: 1
+   ✅ Constructed URL: https://csibackend-internal.dev.teqplay.com/v1
+
+3️⃣  Created temp directory: /var/folders/0c/_rp987dd6qq3d83ggtgffmw80000gn/T/tmpds42m1ow
+
+4️⃣  Testing download_registered_ships (v1 endpoint)...
+   📥 Downloading to: /var/folders/0c/_rp987dd6qq3d83ggtgffmw80000gn/T/tmpds42m1ow/registered_ships_v1.json
+   🌐 Expected URL: https://csibackend-internal.dev.teqplay.com/v1/shipRegister/list/cache
+   ✅ File created: registered_ships_v1.json
+   ✅ File size: 130,000,988 bytes
+   ✅ Valid JSON array with 160,711 records
+   ✅ Sample fields: ['_id', 'identifiers', 'types', 'categories', 'dimensions']...
+
+5️⃣  Testing download_registered_ships_all_dbo (v2 endpoint)...
+   📥 Downloading to: /var/folders/0c/_rp987dd6qq3d83ggtgffmw80000gn/T/tmpds42m1ow/registered_ships_all_dbo_v2.json
+   🌐 Expected URL: https://csibackend-internal.dev.teqplay.com/v2/shipRegister/allDbObjects
+   ✅ File created: registered_ships_all_dbo_v2.json
+   ✅ File size: 207,591,726 bytes
+   ✅ Valid JSON array with 160,711 records
+   ✅ Sample fields: ['identifiers', 'types', 'categories', 'dimensions', 'administration']...
+
+6️⃣  Comparing results...
+   📊 V1 endpoint records: 160,711
+   📊 V2 endpoint records: 160,711
+   📊 V1 endpoint fields: 10 fields
+   📊 V2 endpoint fields: 14 fields
+   📊 Common fields: 9
+   📊 V1 unique fields: ['nameUpperCase']
+   📊 V2 unique fields: ['administration', 'communication', 'scores', 'syncedAt', 'ticketId']
+
+✅ API Integration Test Completed Successfully!
+   ✅ Both download methods work correctly
+   ✅ V1 endpoint: download_registered_ships
+   ✅ V2 endpoint: download_registered_ships_all_dbo
+   ✅ DRY implementation verified
+
 🎉 All tests passed!

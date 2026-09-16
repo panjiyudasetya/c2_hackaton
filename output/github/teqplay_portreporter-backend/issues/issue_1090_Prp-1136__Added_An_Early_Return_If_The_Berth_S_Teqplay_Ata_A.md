@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1090
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1136
 ---
 # Issue #1090: Prp-1136: Added An Early Return If The Berth'S Teqplay Ata/Atd Already Was Detected When The Portauthority Ata/Atd Comes In
 

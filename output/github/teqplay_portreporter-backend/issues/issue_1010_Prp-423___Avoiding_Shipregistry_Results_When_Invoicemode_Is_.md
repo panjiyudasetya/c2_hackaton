@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1010
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-423
 ---
 # Issue #1010: Prp-423 : Avoiding Shipregistry Results When Invoicemode Is Not Indirect_Via_Agency For Setting Shippingline Info In Invoicerows
 

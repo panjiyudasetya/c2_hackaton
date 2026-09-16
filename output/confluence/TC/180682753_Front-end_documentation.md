@@ -7,7 +7,10 @@ title: Front-end documentation
 author: Damon Asberg
 date: '2023-05-09'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/180682753
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/180682753
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181108745/Host+your+front-end+project+with+AWS
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181075975/How+to+add+a+fancy+slack+deployment+message+to+your+project
 ---
 # Front-end documentation
 

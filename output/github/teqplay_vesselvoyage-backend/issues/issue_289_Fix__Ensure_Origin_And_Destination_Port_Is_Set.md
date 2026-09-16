@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/289
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2104
 ---
 # Issue #289: Fix: Ensure Origin And Destination Port Is Set
 

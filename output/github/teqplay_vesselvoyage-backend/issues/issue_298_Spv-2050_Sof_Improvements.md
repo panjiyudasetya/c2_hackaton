@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/298
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2050
 ---
 # Issue #298: Spv-2050 Sof Improvements
 

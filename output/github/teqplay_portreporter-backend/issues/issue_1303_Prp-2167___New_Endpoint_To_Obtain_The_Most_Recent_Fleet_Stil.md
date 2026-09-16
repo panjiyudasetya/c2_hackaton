@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1303
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2167
 ---
 # Issue #1303: Prp-2167 : New Endpoint To Obtain The Most Recent Fleet Still Containing A Given Imo.
 

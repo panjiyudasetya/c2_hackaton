@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1066
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-968
 ---
 # Issue #1066: Prp-968: Change The Status Message Codes Of Alot Of Unauthorized Exceptions
 

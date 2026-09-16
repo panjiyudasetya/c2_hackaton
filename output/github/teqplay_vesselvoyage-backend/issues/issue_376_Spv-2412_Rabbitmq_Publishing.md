@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/376
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2412
 ---
 # Issue #376: Spv-2412 Rabbitmq Publishing
 

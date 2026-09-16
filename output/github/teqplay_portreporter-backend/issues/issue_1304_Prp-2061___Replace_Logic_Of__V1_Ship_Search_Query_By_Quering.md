@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1304
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2061
 ---
 # Issue #1304: Prp-2061 : Replace Logic Of /V1/Ship/Search/Query By Quering Csi For Static Info And Platform For Dynamic.
 

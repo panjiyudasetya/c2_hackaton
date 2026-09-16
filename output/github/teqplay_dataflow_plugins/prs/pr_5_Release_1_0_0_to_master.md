@@ -14,11 +14,7 @@ head_branch: release/1.0.0
 url: https://github.com/teqplay/dataflow_plugins/pull/5
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-1063
-- jira:PTO-1495
-- jira:PTO-1849
-- jira:PTO-1833
+explicit_links: []
 ---
 # PR #5: Release 1.0.0 to master
 
@@ -31,9 +27,9 @@ explicit_links:
 
 ## Description
 
-## [1.0.0] - 2025-03-11
-### Added
-- Add Teqplay API clients.
+## [1.0.0] - 2025-03-11
+### Added
+- Add Teqplay API clients.
 - Add common utilities.
 
 ## Commits

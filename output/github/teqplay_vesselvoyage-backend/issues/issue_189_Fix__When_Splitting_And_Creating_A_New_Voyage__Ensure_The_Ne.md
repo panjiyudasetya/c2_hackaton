@@ -11,7 +11,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/189
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2015
 ---
 # Issue #189: Fix: When Splitting And Creating A New Voyage, Ensure The Next Entry Properly Links To The New Identifier
 

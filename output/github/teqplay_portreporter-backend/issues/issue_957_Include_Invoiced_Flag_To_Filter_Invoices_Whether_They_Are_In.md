@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/957
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-47
 ---
 # Issue #957: Include Invoiced Flag To Filter Invoices Whether They Are Invoiced Or Not
 

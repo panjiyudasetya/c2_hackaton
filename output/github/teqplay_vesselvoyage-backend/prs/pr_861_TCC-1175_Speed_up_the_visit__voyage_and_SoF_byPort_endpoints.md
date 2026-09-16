@@ -14,7 +14,8 @@ head_branch: TCC-1175-byport-query-performance
 url: https://github.com/teqplay/vesselvoyage-backend/pull/861
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1175
 ---
 # PR #861: TCC-1175 Speed up the visit, voyage and SoF byPort endpoints
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/971
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-223
 ---
 # Issue #971: Prp-223: Adding The Fields 'Mutenotificationsuntil' And 'Name' In The Userprofile Copy When Creating Or Updating A User
 

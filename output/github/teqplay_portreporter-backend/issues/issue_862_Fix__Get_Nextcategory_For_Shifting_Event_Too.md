@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/862
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CV-5800
 ---
 # Issue #862: Fix: Get Nextcategory For Shifting Event Too
 

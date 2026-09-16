@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/187
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2018
+- jira:SPV-1985
 ---
 # Issue #187: Spv-2018 New Definitions Port Events
 

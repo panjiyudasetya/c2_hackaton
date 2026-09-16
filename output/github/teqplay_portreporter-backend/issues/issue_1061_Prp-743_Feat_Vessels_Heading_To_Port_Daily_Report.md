@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1061
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-743
 ---
 # Issue #1061: Prp-743/Feat/Vessels Heading To Port Daily Report
 

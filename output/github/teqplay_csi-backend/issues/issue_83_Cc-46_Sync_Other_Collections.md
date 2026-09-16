@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/83
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CC-46
 ---
 # Issue #83: Cc-46 Sync Other Collections
 

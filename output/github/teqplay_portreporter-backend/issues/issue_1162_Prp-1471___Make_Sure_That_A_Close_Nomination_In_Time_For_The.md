@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1162
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1471
 ---
 # Issue #1162: Prp-1471 : Make Sure That A Close Nomination In Time For The Same Vessel, Company And Port But A Different
 

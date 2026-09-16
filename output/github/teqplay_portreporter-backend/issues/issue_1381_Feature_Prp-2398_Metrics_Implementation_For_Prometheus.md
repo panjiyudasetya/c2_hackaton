@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1381
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2398
 ---
 # Issue #1381: Feature/Prp-2398/Metrics Implementation For Prometheus
 

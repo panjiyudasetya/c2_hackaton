@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/39
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRA-156
 ---
 # Issue #39: Upgrade Skeleton-Plugins
 

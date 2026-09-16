@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1109
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-932
 ---
 # Issue #1109: Spv-932: Update Smartfleet Version
 
