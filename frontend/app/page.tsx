@@ -32,8 +32,10 @@ export default function Home() {
   return (
     <div className="flex h-screen flex-col overflow-hidden">
       <header className="flex flex-shrink-0 items-center bg-navy px-6 py-3">
-        <h1 className="text-lg font-semibold text-white">
-          MAP.<span className="text-sky-400">ANSWER</span>
+        <h1 className="flex items-center gap-2 text-lg font-semibold text-white">
+          <span>Ofiniti</span>
+          <span className="text-sm font-normal text-white/40">●</span>
+          <span>Map.answer</span>
         </h1>
       </header>
 
