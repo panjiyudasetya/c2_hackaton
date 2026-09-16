@@ -75,18 +75,50 @@ decision-intel ask "Why was chunk-processing added to the fact_bunkering query?"
 
 ---
 
-## Chat UI
+## Web UI
 
-Prefer a browser over the CLI? `decision-intel serve` runs the same evidence-search-and-answer pipeline as `ask` behind a small Flask backend, with a chat frontend included:
+There are two browser-based UIs. Both answer from the same vector index and graph — pick whichever fits.
+
+### Option A — Simple chat (Flask)
+
+Zero frontend dependencies. `decision-intel serve` bundles a plain HTML/JS chat frontend and serves it from the same Flask process:
 
 ```bash
 decision-intel build          # if you haven't already
 decision-intel serve          # → http://127.0.0.1:5000
 ```
 
-Answers stream in token-by-token, same as the CLI. `--host`/`--port` override the default; the backend refuses to answer (with a clear message in the chat) until `decision-intel build` has produced a vector index.
+Answers stream token-by-token, same as the CLI. `--host`/`--port` override the defaults. The backend refuses to answer with a clear message until `decision-intel build` has run.
 
-Want collection/pipeline steps triggerable from the browser too (not just chat), or a TypeScript/Tailwind frontend instead of plain HTML? See [`frontend/`](frontend/README.md) — a Next.js app backed by `decision-intel api` (a richer REST API on port 8000, with `/collect/*` and `/pipeline/*` as pollable background jobs). Both chat UIs answer from the same index/graph; pick whichever fits.
+### Option B — Full Next.js app
+
+A TypeScript + Tailwind frontend ([`frontend/`](frontend/README.md)) backed by a richer REST API (`decision-intel api`, port 8000). Collection and pipeline steps are triggerable from the browser as pollable background jobs — no CLI required after initial setup.
+
+**One-time frontend setup:**
+
+```bash
+cd frontend
+cp .env.local.example .env.local   # already points to http://localhost:8000
+npm install
+```
+
+**Run everything together** (recommended — uses the included script):
+
+```bash
+./dev.sh
+```
+
+This starts `decision-intel api` (port 8000) and `npm run dev` (port 3000) in parallel and shuts both down on Ctrl-C. Open `http://localhost:3000`.
+
+Or start each piece manually:
+
+```bash
+# terminal 1
+decision-intel api            # REST API → http://127.0.0.1:8000
+
+# terminal 2
+cd frontend && npm run dev    # Next.js → http://localhost:3000
+```
 
 ---
 
@@ -137,7 +169,8 @@ decision-intel --help
 | `graph` | Build SQLite cross-source metadata graph |
 | `build` | Run enrich + index + graph in sequence |
 | `ask "QUESTION"` | Ask the AI agent a decision question |
-| `serve` | Run the Flask chat UI in a browser at `http://127.0.0.1:5000` |
+| `serve` | Run the simple Flask chat UI at `http://127.0.0.1:5000` |
+| `api` | Run the REST API backend for the Next.js app at `http://127.0.0.1:8000` |
 | `search "QUERY"` | Raw semantic search (JSON output, for scripting) |
 | `links "DOC_ID"` | Follow graph links from a document (JSON output) |
 | `read-doc "PATH"` | Print full content of a collected Markdown file |
