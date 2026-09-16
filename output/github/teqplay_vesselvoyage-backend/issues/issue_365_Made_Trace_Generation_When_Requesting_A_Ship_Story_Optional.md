@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/365
 labels: []
-explicit_links:
-- jira:SPV-2406
+explicit_links: []
 ---
 # Issue #365: Made Trace Generation When Requesting A Ship Story Optional
 

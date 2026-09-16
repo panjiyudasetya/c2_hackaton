@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/337
 labels: []
-explicit_links:
-- jira:SPV-2345
+explicit_links: []
 ---
 # Issue #337: Spv-2345 Sof By Imo
 

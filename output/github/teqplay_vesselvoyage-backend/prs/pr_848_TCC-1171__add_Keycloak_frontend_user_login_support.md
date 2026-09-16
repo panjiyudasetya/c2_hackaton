@@ -14,8 +14,7 @@ head_branch: TCC-1171-keycloak-frontend-login
 url: https://github.com/teqplay/vesselvoyage-backend/pull/848
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1171
+explicit_links: []
 ---
 # PR #848: TCC-1171: add Keycloak frontend/user login support
 

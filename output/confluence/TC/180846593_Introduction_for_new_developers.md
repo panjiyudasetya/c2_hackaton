@@ -7,8 +7,7 @@ title: Introduction for new developers
 author: Fauzan Rifqy
 date: '2024-12-18'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/180846593
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/180846593
+explicit_links: []
 ---
 # Introduction for new developers
 

@@ -7,8 +7,7 @@ title: Chorus roles & permissions
 author: Leon Joosse (Unlicensed)
 date: '2023-07-13'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/193921025
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/193921025
+explicit_links: []
 ---
 # Chorus roles & permissions
 

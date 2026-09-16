@@ -7,9 +7,7 @@ title: RouteScout refactor
 author: Former user (Deleted)
 date: '2022-04-04'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/88702977
-explicit_links:
-- jira:JTS-2017
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/88702977
+explicit_links: []
 ---
 # RouteScout refactor
 

@@ -7,8 +7,7 @@ title: Truck-ship nominations
 author: Leon Joosse (Unlicensed)
 date: '2022-04-21'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/104300545
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/104300545
+explicit_links: []
 ---
 # Truck-ship nominations
 

@@ -7,8 +7,7 @@ title: '[Outdated] Chorus Permissions'
 author: Daan Spikker (Unlicensed)
 date: '2022-12-12'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/33097
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/33097
+explicit_links: []
 ---
 # [Outdated] Chorus Permissions
 

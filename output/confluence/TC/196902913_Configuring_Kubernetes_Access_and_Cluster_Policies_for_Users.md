@@ -7,8 +7,7 @@ title: Configuring Kubernetes Access and Cluster Policies for Users
 author: Jamie de Leest
 date: '2026-03-27'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/196902913
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/196902913
+explicit_links: []
 ---
 # Configuring Kubernetes Access and Cluster Policies for Users
 

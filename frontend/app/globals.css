@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark palette, ported from the MAP.ANSWER-style template (see
+     src/decision_intel/web/static/ for the other place it's used). Token
+     *names* are unchanged from the original ofiniti.com theme so components
+     didn't need to change which class they use -- only the values did. */
+  --color-bg: #0f172a; /* bg-dark: page / chat log background */
+  --color-surface: #1e293b; /* bg-sidebar: header, composer, panel chrome */
+  --color-surface-alt: #1e293b; /* sidebar background */
+  --color-border: #334155;
+  --color-text: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-subtle: #94a3b8;
+  --color-primary: #4f46e5;
+  --color-primary-dark: #4338ca;
+  --color-navy: #0b1120; /* top bar -- a touch darker than --color-bg for depth */
+  --color-accent-soft: #1c2340; /* indigo-tinted banner background */
+  --color-signal: #afeed7;
+  --color-bubble-bot: #334155; /* assistant chat bubble -- lighter than surface for contrast */
+}
+
+html,
+body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+@keyframes blink-cursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.stream-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--color-text);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink-cursor 1s step-start infinite;
+}

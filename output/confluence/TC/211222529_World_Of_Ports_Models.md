@@ -7,8 +7,7 @@ title: World Of Ports Models
 author: Richard van Klaveren
 date: '2023-10-10'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/211222529
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/211222529
+explicit_links: []
 ---
 # World Of Ports Models
 

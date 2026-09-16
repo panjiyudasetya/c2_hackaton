@@ -14,8 +14,7 @@ head_branch: TCC-1121
 url: https://github.com/teqplay/vesselvoyage-backend/pull/828
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1121
+explicit_links: []
 ---
 # PR #828: TCC-1121: Audit-log outgoing VesselVoyageV2 exchange changes behind a flag
 

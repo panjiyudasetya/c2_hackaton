@@ -7,8 +7,7 @@ title: High availability deployments in Kubernetes
 author: Minh Trang Nguyen (Unlicensed)
 date: '2023-05-10'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/182190081
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/182190081
+explicit_links: []
 ---
 # High availability deployments in Kubernetes
 

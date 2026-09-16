@@ -7,8 +7,7 @@ title: Ship owner / charterer
 author: Leon Joosse (Unlicensed)
 date: '2022-11-11'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/124092417
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/124092417
+explicit_links: []
 ---
 # Ship owner / charterer
 

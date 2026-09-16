@@ -70,9 +70,9 @@ This PR updates the repository’s GitHub Actions workflows to explicitly set jo
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| .github/workflows/main.yml | Adds explicit job permissions to support OIDC-based auth while limiting repo access. |
+| File | Description |
+| ---- | ----------- |
+| .github/workflows/main.yml | Adds explicit job permissions to support OIDC-based auth while limiting repo access. |
 | .github/workflows/coverage.yml | Adds explicit job permissions for the coverage workflow to support OIDC-based auth while limiting repo access. |
 </details>
 

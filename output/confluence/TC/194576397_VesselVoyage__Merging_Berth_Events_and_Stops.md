@@ -7,8 +7,7 @@ title: 'VesselVoyage: Merging Berth Events and Stops.'
 author: Darius Wattimena
 date: '2023-07-31'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/194576397
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/194576397
+explicit_links: []
 ---
 # VesselVoyage: Merging Berth Events and Stops.
 

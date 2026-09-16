@@ -14,8 +14,7 @@ head_branch: TCC-1061
 url: https://github.com/teqplay/vesselvoyage-backend/pull/832
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1061
+explicit_links: []
 ---
 # PR #832: TCC-1061: Summary statistics for revents merge-back
 

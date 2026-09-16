@@ -7,8 +7,7 @@ title: On Boarding
 author: Joaquin Marquez Bugella
 date: '2023-06-08'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/188907521
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/188907521
+explicit_links: []
 ---
 # On Boarding
 

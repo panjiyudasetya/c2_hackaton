@@ -7,8 +7,7 @@ title: Deployment checklist
 author: Damon Asberg
 date: '2023-05-09'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/180781073
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/180781073
+explicit_links: []
 ---
 # Deployment checklist
 

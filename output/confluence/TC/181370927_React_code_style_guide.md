@@ -7,8 +7,7 @@ title: React code style guide
 author: Damon Asberg
 date: '2025-11-03'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181370927
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181370927
+explicit_links: []
 ---
 # React code style guide
 

@@ -14,8 +14,7 @@ head_branch: TCC-1180-parallel-scenario-merging
 url: https://github.com/teqplay/vesselvoyage-backend/pull/862
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1180
+explicit_links: []
 ---
 # PR #862: TCC-1180: Merge revents scenarios back in parallel on their own threads
 

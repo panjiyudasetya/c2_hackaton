@@ -90,7 +90,95 @@ class JiraCollector(BaseCollector):
             self._report(n, total, "Cards")
         return created
 
-    def _write_issue(self, jira, raw: dict) -> Path:
+    def collect_boards(self, board_names: list[str], max_results_per_board: int = 1000) -> list[Path]:
+        """
+        Fetch every card (and its subtasks) from Jira Agile boards whose name
+        matches any of *board_names* (case-insensitive substring), via the
+        Agile board view rather than a JQL filter — mirrors what the board
+        actually shows, as opposed to `collect()`'s search-based selection.
+
+        Args:
+            board_names: Board name substrings to match, e.g. ``["PTO", "TCC"]``.
+            max_results_per_board: Max cards to fetch per matching board.
+        """
+        jira = self._client()
+        boards = self._find_boards(jira, board_names)
+
+        created: list[Path] = []
+        for board in boards:
+            board_id = board["id"]
+            board_name = board["name"]
+
+            raw_issues = self._board_issues(jira, board_id, max_results_per_board)
+            parents = [i for i in raw_issues if not i["fields"]["issuetype"]["subtask"]]
+
+            for n, issue in enumerate(parents, start=1):
+                created.append(self._write_issue(jira, issue, board_name=board_name))
+                self._report(n, len(parents), f"{board_name} cards")
+
+                for sub_ref in issue["fields"].get("subtasks") or []:
+                    try:
+                        sub_issue = jira.issue(sub_ref["key"])
+                    except Exception:  # noqa: BLE001 — keep collecting other issues
+                        continue
+                    created.append(self._write_issue(jira, sub_issue, board_name=board_name))
+
+        return created
+
+    def list_all_boards(self, max_boards: int = 200) -> list[dict]:
+        """Return every Agile board the credentials can see, as
+        [{"id", "name", "type"}, ...] -- used by the web UI's board picker."""
+        jira = self._client()
+        boards: list[dict] = []
+        start = 0
+        while len(boards) < max_boards:
+            page = jira.get_all_agile_boards(start=start, limit=50) or {}
+            values = page.get("values", [])
+            if not values:
+                break
+            boards.extend(
+                {"id": b.get("id"), "name": b.get("name", "Unnamed"), "type": b.get("type", "")}
+                for b in values
+            )
+            if page.get("isLast", True):
+                break
+            start += 50
+        return boards[:max_boards]
+
+    def _find_boards(self, jira, target_names: list[str]) -> list[dict]:
+        """Return every Agile board whose name contains any of *target_names*."""
+        boards: list[dict] = []
+        start = 0
+        while True:
+            page = jira.get_all_agile_boards(start=start, limit=50) or {}
+            values = page.get("values", [])
+            if not values:
+                break
+            for board in values:
+                name = board.get("name", "")
+                if any(t.lower() in name.lower() for t in target_names):
+                    boards.append(board)
+            if page.get("isLast", True):
+                break
+            start += 50
+        return boards
+
+    def _board_issues(self, jira, board_id, max_results: int) -> list[dict]:
+        """Return every card on *board_id* (parents and subtasks, unfiltered)."""
+        issues: list[dict] = []
+        start = 0
+        while len(issues) < max_results:
+            page = jira.get_issues_for_board(
+                board_id, jql="", start=start, limit=min(50, max_results - len(issues))
+            ) or {}
+            batch = page.get("issues", [])
+            if not batch:
+                break
+            issues.extend(batch)
+            start += len(batch)
+        return issues
+
+    def _write_issue(self, jira, raw: dict, board_name: str | None = None) -> Path:
         key = raw["key"]
         fields = raw.get("fields", {})
 
@@ -125,6 +213,7 @@ class JiraCollector(BaseCollector):
             "type":           "subtask" if is_subtask else "issue",
             "key":            key,
             "project":        project_key,
+            "board":          board_name,
             "issuetype":      issue_type,
             "priority":       priority,
             "assignee":       assignee,
@@ -151,6 +240,8 @@ class JiraCollector(BaseCollector):
             f"**Created:** {created_at} | **Updated:** {updated_at}  ",
         ]
 
+        if board_name:
+            lines.append(f"**Board:** {board_name}  ")
         if labels:
             lines.append(f"**Labels:** {', '.join(labels)}  ")
         if components:
@@ -164,6 +255,15 @@ class JiraCollector(BaseCollector):
             lines += ["## Linked issues", ""]
             for rel_key, rel_summary, label in links:
                 lines.append(f"- {label}: [{rel_key}] {rel_summary}")
+            lines.append("")
+
+        subtasks = fields.get("subtasks") or []
+        if subtasks:
+            lines += ["## Subtasks", ""]
+            for sub in subtasks:
+                sub_fields = sub.get("fields", {})
+                sub_status = sub_fields.get("status", {}).get("name", "Unknown")
+                lines.append(f"- [{sub['key']}] {sub_fields.get('summary', '')} ({sub_status})")
             lines.append("")
 
         if raw_comments:

@@ -14,9 +14,7 @@ head_branch: TCC-1213-encounter-list
 url: https://github.com/teqplay/vesselvoyage-backend/pull/868
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1213
-- jira:ISO-8601
+explicit_links: []
 ---
 # PR #868: TCC-1213: Add worldwide encounter list endpoint
 
@@ -165,22 +163,22 @@ Adds a new worldwide encounter listing API (`GET /v2/encounter/list`) to support
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/main/kotlin/nl/teqplay/vesselvoyage/util/EncounterCursor.kt | Adds base64url cursor encoding/decoding for keyset pagination. |
-| src/test/kotlin/nl/teqplay/vesselvoyage/util/EncounterCursorTest.kt | Tests cursor round-tripping, url-safety, and invalid inputs. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/NormalizedEncounterDataSource.kt | Adds worldwide list query + moves/extends index creation to a background thread. |
-| src/test/kotlin/nl/teqplay/vesselvoyage/datasource/NormalizedEncounterDataSourceTest.kt | Adds query/filter/sort/limit tests and fences async index creation for determinism. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/api/EncounterV2Service.kt | Implements worldwide list service, subject resolution, ship/port enrichment, and cursor emission. |
-| src/test/kotlin/nl/teqplay/vesselvoyage/service/api/EncounterV2ServiceTest.kt | Adds service-level tests for list behavior, enrichment, cursor decoding/returning, and empty-page behavior. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/controller/api/ApiEncounterV2Controller.kt | Exposes `GET /v2/encounter/list` with parameter validation and Swagger metadata. |
-| src/test/kotlin/nl/teqplay/vesselvoyage/controller/api/ApiEncounterV2ControllerTest.kt | Adds controller tests for list endpoint success, validation, and auth. |
-| api/src/main/kotlin/nl/teqplay/vesselvoyage/apiv2/model/requestresponse/EncounterListResponse.kt | Introduces flat worldwide list response DTOs (entries + pagination metadata). |
-| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/EntryDataSourceSupport.kt | Adds `EntrySubjectReference` projection for lightweight entry-to-ship/port resolution. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/VisitV2DataSource.kt | Adds `findSubjectReferencesByIds` projection query for visits. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/VoyageV2DataSource.kt | Adds `findSubjectReferencesByIds` projection query for voyages. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/api/VisitV2Service.kt | Exposes visit subject-reference lookup via service layer. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/api/VoyageV2Service.kt | Exposes voyage subject-reference lookup via service layer. |
+| File | Description |
+| ---- | ----------- |
+| src/main/kotlin/nl/teqplay/vesselvoyage/util/EncounterCursor.kt | Adds base64url cursor encoding/decoding for keyset pagination. |
+| src/test/kotlin/nl/teqplay/vesselvoyage/util/EncounterCursorTest.kt | Tests cursor round-tripping, url-safety, and invalid inputs. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/NormalizedEncounterDataSource.kt | Adds worldwide list query + moves/extends index creation to a background thread. |
+| src/test/kotlin/nl/teqplay/vesselvoyage/datasource/NormalizedEncounterDataSourceTest.kt | Adds query/filter/sort/limit tests and fences async index creation for determinism. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/api/EncounterV2Service.kt | Implements worldwide list service, subject resolution, ship/port enrichment, and cursor emission. |
+| src/test/kotlin/nl/teqplay/vesselvoyage/service/api/EncounterV2ServiceTest.kt | Adds service-level tests for list behavior, enrichment, cursor decoding/returning, and empty-page behavior. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/controller/api/ApiEncounterV2Controller.kt | Exposes `GET /v2/encounter/list` with parameter validation and Swagger metadata. |
+| src/test/kotlin/nl/teqplay/vesselvoyage/controller/api/ApiEncounterV2ControllerTest.kt | Adds controller tests for list endpoint success, validation, and auth. |
+| api/src/main/kotlin/nl/teqplay/vesselvoyage/apiv2/model/requestresponse/EncounterListResponse.kt | Introduces flat worldwide list response DTOs (entries + pagination metadata). |
+| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/EntryDataSourceSupport.kt | Adds `EntrySubjectReference` projection for lightweight entry-to-ship/port resolution. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/VisitV2DataSource.kt | Adds `findSubjectReferencesByIds` projection query for visits. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/VoyageV2DataSource.kt | Adds `findSubjectReferencesByIds` projection query for voyages. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/api/VisitV2Service.kt | Exposes visit subject-reference lookup via service layer. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/api/VoyageV2Service.kt | Exposes voyage subject-reference lookup via service layer. |
 | .github/workflows/main.yml | Adds explicit GitHub Actions permissions (including `id-token: write`). |
 </details>
 

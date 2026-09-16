@@ -7,8 +7,7 @@ title: MongoDB replica and standalone database
 author: Minh Trang Nguyen (Unlicensed)
 date: '2023-09-16'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/183042055
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/183042055
+explicit_links: []
 ---
 # MongoDB replica and standalone database
 

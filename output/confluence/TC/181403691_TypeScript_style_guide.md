@@ -7,9 +7,7 @@ title: TypeScript style guide
 author: Damon Asberg
 date: '2025-12-10'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181403691
-explicit_links:
-- jira:UTF-8
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181403691
+explicit_links: []
 ---
 # TypeScript style guide
 

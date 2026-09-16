@@ -7,8 +7,7 @@ title: Portreporter monitor
 author: Gavin den Hollander
 date: '2023-09-01'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/205291525
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/205291525
+explicit_links: []
 ---
 # Portreporter monitor
 

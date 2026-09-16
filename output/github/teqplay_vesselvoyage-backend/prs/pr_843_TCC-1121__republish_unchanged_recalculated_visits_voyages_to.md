@@ -14,8 +14,7 @@ head_branch: TCC-1121-2
 url: https://github.com/teqplay/vesselvoyage-backend/pull/843
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1121
+explicit_links: []
 ---
 # PR #843: TCC-1121: republish unchanged recalculated visits/voyages to PTO
 

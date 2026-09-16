@@ -7,8 +7,7 @@ title: Front-end guides
 author: Damon Asberg
 date: '2024-12-17'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181239830
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181239830
+explicit_links: []
 ---
 # Front-end guides
 

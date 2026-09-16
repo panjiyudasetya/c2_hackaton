@@ -14,8 +14,7 @@ head_branch: TCC-1137-fix-fallback-activities
 url: https://github.com/teqplay/vesselvoyage-backend/pull/830
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1137
+explicit_links: []
 ---
 # PR #830: TCC-1137 Proactively repair fallback-ended activities using event history
 

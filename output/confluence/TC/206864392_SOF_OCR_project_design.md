@@ -7,8 +7,7 @@ title: SOF OCR project design
 author: Michel Wilson
 date: '2023-08-28'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/206864392
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/206864392
+explicit_links: []
 ---
 # SOF OCR project design
 

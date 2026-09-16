@@ -133,11 +133,11 @@ Fixes stalled progress reporting for distributed (forked) (r)events scenarios by
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| `src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsConversionService.kt` | Builds per-job status from forked children and uses the slowest job for scenario-level cursor/progress inputs. |
-| `api/src/main/kotlin/nl/teqplay/vesselvoyage/model/ReventsRecalculationStatus.kt` | Adds `jobs` to the API model and updates progress calculation to follow the slowest job when present. |
-| `src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsConversionServiceTest.kt` | Adds coverage for job listing/ordering, lagging-job selection, and per-job replay/monitor reporting. |
+| File | Description |
+| ---- | ----------- |
+| `src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsConversionService.kt` | Builds per-job status from forked children and uses the slowest job for scenario-level cursor/progress inputs. |
+| `api/src/main/kotlin/nl/teqplay/vesselvoyage/model/ReventsRecalculationStatus.kt` | Adds `jobs` to the API model and updates progress calculation to follow the slowest job when present. |
+| `src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsConversionServiceTest.kt` | Adds coverage for job listing/ordering, lagging-job selection, and per-job replay/monitor reporting. |
 | `src/test/kotlin/nl/teqplay/vesselvoyage/model/ReventsRecalculationStatusProgressTest.kt` | Adds progress-calculation tests for multi-job scenarios (min progress) and window-less job-reported scenarios. |
 </details>
 

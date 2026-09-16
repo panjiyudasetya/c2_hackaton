@@ -7,8 +7,7 @@ title: Ship reports
 author: Joaquin Marquez Bugella
 date: '2022-06-08'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/111935489
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/111935489
+explicit_links: []
 ---
 # Ship reports
 

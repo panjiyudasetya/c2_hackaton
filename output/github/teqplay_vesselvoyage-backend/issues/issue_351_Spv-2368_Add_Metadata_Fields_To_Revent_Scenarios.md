@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/351
 labels: []
-explicit_links:
-- jira:SPV-2368
+explicit_links: []
 ---
 # Issue #351: Spv-2368 Add Metadata Fields To Revent Scenarios
 

@@ -120,10 +120,10 @@ This PR reduces concurrent `getInterests(scenarioId)` fetch failures during (r)e
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsReplayMergeService.kt | Introduces per-scenario interest caching + retry-on-transport-errors for interest fetches and updates merge entry building to consume the cache. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt | Ensures cached interests are evicted after merge processing completes to avoid holding large responses in memory. |
+| File | Description |
+| ---- | ----------- |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsReplayMergeService.kt | Introduces per-scenario interest caching + retry-on-transport-errors for interest fetches and updates merge entry building to consume the cache. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt | Ensures cached interests are evicted after merge processing completes to avoid holding large responses in memory. |
 | src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsReplayMergeServiceTest.kt | Adds tests verifying single-fetch caching across ships, eviction behavior, and retry vs. rethrow behavior for fetch failures. |
 </details>
 

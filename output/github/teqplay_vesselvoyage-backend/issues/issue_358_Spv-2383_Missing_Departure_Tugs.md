@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/358
 labels: []
-explicit_links:
-- jira:SPV-2383
+explicit_links: []
 ---
 # Issue #358: Spv-2383 Missing Departure Tugs
 

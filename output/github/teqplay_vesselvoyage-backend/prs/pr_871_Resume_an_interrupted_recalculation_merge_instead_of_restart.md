@@ -131,11 +131,11 @@ This PR improves operational behavior of the revents recalculation merge by pers
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| `src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt` | Skips already-merged ships on resume, records merged ships as they finish, and resumes progress/error aggregation correctly. |
-| `src/main/kotlin/nl/teqplay/vesselvoyage/datasource/ReventsRecalculationsDataSource.kt` | Adds an atomic per-ship persistence method (`$addToSet`) for merged ship IDs. |
-| `api/src/main/kotlin/nl/teqplay/vesselvoyage/model/RecalculationResult.kt` | Introduces the new `mergedShipIds` API/model field across all recalculation result types. |
+| File | Description |
+| ---- | ----------- |
+| `src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt` | Skips already-merged ships on resume, records merged ships as they finish, and resumes progress/error aggregation correctly. |
+| `src/main/kotlin/nl/teqplay/vesselvoyage/datasource/ReventsRecalculationsDataSource.kt` | Adds an atomic per-ship persistence method (`$addToSet`) for merged ship IDs. |
+| `api/src/main/kotlin/nl/teqplay/vesselvoyage/model/RecalculationResult.kt` | Introduces the new `mergedShipIds` API/model field across all recalculation result types. |
 | `src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationServiceTest.kt` | Adds unit tests validating merge resume, skipping, progress resumption, and error preservation semantics. |
 </details>
 

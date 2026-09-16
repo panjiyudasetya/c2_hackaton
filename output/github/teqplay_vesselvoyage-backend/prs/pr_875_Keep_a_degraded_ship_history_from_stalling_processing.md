@@ -153,13 +153,13 @@ This PR hardens background post-processing against a degraded internal ship-hist
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/test/kotlin/nl/teqplay/vesselvoyage/service/PostProcessingServiceTest.kt | Updates behavior assertions (leave queued on repeated failures) and adds cooldown-skipping coverage. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/queue/RabbitMqAisConsumerService.kt | Raises lane drain timeout constant and documents the shutdown-budget rationale. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/PostProcessingService.kt | Implements bounded retries, cooldown, and failure signaling to avoid permanently persisting entries without ship traces during outages. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/config/ShipHistoryRestTemplateConfiguration.kt | Adds a dedicated ship-history `RestTemplate` with a 25s read timeout while reusing internal-api interceptors/URI/error handling. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/config/PlatformClientAutoConfiguration.kt | Wires `AisHistoryClient` to the ship-history-specific `RestTemplate`. |
+| File | Description |
+| ---- | ----------- |
+| src/test/kotlin/nl/teqplay/vesselvoyage/service/PostProcessingServiceTest.kt | Updates behavior assertions (leave queued on repeated failures) and adds cooldown-skipping coverage. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/queue/RabbitMqAisConsumerService.kt | Raises lane drain timeout constant and documents the shutdown-budget rationale. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/PostProcessingService.kt | Implements bounded retries, cooldown, and failure signaling to avoid permanently persisting entries without ship traces during outages. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/config/ShipHistoryRestTemplateConfiguration.kt | Adds a dedicated ship-history `RestTemplate` with a 25s read timeout while reusing internal-api interceptors/URI/error handling. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/config/PlatformClientAutoConfiguration.kt | Wires `AisHistoryClient` to the ship-history-specific `RestTemplate`. |
 | src/main/kotlin/nl/teqplay/vesselvoyage/client/AisHistoryClient.kt | Switches injection qualifier to the ship-history-specific `RestTemplate`. |
 </details>
 

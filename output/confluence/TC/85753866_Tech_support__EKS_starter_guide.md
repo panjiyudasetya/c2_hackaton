@@ -7,8 +7,7 @@ title: 'Tech support: EKS starter guide'
 author: Jamie de Leest
 date: '2026-03-27'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/85753866
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/85753866
+explicit_links: []
 ---
 # Tech support: EKS starter guide
 

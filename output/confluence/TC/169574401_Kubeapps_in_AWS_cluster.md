@@ -7,8 +7,7 @@ title: Kubeapps in AWS cluster
 author: Minh Trang Nguyen (Unlicensed)
 date: '2023-03-01'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/169574401
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/169574401
+explicit_links: []
 ---
 # Kubeapps in AWS cluster
 

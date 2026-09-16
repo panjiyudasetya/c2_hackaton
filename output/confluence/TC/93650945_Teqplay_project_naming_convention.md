@@ -7,8 +7,7 @@ title: Teqplay project naming convention
 author: Darius Wattimena
 date: '2022-03-08'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/93650945
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/93650945
+explicit_links: []
 ---
 # Teqplay project naming convention
 

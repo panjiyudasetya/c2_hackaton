@@ -7,8 +7,7 @@ title: Stage environment set-up
 author: Joaquin Marquez Bugella
 date: '2023-09-04'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/199983140
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/199983140
+explicit_links: []
 ---
 # Stage environment set-up
 

@@ -7,8 +7,7 @@ title: Configure a new user in EKS
 author: Darius Wattimena
 date: '2022-02-04'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/87359493
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/87359493
+explicit_links: []
 ---
 # Configure a new user in EKS
 

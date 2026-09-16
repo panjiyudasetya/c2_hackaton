@@ -7,8 +7,7 @@ title: Back-end security analysis (with Slack notifications)
 author: Leon Joosse (Unlicensed)
 date: '2023-07-17'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/197820417
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/197820417
+explicit_links: []
 ---
 # Back-end security analysis (with Slack notifications)
 

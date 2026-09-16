@@ -7,8 +7,7 @@ title: Functional
 author: Joaquin Marquez Bugella
 date: '2022-05-27'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/109772814
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/109772814
+explicit_links: []
 ---
 # Functional
 

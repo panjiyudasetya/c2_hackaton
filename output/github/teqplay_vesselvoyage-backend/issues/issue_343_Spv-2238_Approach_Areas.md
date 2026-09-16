@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/343
 labels: []
-explicit_links:
-- jira:SPV-2238
+explicit_links: []
 ---
 # Issue #343: Spv-2238 Approach Areas
 

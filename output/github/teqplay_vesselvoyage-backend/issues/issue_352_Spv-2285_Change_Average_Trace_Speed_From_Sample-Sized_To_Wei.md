@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/352
 labels: []
-explicit_links:
-- jira:SPV-2285
+explicit_links: []
 ---
 # Issue #352: Spv-2285 Change Average Trace Speed From Sample-Sized To Weighted Average Calculation
 
