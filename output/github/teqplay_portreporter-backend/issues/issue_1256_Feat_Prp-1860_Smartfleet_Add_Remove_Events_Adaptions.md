@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1256
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1860
 ---
 # Issue #1256: Feat/Prp-1860/Smartfleet Add Remove Events Adaptions
 

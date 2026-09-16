@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1103
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1160
 ---
 # Issue #1103: Prp-1160 : Include Berth Timestamps In Getportcalltimestamps Endpoint.
 

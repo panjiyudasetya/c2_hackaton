@@ -14,7 +14,8 @@ head_branch: TCC-1104-story-encounter-imo
 url: https://github.com/teqplay/vesselvoyage-backend/pull/826
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1104
 ---
 # PR #826: TCC-1104 Attach the other ship's IMO to story encounters when known
 

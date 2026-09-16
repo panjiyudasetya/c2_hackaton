@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1079
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1070
 ---
 # Issue #1079: Prp-1070: Remove The Coroutine In The Middle Which Causes The Try Catch To Be Missed
 

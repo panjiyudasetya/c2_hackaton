@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1402
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2490
 ---
 # Issue #1402: Prp-2490 : Cover Also Csi Bulk Calls And Report On A Coroutine So Main Logic Can Return Earlier.
 

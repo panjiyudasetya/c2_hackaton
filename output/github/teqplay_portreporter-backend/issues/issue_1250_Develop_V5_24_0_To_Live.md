@@ -10,7 +10,14 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1250
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1800
+- jira:PRP-1761
+- jira:PRP-1330
+- jira:PRP-1856
+- jira:PRP-1745
+- jira:PRP-1764
+- jira:PRP-1822
 ---
 # Issue #1250: Develop V5.24.0 To Live
 

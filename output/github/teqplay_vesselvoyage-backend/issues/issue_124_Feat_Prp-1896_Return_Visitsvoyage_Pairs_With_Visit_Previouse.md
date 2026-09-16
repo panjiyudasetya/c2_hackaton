@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/124
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1896
 ---
 # Issue #124: Feat/Prp-1896/Return Visitsvoyage Pairs With Visit Previousentryid Relation
 

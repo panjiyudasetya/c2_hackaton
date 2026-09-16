@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/26
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-270
 ---
 # Issue #26: Spv-270: Add Metadata To Change Events & Add Category Filters To Endpoints
 

@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/198
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2024
 ---
 # Issue #198: Spv-2024 Stop Event Support
 

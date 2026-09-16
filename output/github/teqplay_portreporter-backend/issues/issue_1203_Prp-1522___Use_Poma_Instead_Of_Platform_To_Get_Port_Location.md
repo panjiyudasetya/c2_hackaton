@@ -10,7 +10,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1203
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1522
+- jira:PRP-1521
 ---
 # Issue #1203: Prp-1522 : Use Poma Instead Of Platform To Get Port Locations And Berths.
 

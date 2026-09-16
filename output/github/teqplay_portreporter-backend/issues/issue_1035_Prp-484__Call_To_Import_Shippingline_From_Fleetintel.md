@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1035
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-484
 ---
 # Issue #1035: Prp-484: Call To Import Shippingline From Fleetintel
 

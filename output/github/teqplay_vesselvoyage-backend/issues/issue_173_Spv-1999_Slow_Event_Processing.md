@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/173
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1999
 ---
 # Issue #173: Spv-1999 Slow Event Processing
 

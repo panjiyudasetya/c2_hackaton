@@ -7,7 +7,9 @@ title: Spring Boot 2.6 to 3.1 Migration Plan
 author: Jamie de Leest
 date: '2025-01-28'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/214106132
-explicit_links: []
+explicit_links:
+- github:FasterXML/jackson-module-kotlin:issue:670
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/214106132
 ---
 # Spring Boot 2.6 to 3.1 Migration Plan
 

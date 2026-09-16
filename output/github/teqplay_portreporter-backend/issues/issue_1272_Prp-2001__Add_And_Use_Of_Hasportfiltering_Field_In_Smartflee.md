@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1272
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2001
 ---
 # Issue #1272: Prp-2001: Add And Use Of Hasportfiltering Field In Smartfleeteventtype.
 

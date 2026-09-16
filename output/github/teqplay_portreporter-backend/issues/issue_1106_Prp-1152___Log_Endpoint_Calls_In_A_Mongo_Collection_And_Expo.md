@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1106
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1152
 ---
 # Issue #1106: Prp-1152 : Log Endpoint Calls In A Mongo Collection And Expose An Endpoint To Get Them Filtering By Time.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1083
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-965
 ---
 # Issue #1083: Prp-965: Enabling The Enduser To Export Dashboard Data Into Spreadsheet Format
 

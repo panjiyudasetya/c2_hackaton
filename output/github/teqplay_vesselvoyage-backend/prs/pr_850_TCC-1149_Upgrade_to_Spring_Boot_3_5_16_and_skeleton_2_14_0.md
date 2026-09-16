@@ -14,7 +14,8 @@ head_branch: TCC-1149-upgrade-spring-boot-3-5-16
 url: https://github.com/teqplay/vesselvoyage-backend/pull/850
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1149
 ---
 # PR #850: TCC-1149 Upgrade to Spring Boot 3.5.16 and skeleton 2.14.0
 

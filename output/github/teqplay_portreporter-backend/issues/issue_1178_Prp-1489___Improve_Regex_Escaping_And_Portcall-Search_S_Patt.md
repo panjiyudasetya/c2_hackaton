@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1178
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1489
 ---
 # Issue #1178: Prp-1489 : Improve Regex Escaping And Portcall-Search'S Pattern.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1125
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-694
 ---
 # Issue #1125: Prp-694 : Passthrough To Poma Api. Implementation Of Auth0 And Keycloak Authorization.
 

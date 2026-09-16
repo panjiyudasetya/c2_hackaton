@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1259
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1876
 ---
 # Issue #1259: Feat/Prp-1876/Extend Smartfleetsubscriptiondetails With Filterbyports
 

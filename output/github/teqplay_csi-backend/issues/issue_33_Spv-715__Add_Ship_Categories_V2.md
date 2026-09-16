@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/33
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-715
 ---
 # Issue #33: Spv-715: Add Ship Categories V2
 

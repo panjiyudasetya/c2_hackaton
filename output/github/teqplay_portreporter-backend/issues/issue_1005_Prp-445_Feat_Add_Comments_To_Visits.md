@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1005
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-445
 ---
 # Issue #1005: Prp-445/Feat/Add Comments To Visits
 

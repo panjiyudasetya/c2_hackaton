@@ -14,8 +14,7 @@ head_branch: release/1.4.0
 url: https://github.com/teqplay/dataflow_plugins/pull/20
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-2162
+explicit_links: []
 ---
 # PR #20: Release 1.4.0 to Master
 

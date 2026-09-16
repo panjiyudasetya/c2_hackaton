@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/168
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1989
 ---
 # Issue #168: Spv-1989 Correct To Use Of True Destination Changed Event And Write Unit Tests
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1415
 labels: []
-explicit_links: []
+explicit_links:
+- jira:DEV-448
 ---
 # Issue #1415: Test: Adding Stack Trace To Bitbucket Pipelines For Testing Purposes
 

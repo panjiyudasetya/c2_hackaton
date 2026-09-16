@@ -10,7 +10,9 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/81
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CC-97
+- github:teqplay/csi-backend:issue:82
 ---
 # Issue #81: Cc-97 Getall For All Collections
 

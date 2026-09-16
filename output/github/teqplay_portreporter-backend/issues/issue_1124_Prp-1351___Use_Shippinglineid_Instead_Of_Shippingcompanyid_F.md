@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1124
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1351
 ---
 # Issue #1124: Prp-1351 : Use Shippinglineid Instead Of Shippingcompanyid For The Agent'S Blacklist Check.
 

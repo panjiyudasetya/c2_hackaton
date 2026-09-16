@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1132
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1240
 ---
 # Issue #1132: Prp-1240: Applied Pr Feedback In Doing That Found A Timezoning Issue Where Dates In A Different Timezone Were Shown As Z(Utc) But Should Have Their Timezone Attached
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1070
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-954
 ---
 # Issue #1070: Prp-954 : Including Richer Messages And Unittests For Nomination Slack Notifications
 

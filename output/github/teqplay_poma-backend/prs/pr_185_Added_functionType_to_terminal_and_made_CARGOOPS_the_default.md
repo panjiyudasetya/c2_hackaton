@@ -14,7 +14,8 @@ head_branch: CC-123-function-types-terminals
 url: https://github.com/teqplay/poma-backend/pull/185
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:CC-123
 ---
 # PR #185: Added functionType to terminal and made CARGOOPS the default in the apiModel
 

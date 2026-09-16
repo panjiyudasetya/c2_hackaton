@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/177
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2002
 ---
 # Issue #177: Feat: Regenerate Traces During Recalculation
 

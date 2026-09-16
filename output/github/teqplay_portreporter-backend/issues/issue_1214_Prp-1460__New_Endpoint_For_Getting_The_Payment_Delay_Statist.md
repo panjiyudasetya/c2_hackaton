@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1214
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1460
 ---
 # Issue #1214: Prp-1460: New Endpoint For Getting The Payment Delay Statistics Given A Period Of Time.
 

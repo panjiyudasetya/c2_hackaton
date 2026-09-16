@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/966
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-225
 ---
 # Issue #966: [Prp-225] Sorting Nomination List By Creationtimestamp
 

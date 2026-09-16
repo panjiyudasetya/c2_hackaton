@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1282
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2008
 ---
 # Issue #1282: Prp-2008 : Add New Endpoint To Get The Fleet Settings And Internally Rename Getfleet To Getfleetvoyages For Consistency.
 

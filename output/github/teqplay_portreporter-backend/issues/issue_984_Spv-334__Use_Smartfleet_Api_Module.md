@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/984
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-334
 ---
 # Issue #984: Spv-334: Use Smartfleet Api Module
 

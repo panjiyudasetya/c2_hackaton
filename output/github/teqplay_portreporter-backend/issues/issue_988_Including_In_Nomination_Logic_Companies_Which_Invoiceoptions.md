@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/988
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-54
 ---
 # Issue #988: Including In Nomination Logic Companies Which Invoiceoptions Are Either 'Direct Billing' Or 'Via Agent'
 

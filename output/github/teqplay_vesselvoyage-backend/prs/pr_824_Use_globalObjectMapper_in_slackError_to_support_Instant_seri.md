@@ -14,7 +14,8 @@ head_branch: fix/slack-error-jackson-instant
 url: https://github.com/teqplay/vesselvoyage-backend/pull/824
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:JSR-310
 ---
 # PR #824: Use globalObjectMapper in slackError to support Instant serialization
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/17
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-173
 ---
 # Issue #17: Spv-173 Upgrade Csi Dependencies
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1148
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1272
 ---
 # Issue #1148: Prp-1272 : Don'T Apply Kickbacks To Portcall Orders.
 

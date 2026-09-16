@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1377
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2433
 ---
 # Issue #1377: Feat/Prp-2433/Remove Vopak Queue Consumption
 

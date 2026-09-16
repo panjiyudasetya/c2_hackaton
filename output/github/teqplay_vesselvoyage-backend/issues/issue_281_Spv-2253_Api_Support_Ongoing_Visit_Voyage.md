@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/281
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2253
 ---
 # Issue #281: Spv-2253 Api Support Ongoing Visit Voyage
 

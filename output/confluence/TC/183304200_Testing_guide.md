@@ -7,7 +7,8 @@ title: Testing guide
 author: Damon Asberg
 date: '2023-05-16'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/183304200
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/183304200
 ---
 # Testing guide
 

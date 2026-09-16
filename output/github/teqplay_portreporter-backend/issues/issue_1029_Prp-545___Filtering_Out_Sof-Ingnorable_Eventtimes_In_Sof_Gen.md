@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1029
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-545
 ---
 # Issue #1029: Prp-545 : Filtering Out Sof-Ingnorable Eventtimes In Sof Generation
 

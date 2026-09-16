@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1075
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-992
 ---
 # Issue #1075: Prp-992 : Further Changes On Shippingcompany Layers
 

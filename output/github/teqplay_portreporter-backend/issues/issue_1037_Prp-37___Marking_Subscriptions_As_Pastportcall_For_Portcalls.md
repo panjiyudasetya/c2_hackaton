@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1037
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-37
 ---
 # Issue #1037: Prp-37 : Marking Subscriptions As Pastportcall For Portcalls Which Current Status Is Inbound And Were Not Updated In The Last 2 Months
 

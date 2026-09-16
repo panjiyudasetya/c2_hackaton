@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1194
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1640
 ---
 # Issue #1194: Prp-1640 : Hotfix - Restoring Deleted Endpoint [Put] /V1/Subscriptionprofiles/{Uuid}/Details.
 

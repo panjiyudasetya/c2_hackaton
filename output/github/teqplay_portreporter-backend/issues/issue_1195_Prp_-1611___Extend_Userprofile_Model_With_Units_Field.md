@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1195
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1611
 ---
 # Issue #1195: Prp'-1611 : Extend Userprofile Model With Units Field.
 

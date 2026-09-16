@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1171
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1320
 ---
 # Issue #1171: Prp-1320 : Temporal Issue With Column Autosizing Due To Lack Of System Library.
 

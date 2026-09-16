@@ -7,7 +7,8 @@ title: Cypress guidelines
 author: David Hansson
 date: '2023-05-25'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/185073665
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/185073665
 ---
 # Cypress guidelines
 

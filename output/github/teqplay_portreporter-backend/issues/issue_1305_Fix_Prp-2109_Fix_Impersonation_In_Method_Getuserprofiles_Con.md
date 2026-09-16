@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1305
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2109
 ---
 # Issue #1305: Fix/Prp-2109/Fix Impersonation In Method Getuserprofiles Controller
 

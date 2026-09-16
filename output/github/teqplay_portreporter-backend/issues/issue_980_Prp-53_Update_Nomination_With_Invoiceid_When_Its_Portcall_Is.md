@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/980
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-53
 ---
 # Issue #980: Prp-53 Update Nomination With Invoiceid When Its Portcall Is Invoiced
 

@@ -7,7 +7,8 @@ title: Setting up a Kubernetes cluster in EKS
 author: Minh Trang Nguyen (Unlicensed)
 date: '2023-06-10'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/83197953
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/83197953
 ---
 # Setting up a Kubernetes cluster in EKS
 

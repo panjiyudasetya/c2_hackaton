@@ -7,7 +7,8 @@ title: Host frontend on AWS
 author: Damon Asberg
 date: '2025-10-27'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181108745
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181108745
 ---
 # Host frontend on AWS
 

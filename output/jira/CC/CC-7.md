@@ -17,6 +17,8 @@ date: '2024-06-23'
 url: https://teqplaybv.atlassian.net/browse/CC-7
 explicit_links:
 - jira:CC-17
+- jira:CC-8
+- jira:CC-9
 ---
 # [CC-7] I want to prevent flipflopping pilot events in singapore (onboard /disembarked)
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1202
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1459
 ---
 # Issue #1202: Prp-1459 : Credit Invoice Overview Based On Their Debit Inovice Dates.
 

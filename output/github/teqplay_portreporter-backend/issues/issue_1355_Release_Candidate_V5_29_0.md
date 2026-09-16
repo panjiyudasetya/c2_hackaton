@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1355
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2274
 ---
 # Issue #1355: Release Candidate V5.29.0
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1264
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1891
 ---
 # Issue #1264: Prp-1891 : Enabling Endpoint In Static V2 Controller To Get List Of Berth Mapped Ports.
 

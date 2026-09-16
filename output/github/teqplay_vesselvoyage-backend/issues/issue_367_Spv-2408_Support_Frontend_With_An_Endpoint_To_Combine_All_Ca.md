@@ -11,7 +11,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/367
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2408
 ---
 # Issue #367: Spv-2408 Support Frontend With An Endpoint To Combine All Calls On The Ports Page
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1189
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1249
 ---
 # Issue #1189: Prp-1249/Berths Poma
 

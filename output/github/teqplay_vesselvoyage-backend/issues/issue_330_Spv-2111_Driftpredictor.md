@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/330
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2111
 ---
 # Issue #330: Spv-2111 Driftpredictor
 

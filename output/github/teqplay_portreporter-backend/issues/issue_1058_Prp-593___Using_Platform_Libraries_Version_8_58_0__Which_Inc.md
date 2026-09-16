@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1058
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-593
 ---
 # Issue #1058: Prp-593 : Using Platform Libraries Version 8.58.0, Which Include The Final Recalling Management
 

@@ -14,7 +14,9 @@ head_branch: claude/revents-monitoring-metrics-qqq216
 url: https://github.com/teqplay/vesselvoyage-backend/pull/854
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- github:teqplay/ais-engine:pr:1573
+- github:teqplay/vesselvoyage:pr:165
 ---
 # PR #854: Surface revents monitoring metrics on the recalculation status
 

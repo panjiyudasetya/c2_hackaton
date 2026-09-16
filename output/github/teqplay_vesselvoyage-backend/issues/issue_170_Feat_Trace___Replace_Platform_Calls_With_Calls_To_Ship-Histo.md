@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/170
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1991
+- jira:SPV-1992
 ---
 # Issue #170: Feat(Trace): Replace Platform Calls With Calls To Ship-History
 

@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/20
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-202
 ---
 # Issue #20: Fix/Spv-202 Improve Query Indexes
 

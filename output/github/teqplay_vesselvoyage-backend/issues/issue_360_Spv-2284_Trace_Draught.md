@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/360
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2284
 ---
 # Issue #360: Spv-2284 Trace Draught
 

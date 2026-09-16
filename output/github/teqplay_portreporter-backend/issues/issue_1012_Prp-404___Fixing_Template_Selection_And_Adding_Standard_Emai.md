@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1012
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-404
 ---
 # Issue #1012: Prp-404 : Fixing Template Selection And Adding Standard Email Template Variables
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1146
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1272
 ---
 # Issue #1146: Prp-1272: Applying Kickback Based On The Invoice Options Instead Of Billed Company.
 

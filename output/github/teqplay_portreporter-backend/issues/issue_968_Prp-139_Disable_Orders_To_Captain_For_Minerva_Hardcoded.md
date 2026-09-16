@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/968
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-139
 ---
 # Issue #968: Prp-139 Disable Orders To Captain For Minerva Hardcoded
 

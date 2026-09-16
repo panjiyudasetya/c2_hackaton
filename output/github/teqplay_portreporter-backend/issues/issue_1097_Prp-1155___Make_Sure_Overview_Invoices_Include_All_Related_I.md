@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1097
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1155
 ---
 # Issue #1097: Prp-1155 : Make Sure Overview Invoices Include All Related Invoices In The List.
 

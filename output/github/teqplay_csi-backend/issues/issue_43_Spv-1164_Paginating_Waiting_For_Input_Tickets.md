@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/43
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1164
 ---
 # Issue #43: Spv-1164 Paginating Waiting For Input Tickets
 

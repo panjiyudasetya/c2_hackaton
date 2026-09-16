@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1087
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1000
 ---
 # Issue #1087: Prp-1000/Feat/Notify In Slack When Vessel Is Added To A Fleet When Automatically Creating A Nomination
 

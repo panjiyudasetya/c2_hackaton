@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1073
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-993
 ---
 # Issue #1073: Prp-993 : Updating The Subscriptionprofile Correctly (Chosing The Port Correctly And Correct The Subscriptionprofile Object Copy)
 

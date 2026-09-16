@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1033
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-592
 ---
 # Issue #1033: Prp-592 : Manage When Platform Returns No Vessels
 

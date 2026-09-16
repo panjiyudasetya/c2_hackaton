@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1245
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1856
 ---
 # Issue #1245: Prp-1856 : Add Paid Parameter To Get Invoices Endpoint.
 

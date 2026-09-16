@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1207
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1612
 ---
 # Issue #1207: Prp-1612/Add Linked Portcall Id
 

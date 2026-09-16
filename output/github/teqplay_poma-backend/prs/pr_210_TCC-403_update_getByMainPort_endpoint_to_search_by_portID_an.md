@@ -14,7 +14,8 @@ head_branch: TCC-403-Update-the-getByMainport-endpoint-to-search-by-unlocode-and
 url: https://github.com/teqplay/poma-backend/pull/210
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-403
 ---
 # PR #210: TCC-403 update getByMainPort endpoint to search by portID and unlocode
 

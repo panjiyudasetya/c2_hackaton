@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1332
 labels: []
-explicit_links: []
+explicit_links:
+- github:teqplay/portreporter-backend:issue:704
 ---
 # Issue #1332: Prp-2266 Removed Nortendering Packages And Config
 

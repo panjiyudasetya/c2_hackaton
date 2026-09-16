@@ -10,7 +10,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1040
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-658
+- jira:PRP-659
 ---
 # Issue #1040: Prp-658: Expose Full Ship And Port Models For Company And Fleet
 

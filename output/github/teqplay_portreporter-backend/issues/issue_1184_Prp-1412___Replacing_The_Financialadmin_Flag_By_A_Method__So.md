@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1184
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1412
 ---
 # Issue #1184: Prp-1412 : Replacing The Financialadmin Flag By A Method (So It'S Not Overwriten If Provided From Db).
 

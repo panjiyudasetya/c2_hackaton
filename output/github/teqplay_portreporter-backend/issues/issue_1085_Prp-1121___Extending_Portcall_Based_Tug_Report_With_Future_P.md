@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1085
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1121
 ---
 # Issue #1085: Prp-1121 : Extending Portcall Based Tug Report With Future Portcall'S Agent And Towing Company As Well As Modifying Reasons.
 

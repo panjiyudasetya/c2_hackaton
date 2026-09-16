@@ -15,7 +15,12 @@ author: Darius Wattimena
 status: Done
 date: '2024-07-18'
 url: https://teqplaybv.atlassian.net/browse/CC-1
-explicit_links: []
+explicit_links:
+- jira:CC-2
+- jira:CC-3
+- jira:CC-4
+- jira:CC-5
+- jira:CC-6
 ---
 # [CC-1] Poma Syncing
 

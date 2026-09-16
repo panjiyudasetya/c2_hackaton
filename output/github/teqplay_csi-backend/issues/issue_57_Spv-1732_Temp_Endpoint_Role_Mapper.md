@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/57
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1732
 ---
 # Issue #57: Spv-1732 Temp Endpoint Role Mapper
 

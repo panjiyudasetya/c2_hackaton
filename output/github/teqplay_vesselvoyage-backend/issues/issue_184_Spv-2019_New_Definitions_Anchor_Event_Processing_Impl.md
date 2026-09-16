@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/184
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2019
+- jira:SPV-1985
 ---
 # Issue #184: Spv-2019 New Definitions Anchor Event Processing Impl
 

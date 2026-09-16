@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1051
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-593
 ---
 # Issue #1051: Prp-593/Fix/Upgrading Platform Version In Gradle Build And Correct Communication Settings
 

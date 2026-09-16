@@ -10,7 +10,10 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/953
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-40
+- jira:PRP-41
+- jira:PRP-103
 ---
 # Issue #953: Feat/Hybriduser.Crud
 

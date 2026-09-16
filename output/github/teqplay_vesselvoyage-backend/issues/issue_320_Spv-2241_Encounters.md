@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/320
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2241
 ---
 # Issue #320: Spv-2241 Encounters
 

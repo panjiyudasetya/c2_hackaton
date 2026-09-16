@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1114
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1257
 ---
 # Issue #1114: Prp-1257 : Remove Portcall'S Invoiceid When Crediting An Invoice. Also Allow To Do It Without The Invoice Being Credited (For Office Admin Purposes).
 

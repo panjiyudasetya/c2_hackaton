@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/250
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2126
 ---
 # Issue #250: Spv-2126 Overrule Fallbacks With Real Value
 

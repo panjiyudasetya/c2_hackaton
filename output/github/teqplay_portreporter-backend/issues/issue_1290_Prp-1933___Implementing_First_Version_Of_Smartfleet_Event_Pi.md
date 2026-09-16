@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1290
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1933
 ---
 # Issue #1290: Prp-1933 : Implementing First Version Of Smartfleet Event Pilot Boarding Place.
 

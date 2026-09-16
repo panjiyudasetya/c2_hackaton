@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/70
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PTO-741
 ---
 # Issue #70: Fixed Prometheus Authorization, Now Really
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1265
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1892
 ---
 # Issue #1265: Prp-1892 : Getting The Correct Fallback For Dashboard Configuration When Fleet Is Not Provided Or Not Found.
 

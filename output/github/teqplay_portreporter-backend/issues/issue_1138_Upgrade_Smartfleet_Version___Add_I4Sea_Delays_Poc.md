@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1138
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1027
 ---
 # Issue #1138: Upgrade Smartfleet Version & Add I4Sea Delays Poc
 

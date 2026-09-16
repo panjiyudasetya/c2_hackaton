@@ -10,7 +10,12 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1318
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1993
+- jira:PRP-1996
+- jira:PRP-1933
+- jira:PRP-2042
+- jira:PRP-2121
 ---
 # Issue #1318: Feature/Smartfleetevents Part 4
 

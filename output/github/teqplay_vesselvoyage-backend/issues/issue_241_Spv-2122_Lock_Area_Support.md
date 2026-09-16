@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/241
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2122
 ---
 # Issue #241: Spv-2122 Lock Area Support
 

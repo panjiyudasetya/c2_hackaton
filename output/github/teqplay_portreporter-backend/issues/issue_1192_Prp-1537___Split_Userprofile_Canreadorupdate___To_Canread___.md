@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1192
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1537
 ---
 # Issue #1192: Prp-1537 : Split Userprofile.Canreadorupdate() To Canread() And Canupdate().
 

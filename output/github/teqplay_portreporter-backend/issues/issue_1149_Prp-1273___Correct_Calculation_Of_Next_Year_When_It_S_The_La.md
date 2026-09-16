@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1149
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1273
 ---
 # Issue #1149: Prp-1273 : Correct Calculation Of Next Year When It'S The Last Week Of The Year.
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1221
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1658
 ---
 # Issue #1221: Prp-1658 : Forbidding Deleting An Agent, Shipping Company Or Shipping Line If There Are Invoices Linked To Them.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/993
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-189
 ---
 # Issue #993: Prp-189 : Two Modifications For User-Error Prevention:
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1418
 labels: []
-explicit_links: []
+explicit_links:
+- jira:DEV-448
 ---
 # Issue #1418: Dev-448 Fixing Ci Issue For Daily Tests
 

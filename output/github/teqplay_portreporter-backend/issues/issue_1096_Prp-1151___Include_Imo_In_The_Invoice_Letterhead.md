@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1096
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1151
 ---
 # Issue #1096: Prp-1151 : Include Imo In The Invoice Letterhead
 

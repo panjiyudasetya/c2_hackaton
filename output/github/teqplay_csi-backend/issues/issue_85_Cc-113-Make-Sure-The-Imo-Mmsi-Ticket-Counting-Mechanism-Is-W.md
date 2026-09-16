@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/85
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CC-113
 ---
 # Issue #85: Cc-113-Make-Sure-The-Imo-Mmsi-Ticket-Counting-Mechanism-Is-Working-Properly-Again
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/72
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SVP-2152
 ---
 # Issue #72: Svp-2152-Show-Calculated-Fields-Teu-And-Classification
 

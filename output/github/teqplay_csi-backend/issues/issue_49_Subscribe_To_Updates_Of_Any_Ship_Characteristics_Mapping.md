@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/49
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRA-284
 ---
 # Issue #49: Subscribe To Updates Of Any Ship/Characteristics/Mapping
 

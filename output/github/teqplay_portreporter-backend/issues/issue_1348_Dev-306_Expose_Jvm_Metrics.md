@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1348
 labels: []
-explicit_links: []
+explicit_links:
+- jira:DEV-306
 ---
 # Issue #1348: Dev-306 Expose Jvm Metrics
 

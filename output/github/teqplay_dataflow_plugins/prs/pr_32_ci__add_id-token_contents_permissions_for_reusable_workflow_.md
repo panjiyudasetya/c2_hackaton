@@ -62,8 +62,8 @@ Updates the SBOM upload GitHub Actions workflow to explicitly grant the minimal 
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
+| File | Description |
+| ---- | ----------- |
 | .github/workflows/SBOM upload.yml | Adds explicit job permissions needed to call the `teqplay/actions` reusable SBOM upload workflow. |
 </details>
 

@@ -14,8 +14,7 @@ head_branch: PTO-2037
 url: https://github.com/teqplay/dataflow_plugins/pull/6
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-2037
+explicit_links: []
 ---
 # PR #6: PTO-2037 Update API Config
 
@@ -28,7 +27,7 @@ explicit_links:
 
 ## Description
 
-### Description
+### Description
 Updates the API configuration map by adding the API URLs for the context mapping environment.
 
 ## Commits

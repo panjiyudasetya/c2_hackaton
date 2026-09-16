@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1177
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1501
 ---
 # Issue #1177: Feat/Prp-1501/Remove Endpoint Agencies Customer Trial
 

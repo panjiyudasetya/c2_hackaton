@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1082
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-974
 ---
 # Issue #1082: Prp-971: Remove The Specific Line That Accepts All Events For Singapore, And Ignore Pilotboarding Place Ata And Atd Events. This Works Because In The Formattedevents For Singapore It Is Not Resolved To The Corresponding Types But Kept As Raw
 

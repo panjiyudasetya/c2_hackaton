@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1122
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1240
 ---
 # Issue #1122: Prp-1240/Date To Instant
 

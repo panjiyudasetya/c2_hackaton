@@ -14,7 +14,8 @@ head_branch: TCC-578-fix_ambiguity
 url: https://github.com/teqplay/poma-backend/pull/222
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-578
 ---
 # PR #222: Fix ambiguous endpoint
 

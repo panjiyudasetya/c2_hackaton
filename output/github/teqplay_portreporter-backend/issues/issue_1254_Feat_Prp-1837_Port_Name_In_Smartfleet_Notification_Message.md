@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1254
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1837
 ---
 # Issue #1254: Feat/Prp-1837/Port Name In Smartfleet Notification Message
 

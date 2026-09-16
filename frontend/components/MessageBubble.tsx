@@ -11,6 +11,13 @@ export interface ChatMessage {
   streaming?: boolean;
   savedTo?: string | null;
   error?: boolean;
+  // Readiness-mode extras: issueKey marks this as a readiness report (vs. a
+  // plain chat answer) so a "Post to Jira" action can be offered for it.
+  issueKey?: string;
+  historyNote?: string;
+  postStatus?: "posting" | "posted" | "error";
+  postUrl?: string;
+  postError?: string;
 }
 
 // Assistant answers are markdown (the agent's system prompt asks for
@@ -49,7 +56,13 @@ const MARKDOWN_COMPONENTS = {
   ),
 };
 
-export default function MessageBubble({ message }: { message: ChatMessage }) {
+export default function MessageBubble({
+  message,
+  onPostToJira,
+}: {
+  message: ChatMessage;
+  onPostToJira?: (message: ChatMessage) => void;
+}) {
   const isUser = message.role === "user";
 
   return (
@@ -76,6 +89,31 @@ export default function MessageBubble({ message }: { message: ChatMessage }) {
           {message.streaming && <span className="stream-cursor" />}
         </div>
         {message.savedTo && <p className="mt-1 text-xs text-muted">Saved to {message.savedTo}</p>}
+        {message.historyNote && <p className="mt-1 text-xs text-muted">{message.historyNote}</p>}
+
+        {message.issueKey && !message.streaming && !message.error && (
+          <div className="mt-1.5 flex items-center gap-2">
+            {message.postStatus === "posted" ? (
+              <a
+                href={message.postUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs text-primary underline underline-offset-2"
+              >
+                Posted to {message.issueKey}
+              </a>
+            ) : (
+              <button
+                onClick={() => onPostToJira?.(message)}
+                disabled={message.postStatus === "posting"}
+                className="rounded-md border border-border px-2 py-1 text-xs text-subtle transition hover:border-primary hover:text-text disabled:opacity-50"
+              >
+                {message.postStatus === "posting" ? "Posting…" : "Post to Jira"}
+              </button>
+            )}
+            {message.postStatus === "error" && <span className="text-xs text-red-400">{message.postError}</span>}
+          </div>
+        )}
       </div>
     </div>
   );

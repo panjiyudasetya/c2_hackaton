@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1319
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1536
 ---
 # Issue #1319: Fix/Prp-1536/Always Set Admin Flag Calculated After Roles
 

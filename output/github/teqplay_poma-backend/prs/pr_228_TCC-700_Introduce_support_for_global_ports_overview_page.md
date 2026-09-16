@@ -14,7 +14,8 @@ head_branch: TCC-700
 url: https://github.com/teqplay/poma-backend/pull/228
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-700
 ---
 # PR #228: TCC-700 Introduce support for global ports overview page
 
@@ -70,21 +71,36 @@ Copilot reviewed 14 out of 14 changed files in this pull request and generated 8
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/test/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorServiceTest.kt | Adds unit tests for the new port/infrastructure validation service. |
-| src/main/kotlin/nl/teqplay/poma/model/aggregation/MappingStatusCount.kt | Adds an aggregation result DTO for mapping-status counts. |
-| src/main/kotlin/nl/teqplay/poma/generics/DataSource.kt | Adds generic `getCount(query)` and a bounding-box+field lookup helper. |
-| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingService.kt | Implements mapping overview + paginated per-port mapping status computation. |
-| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingController.kt | Exposes mapping overview/status endpoints with OpenAPI annotations. |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/Validity.kt | Introduces `Validity` enum used across validation reports. |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/ValidationReports.kt | Adds structured validity report data classes and counters. |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorService.kt | Implements validation logic for ports and related infrastructure entities. |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortService.kt | Adds expected-mapping-status filtering and a count endpoint for pagination. |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Wires the new `expectedMappingStatus` query parameter through to the service. |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/AbstractPortDatasource.kt | Adds an index for mapping status and an aggregation summary method. |
-| api/src/main/kotlin/nl/teqplay/poma/api/v1/PortMappingStatus.kt | New API DTO for per-port mapping status results. |
-| api/src/main/kotlin/nl/teqplay/poma/api/v1/PaginatedResponse.kt | New generic pagination wrapper DTO. |
+| File | Description |
+
+| ---- | ----------- |
+
+| src/test/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorServiceTest.kt | Adds unit tests for the new port/infrastructure validation service. |
+
+| src/main/kotlin/nl/teqplay/poma/model/aggregation/MappingStatusCount.kt | Adds an aggregation result DTO for mapping-status counts. |
+
+| src/main/kotlin/nl/teqplay/poma/generics/DataSource.kt | Adds generic `getCount(query)` and a bounding-box+field lookup helper. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingService.kt | Implements mapping overview + paginated per-port mapping status computation. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/mapping/MappingController.kt | Exposes mapping overview/status endpoints with OpenAPI annotations. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/Validity.kt | Introduces `Validity` enum used across validation reports. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/ValidationReports.kt | Adds structured validity report data classes and counters. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorService.kt | Implements validation logic for ports and related infrastructure entities. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortService.kt | Adds expected-mapping-status filtering and a count endpoint for pagination. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Wires the new `expectedMappingStatus` query parameter through to the service. |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/AbstractPortDatasource.kt | Adds an index for mapping status and an aggregation summary method. |
+
+| api/src/main/kotlin/nl/teqplay/poma/api/v1/PortMappingStatus.kt | New API DTO for per-port mapping status results. |
+
+| api/src/main/kotlin/nl/teqplay/poma/api/v1/PaginatedResponse.kt | New generic pagination wrapper DTO. |
+
 | api/src/main/kotlin/nl/teqplay/poma/api/v1/MappingOverview.kt | New API DTO for mapping overview counts. |
 </details>
 
@@ -328,27 +344,48 @@ Will this not break existing API users? As they never provide an `expectedMappin
 
 ### TeqJoostD — 2026-02-12 on `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorService.kt`
 
-For only basic information we check the PortValidationReport, for the full mapping we check the (now renamed for clarity) PortMappingValidationReport. Which is a report of the full port and not only the port info.
-```
-/**
-     * Retrieve the mapping status based on the [expectedStatus]
-     *
-     * When the expected mapping is not mapped always return true
-     * When the expected mapping is basic, return true if the port is valid
-     * When the expected mapping is fully, return true if the whole report is valid
-     */
-    fun getMappingStatus(
-        expectedStatus: MappingStatus,
-        report: PortMappingValidationReport,
-    ): Boolean {
-        return when (expectedStatus) {
-            MappingStatus.NOT_MAPPED -> true
-            MappingStatus.BASIC_MAPPED -> report.port.valid
-            MappingStatus.FULLY_MAPPED -> report.valid
-        }
-    }
-```
-
+For only basic information we check the PortValidationReport, for the full mapping we check the (now renamed for clarity) PortMappingValidationReport. Which is a report of the full port and not only the port info.
+
+```
+
+/**
+
+     * Retrieve the mapping status based on the [expectedStatus]
+
+     *
+
+     * When the expected mapping is not mapped always return true
+
+     * When the expected mapping is basic, return true if the port is valid
+
+     * When the expected mapping is fully, return true if the whole report is valid
+
+     */
+
+    fun getMappingStatus(
+
+        expectedStatus: MappingStatus,
+
+        report: PortMappingValidationReport,
+
+    ): Boolean {
+
+        return when (expectedStatus) {
+
+            MappingStatus.NOT_MAPPED -> true
+
+            MappingStatus.BASIC_MAPPED -> report.port.valid
+
+            MappingStatus.FULLY_MAPPED -> report.valid
+
+        }
+
+    }
+
+```
+
+
+
 Not very clear, but the whole thing is a bit all the rules are a bit confusing to begin with imo
 
 ### TeqJoostD — 2026-02-12 on `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/PortModelValidatorService.kt`
@@ -373,7 +410,8 @@ Do we want to calculate individual fields or entitites here? I do not advise doi
 
 ### TeqJoostD — 2026-02-12 on `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/ValidationReports.kt`
 
-So either checking all port fields + all fields of all entities. (please no)
+So either checking all port fields + all fields of all entities. (please no)
+
 Or we count an invalid port as +1 invalid or +1 valid (not count the fields individually)
 
 ### TeqJoostD — 2026-02-12 on `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortService.kt`
@@ -394,9 +432,14 @@ wait it does `!= null` not `== null` sorry I missread this
 
 ### davidTeqplay — 2026-02-12 on `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/validation/ValidationReports.kt`
 
-I think we can count the port as 1 invalid...or if we skip it?
-
-Example:
-<img width="1623" height="50" alt="image" src="https://github.com/user-attachments/assets/e2e991bd-388c-49a8-b3ba-5ea54ef81c54" />
-
+I think we can count the port as 1 invalid...or if we skip it?
+
+
+
+Example:
+
+<img width="1623" height="50" alt="image" src="https://github.com/user-attachments/assets/e2e991bd-388c-49a8-b3ba-5ea54ef81c54" />
+
+
+
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/80
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CC-48
 ---
 # Issue #80: Added Checking For Differences
 

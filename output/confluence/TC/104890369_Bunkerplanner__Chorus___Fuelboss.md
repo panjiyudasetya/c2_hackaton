@@ -7,7 +7,8 @@ title: ⛽Bunkerplanner (Chorus / Fuelboss)
 author: Leon Joosse (Unlicensed)
 date: '2023-07-04'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/104890369
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/104890369
 ---
 # ⛽Bunkerplanner (Chorus / Fuelboss)
 

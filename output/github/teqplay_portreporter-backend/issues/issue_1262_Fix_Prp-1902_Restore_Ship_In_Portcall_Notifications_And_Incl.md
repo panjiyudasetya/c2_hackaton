@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1262
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1902
 ---
 # Issue #1262: Fix/Prp-1902/Restore Ship In Portcall Notifications And Include It In Smartfleet Ones
 

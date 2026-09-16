@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1247
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1865
 ---
 # Issue #1247: Prp-1865 : Accept Vopak Portcall Updates From Queue For Wilhelmsen Also.
 

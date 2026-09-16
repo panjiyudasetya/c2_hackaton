@@ -14,7 +14,8 @@ head_branch: develop
 url: https://github.com/teqplay/poma-backend/pull/204
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-53
 ---
 # PR #204: Release 2 Sep 2025
 
@@ -68,21 +69,36 @@ Copilot reviewed 25 out of 26 changed files in this pull request and generated 1
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/test/kotlin/nl/teqplay/poma/generics/DataSourceTest.kt | Updated test to use `drop()` instead of `deleteMany()` and improved test assertions |
-| src/main/resources/application.yml | Removed WOP configuration properties and added Slack webhook configuration |
-| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureService.kt | Enhanced merge logic with performance optimizations and improved duplicate detection |
-| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureController.kt | Converted from field injection to constructor injection pattern |
-| src/main/kotlin/nl/teqplay/poma/generics/DataSource.kt | Improved collection replacement logic with better error handling |
-| src/main/kotlin/nl/teqplay/poma/feature/worldofports/WopService.kt | Deprecated and removed WOP import functionality |
-| src/main/kotlin/nl/teqplay/poma/feature/worldofports/WopRawDatasource.kt | Added deprecation annotation |
-| src/main/kotlin/nl/teqplay/poma/feature/worldofports/WopController.kt | Added deprecation annotation and removed import endpoints |
-| src/main/kotlin/nl/teqplay/poma/feature/synchronize/SyncService.kt | Added deduplication logic and exception reporting |
-| Multiple infrastructure controllers | Converted from field injection to constructor injection |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthService.kt | Migrated from WebClient to RestTemplate |
-| src/main/kotlin/nl/teqplay/poma/feature/connection/SlackService.kt | Migrated from WebClient to RestTemplate |
-| src/main/kotlin/nl/teqplay/poma/config/RestTemplateConfiguration.kt | Replaced WebClient configuration with RestTemplate configuration |
+| File | Description |
+
+| ---- | ----------- |
+
+| src/test/kotlin/nl/teqplay/poma/generics/DataSourceTest.kt | Updated test to use `drop()` instead of `deleteMany()` and improved test assertions |
+
+| src/main/resources/application.yml | Removed WOP configuration properties and added Slack webhook configuration |
+
+| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureService.kt | Enhanced merge logic with performance optimizations and improved duplicate detection |
+
+| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureController.kt | Converted from field injection to constructor injection pattern |
+
+| src/main/kotlin/nl/teqplay/poma/generics/DataSource.kt | Improved collection replacement logic with better error handling |
+
+| src/main/kotlin/nl/teqplay/poma/feature/worldofports/WopService.kt | Deprecated and removed WOP import functionality |
+
+| src/main/kotlin/nl/teqplay/poma/feature/worldofports/WopRawDatasource.kt | Added deprecation annotation |
+
+| src/main/kotlin/nl/teqplay/poma/feature/worldofports/WopController.kt | Added deprecation annotation and removed import endpoints |
+
+| src/main/kotlin/nl/teqplay/poma/feature/synchronize/SyncService.kt | Added deduplication logic and exception reporting |
+
+| Multiple infrastructure controllers | Converted from field injection to constructor injection |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthService.kt | Migrated from WebClient to RestTemplate |
+
+| src/main/kotlin/nl/teqplay/poma/feature/connection/SlackService.kt | Migrated from WebClient to RestTemplate |
+
+| src/main/kotlin/nl/teqplay/poma/config/RestTemplateConfiguration.kt | Replaced WebClient configuration with RestTemplate configuration |
+
 | src/main/kotlin/nl/teqplay/poma/config/Config.kt | Removed WOP properties configuration |
 </details>
 

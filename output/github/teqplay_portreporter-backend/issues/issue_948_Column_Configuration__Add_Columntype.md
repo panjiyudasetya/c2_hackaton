@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/948
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-111
 ---
 # Issue #948: Column Configuration: Add Columntype
 

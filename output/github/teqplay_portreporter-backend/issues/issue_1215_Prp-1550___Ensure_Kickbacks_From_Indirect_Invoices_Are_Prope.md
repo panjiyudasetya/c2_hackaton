@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1215
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1550
 ---
 # Issue #1215: Prp-1550 : Ensure Kickbacks From Indirect Invoices Are Properly Categorised To Shippinglines Companies.
 

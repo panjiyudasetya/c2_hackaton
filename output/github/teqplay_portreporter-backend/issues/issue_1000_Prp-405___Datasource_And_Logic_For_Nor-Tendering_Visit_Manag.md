@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1000
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-405
 ---
 # Issue #1000: Prp-405 : Datasource And Logic For Nor-Tendering Visit Management
 

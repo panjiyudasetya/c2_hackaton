@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1063
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-726
 ---
 # Issue #1063: Prp-726 : Automatic Ingestion Of Nominations From Queue
 

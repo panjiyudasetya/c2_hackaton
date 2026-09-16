@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/247
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2140
 ---
 # Issue #247: Spv-2140 Use Poma Models
 

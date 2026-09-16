@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1260
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1838
 ---
 # Issue #1260: Prp-1838 : Removing Unneeded Metadata Endpoint. Including Searchpattern In The New Field For Searching. Include The Fleet Field In The Notification Model.
 

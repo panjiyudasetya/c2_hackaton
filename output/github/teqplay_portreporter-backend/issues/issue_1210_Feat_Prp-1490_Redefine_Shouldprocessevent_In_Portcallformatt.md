@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1210
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1490
 ---
 # Issue #1210: Feat/Prp-1490/Redefine Shouldprocessevent In Portcallformatter
 

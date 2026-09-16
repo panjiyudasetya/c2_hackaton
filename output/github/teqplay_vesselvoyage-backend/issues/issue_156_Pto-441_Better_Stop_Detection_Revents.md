@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/156
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PTO-441
 ---
 # Issue #156: Pto-441 Better Stop Detection Revents
 

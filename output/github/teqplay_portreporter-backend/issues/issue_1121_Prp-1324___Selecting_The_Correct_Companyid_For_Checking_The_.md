@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1121
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1324
 ---
 # Issue #1121: Prp-1324 : Selecting The Correct Companyid For Checking The Portcallorder Blacklist, Some Refactoring For Clarity Sake And Adding Relevant Unittest.
 

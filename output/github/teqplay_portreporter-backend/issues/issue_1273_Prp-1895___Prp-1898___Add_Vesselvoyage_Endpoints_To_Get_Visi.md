@@ -11,7 +11,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1273
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1895
+- jira:PRP-1898
 ---
 # Issue #1273: Prp-1895 + Prp-1898 : Add Vesselvoyage Endpoints To Get Visit Or Voyage By Their Id. Portreporter Mirrored Classes For Vesselvoyage.
 

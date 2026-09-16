@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1229
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1636
 ---
 # Issue #1229: Prp-1636 : Fix The Spreadsheet Generation Of Kickback Overviews For Shippinglines And Agencies: Including The Correct Credit Invoices In The Given Time Period.
 

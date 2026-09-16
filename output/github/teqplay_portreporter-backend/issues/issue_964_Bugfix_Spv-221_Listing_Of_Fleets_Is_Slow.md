@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/964
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-221
 ---
 # Issue #964: Bugfix/Spv-221 Listing Of Fleets Is Slow
 

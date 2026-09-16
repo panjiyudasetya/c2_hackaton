@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/283
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2263
 ---
 # Issue #283: Spv-2263 Api Missing Destination
 

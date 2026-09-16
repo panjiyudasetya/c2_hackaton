@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/87
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CC-113
 ---
 # Issue #87: Develop
 

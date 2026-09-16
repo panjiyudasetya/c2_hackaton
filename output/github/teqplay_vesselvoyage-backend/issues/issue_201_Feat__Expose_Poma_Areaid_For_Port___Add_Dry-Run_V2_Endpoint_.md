@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/201
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2059
 ---
 # Issue #201: Feat: Expose Poma Areaid For Port & Add Dry-Run V2 Endpoint For (R)Events
 

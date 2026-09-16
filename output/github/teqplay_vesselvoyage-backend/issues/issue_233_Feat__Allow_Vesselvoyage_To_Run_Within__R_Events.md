@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/233
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2134
 ---
 # Issue #233: Feat: Allow Vesselvoyage To Run Within (R)Events
 

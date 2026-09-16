@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1306
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2150
 ---
 # Issue #1306: Prp-2150 : Extend Company Model With Nullable Support Field.
 

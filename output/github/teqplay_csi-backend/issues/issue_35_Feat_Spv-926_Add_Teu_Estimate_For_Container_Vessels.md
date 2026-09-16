@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/35
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-926
 ---
 # Issue #35: Feat/Spv-926 Add Teu Estimate For Container Vessels
 

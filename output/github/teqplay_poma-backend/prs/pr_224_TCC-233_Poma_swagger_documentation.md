@@ -14,7 +14,8 @@ head_branch: TCC-233
 url: https://github.com/teqplay/poma-backend/pull/224
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-233
 ---
 # PR #224: TCC-233 Poma swagger documentation
 
@@ -62,20 +63,34 @@ Copilot reviewed 13 out of 13 changed files in this pull request and generated 1
 <details>
 <summary>Show a summary per file</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/main/kotlin/nl/teqplay/poma/common/ApiRequestBody.kt | New type alias for Swagger's RequestBody annotation to prevent naming conflicts with Spring's annotation |
-| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureController.kt | Added comprehensive Swagger annotations including operation summaries, parameter descriptions, and response codes for the base infrastructure controller |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalController.kt | Added Swagger documentation for terminal management endpoints including CRUD operations, imports, and maintenance scripts |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Added Swagger documentation for port management endpoints with detailed parameter descriptions and enhanced tag description |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/pilotboardingplace/PilotBoardingPlaceController.kt | Added Swagger documentation for pilot boarding place endpoints with enhanced tag description |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/lock/LockController.kt | Added Swagger documentation for lock management endpoints |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customarea/CustomAreaController.kt | Added Swagger documentation for custom area endpoints with enhanced tag description |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/breakwater/BreakWaterAreaController.kt | Added Swagger documentation for breakwater area endpoints with enhanced tag description |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthController.kt | Added Swagger documentation for berth management endpoints including import and maintenance operations |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/basin/BasinController.kt | Added Swagger documentation for basin management endpoints with enhanced tag description |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approachroute/ApproachRouteController.kt | Added Swagger documentation for approach route endpoints |
-| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approacharea/ApproachAreaController.kt | Added Swagger documentation for approach area endpoints |
+| File | Description |
+
+| ---- | ----------- |
+
+| src/main/kotlin/nl/teqplay/poma/common/ApiRequestBody.kt | New type alias for Swagger's RequestBody annotation to prevent naming conflicts with Spring's annotation |
+
+| src/main/kotlin/nl/teqplay/poma/generics/InfrastructureController.kt | Added comprehensive Swagger annotations including operation summaries, parameter descriptions, and response codes for the base infrastructure controller |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/terminal/TerminalController.kt | Added Swagger documentation for terminal management endpoints including CRUD operations, imports, and maintenance scripts |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortController.kt | Added Swagger documentation for port management endpoints with detailed parameter descriptions and enhanced tag description |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/pilotboardingplace/PilotBoardingPlaceController.kt | Added Swagger documentation for pilot boarding place endpoints with enhanced tag description |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/lock/LockController.kt | Added Swagger documentation for lock management endpoints |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/customarea/CustomAreaController.kt | Added Swagger documentation for custom area endpoints with enhanced tag description |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/breakwater/BreakWaterAreaController.kt | Added Swagger documentation for breakwater area endpoints with enhanced tag description |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/berth/BerthController.kt | Added Swagger documentation for berth management endpoints including import and maintenance operations |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/basin/BasinController.kt | Added Swagger documentation for basin management endpoints with enhanced tag description |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approachroute/ApproachRouteController.kt | Added Swagger documentation for approach route endpoints |
+
+| src/main/kotlin/nl/teqplay/poma/feature/infrastructure/approacharea/ApproachAreaController.kt | Added Swagger documentation for approach area endpoints |
+
 | src/main/kotlin/nl/teqplay/poma/feature/infrastructure/anchorage/AnchorageController.kt | Added Swagger documentation for anchorage endpoints with import functionality |
 </details>
 

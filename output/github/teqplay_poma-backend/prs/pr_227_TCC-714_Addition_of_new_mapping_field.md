@@ -14,7 +14,8 @@ head_branch: TCC-714
 url: https://github.com/teqplay/poma-backend/pull/227
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-714
 ---
 # PR #227: TCC-714 Addition of new mapping field
 
@@ -175,7 +176,8 @@ no, its not expected mapping level its what the current mapping status is right?
 
 ### TeqJoostD — 2026-02-10 on `src/main/kotlin/nl/teqplay/poma/model/basemodels/Port.kt`
 
-i misunderstood what the value is
+i misunderstood what the value is
+
 
 
 ### TeqJoostD — 2026-02-11 on `src/main/kotlin/nl/teqplay/poma/feature/infrastructure/port/PortService.kt`

@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/313
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2202
 ---
 # Issue #313: Spv-2202 Confirm Visits Stop Inside Port
 

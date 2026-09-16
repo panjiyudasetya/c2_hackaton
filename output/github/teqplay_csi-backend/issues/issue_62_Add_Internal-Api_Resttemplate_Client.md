@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/62
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRA-939
 ---
 # Issue #62: Add Internal-Api Resttemplate Client
 

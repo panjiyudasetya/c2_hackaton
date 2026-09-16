@@ -14,7 +14,8 @@ head_branch: migration/cicd_master_adapt_api_gradle_build
 url: https://github.com/teqplay/poma-backend/pull/180
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- github:teqplay/poma-backend:pr:179
 ---
 # PR #180: dev-570 : Adapt also api build.gradle version suffix.
 

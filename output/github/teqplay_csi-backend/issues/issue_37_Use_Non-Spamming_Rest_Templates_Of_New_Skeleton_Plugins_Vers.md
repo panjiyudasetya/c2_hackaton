@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/37
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRA-104
 ---
 # Issue #37: Use Non-Spamming Rest Templates Of New Skeleton Plugins Version
 

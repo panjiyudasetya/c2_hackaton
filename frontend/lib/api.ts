@@ -115,4 +115,10 @@ export const api = {
   },
 
   doc: (path: string) => request<{ path: string; content: string }>(`/docs?path=${encodeURIComponent(path)}`),
+
+  postJiraComment: (issueKey: string, comment: string) =>
+    request<{ posted: boolean; url: string }>("/jira/comment", {
+      method: "POST",
+      body: JSON.stringify({ issue_key: issueKey, comment }),
+    }),
 };

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1111
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-822
 ---
 # Issue #1111: Prp-822: Use The Post Instead Of Get For Changing Your Password
 

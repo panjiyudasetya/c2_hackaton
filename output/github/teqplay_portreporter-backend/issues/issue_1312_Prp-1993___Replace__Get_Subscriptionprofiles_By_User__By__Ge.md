@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1312
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1993
 ---
 # Issue #1312: Prp-1993 : Replace 'Get Subscriptionprofiles By User' By 'Get Subscriptionprofiles By Companyid'. Replace Patch By Put Endpoint. Enforce Unittests And Improve Existing Smartfleetsubscriptionprofilelogic.
 

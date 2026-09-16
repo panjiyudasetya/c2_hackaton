@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1292
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1996
 ---
 # Issue #1292: Prp-1996 : Overwrite Users Fleet Subscriptions Based On Subscriptionprofile.
 

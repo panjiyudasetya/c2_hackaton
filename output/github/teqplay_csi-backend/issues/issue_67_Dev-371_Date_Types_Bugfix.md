@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/67
 labels: []
-explicit_links: []
+explicit_links:
+- jira:DEV-371
 ---
 # Issue #67: Dev-371 Date Types Bugfix
 

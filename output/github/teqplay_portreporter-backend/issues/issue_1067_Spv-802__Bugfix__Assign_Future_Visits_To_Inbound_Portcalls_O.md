@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1067
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-802
 ---
 # Issue #1067: Spv-802: Bugfix, Assign Future Visits To Inbound Portcalls Only
 

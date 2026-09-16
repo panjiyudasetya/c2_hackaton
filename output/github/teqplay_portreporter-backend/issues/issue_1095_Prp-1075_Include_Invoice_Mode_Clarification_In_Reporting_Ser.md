@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1095
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1075
 ---
 # Issue #1095: Prp-1075/Include Invoice Mode Clarification In Reporting Services Mail Body Message
 

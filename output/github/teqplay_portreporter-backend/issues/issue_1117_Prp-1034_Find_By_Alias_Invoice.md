@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1117
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1034
 ---
 # Issue #1117: Prp-1034/Find By Alias Invoice
 

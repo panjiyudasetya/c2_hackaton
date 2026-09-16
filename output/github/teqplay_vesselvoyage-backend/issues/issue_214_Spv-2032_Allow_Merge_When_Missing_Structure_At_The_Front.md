@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/214
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2032
+- jira:SPV-2076
 ---
 # Issue #214: Spv-2032 Allow Merge When Missing Structure At The Front
 

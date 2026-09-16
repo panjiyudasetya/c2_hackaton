@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1015
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-455
 ---
 # Issue #1015: Prp-455 : Enabling Impersonation For Those Nortendering Endpoints That Involve User Logging Actions: Transitvisit And Addcomment
 

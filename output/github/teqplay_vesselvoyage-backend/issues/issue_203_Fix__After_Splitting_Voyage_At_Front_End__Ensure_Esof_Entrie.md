@@ -11,7 +11,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/203
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2031
 ---
 # Issue #203: Fix: After Splitting Voyage At Front/End, Ensure Esof Entries Are Filtered To Still Be Overlapping With The Voyage
 

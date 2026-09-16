@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/77
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CC-47
 ---
 # Issue #77: Cc-47 Add Sync Log
 

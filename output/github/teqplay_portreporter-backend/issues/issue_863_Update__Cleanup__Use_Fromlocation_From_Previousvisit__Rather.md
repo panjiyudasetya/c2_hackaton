@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/863
 labels: []
-explicit_links: []
+explicit_links:
+- github:teqplay/portreporter-backend:issue:211
 ---
 # Issue #863: Update: Cleanup. Use Fromlocation From Previousvisit, Rather Than Parse The Events
 

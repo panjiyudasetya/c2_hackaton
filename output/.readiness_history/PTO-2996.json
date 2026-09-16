@@ -1,0 +1,53 @@
+[
+  {
+    "timestamp": 1789538448.2931576,
+    "percentage": 0.0,
+    "classification": "NOT READY",
+    "criteria": {
+      "User problem": "FAIL",
+      "Expected behaviour": "FAIL",
+      "Acceptance criteria": "FAIL",
+      "Edge cases": "FAIL",
+      "API behaviour": "FAIL",
+      "Dependencies": "FAIL",
+      "Permissions": "FAIL",
+      "Designs/specifications": "FAIL",
+      "Data/validation": "FAIL",
+      "Non-functional requirements": "FAIL"
+    }
+  },
+  {
+    "timestamp": 1789538476.478091,
+    "percentage": 0.0,
+    "classification": "NOT READY",
+    "criteria": {
+      "User problem": "FAIL",
+      "Expected behaviour": "FAIL",
+      "Acceptance criteria": "FAIL",
+      "Edge cases": "FAIL",
+      "API behaviour": "FAIL",
+      "Dependencies": "FAIL",
+      "Permissions": "FAIL",
+      "Designs/specifications": "FAIL",
+      "Data/validation": "FAIL",
+      "Non-functional requirements": "FAIL"
+    }
+  },
+  {
+    "timestamp": 1789540315.2341535,
+    "percentage": 0.0,
+    "classification": "NOT READY",
+    "criteria": {
+      "User problem": "FAIL",
+      "Expected behaviour": "FAIL",
+      "Acceptance criteria": "FAIL",
+      "Edge cases": "FAIL",
+      "API behaviour": "FAIL",
+      "Dependencies": "FAIL",
+      "Permissions": "FAIL",
+      "Designs/specifications": "FAIL",
+      "Data/validation": "FAIL",
+      "Non-functional requirements": "FAIL"
+    }
+  }
+]

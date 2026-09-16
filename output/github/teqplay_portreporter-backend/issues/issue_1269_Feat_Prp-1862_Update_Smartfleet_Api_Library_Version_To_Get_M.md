@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1269
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1862
 ---
 # Issue #1269: Feat/Prp-1862/Update Smartfleet Api Library Version To Get Model Updates
 

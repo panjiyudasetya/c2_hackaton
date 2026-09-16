@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1004
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-408
 ---
 # Issue #1004: Prp-408: Keep Track Of Visitstatus Changes
 

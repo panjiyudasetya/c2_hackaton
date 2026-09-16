@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/221
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2100
+- jira:SPV-2076
 ---
 # Issue #221: Spv-2100 Perform Enlarging Of Time Window For V2
 

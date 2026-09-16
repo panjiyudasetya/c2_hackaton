@@ -66,6 +66,19 @@ class JiraCollector(BaseCollector):
             cloud=True,
         )
 
+    def post_comment(self, issue_key: str, comment: str) -> str:
+        """Post *comment* onto *issue_key* and return the ticket's URL.
+
+        This is the one write operation this project performs against Jira --
+        deliberately not status transitions or field edits (see
+        agent/readiness_reviewer.py's module docstring for why). Uses the
+        same credentials as collection, which already have whatever
+        read/write scope the configured account has in Jira itself.
+        """
+        jira = self._client()
+        jira.issue_add_comment(issue_key, comment)
+        return f"{os.environ['JIRA_URL'].rstrip('/')}/browse/{issue_key}"
+
     def collect(self, jql: str = "", max_results: int = 50, **kwargs) -> list[Path]:
         """
         Fetch issues matching *jql* and write one .md file per issue.

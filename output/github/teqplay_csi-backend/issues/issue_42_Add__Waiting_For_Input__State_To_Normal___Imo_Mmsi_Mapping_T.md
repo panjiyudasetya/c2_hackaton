@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/42
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1164
 ---
 # Issue #42: Add 'Waiting For Input' State To Normal & Imo/Mmsi Mapping Tickets
 

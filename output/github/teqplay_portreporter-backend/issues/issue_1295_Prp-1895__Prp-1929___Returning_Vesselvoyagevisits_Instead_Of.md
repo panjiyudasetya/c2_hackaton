@@ -11,7 +11,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1295
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1985
+- jira:PRP-1929
 ---
 # Issue #1295: Prp-1895, Prp-1929 : Returning Vesselvoyagevisits Instead Of Vesselvoyage'S Visits In Two Endpoints.
 

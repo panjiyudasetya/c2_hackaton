@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/55
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRA-483
 ---
 # Issue #55: Add Ship Types To The Cached Ship Info
 

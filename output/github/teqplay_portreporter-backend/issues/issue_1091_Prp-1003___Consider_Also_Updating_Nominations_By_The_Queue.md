@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1091
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1003
 ---
 # Issue #1091: Prp-1003 : Consider Also Updating Nominations By The Queue.
 

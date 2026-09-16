@@ -7,7 +7,8 @@ title: Functional Introduction
 author: Yaren Aslan
 date: '2025-10-02'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/214106116
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/214106116
 ---
 # Functional Introduction
 

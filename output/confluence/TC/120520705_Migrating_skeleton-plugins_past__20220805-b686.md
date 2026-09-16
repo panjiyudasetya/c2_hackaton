@@ -7,7 +7,8 @@ title: Migrating skeleton-plugins past `20220805-b686`
 author: Former user (Deleted)
 date: '2022-08-05'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/120520705
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/120520705
 ---
 # Migrating skeleton-plugins past `20220805-b686`
 

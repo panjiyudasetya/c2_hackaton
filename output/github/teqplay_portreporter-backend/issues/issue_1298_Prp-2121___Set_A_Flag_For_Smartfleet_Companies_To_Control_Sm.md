@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1298
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2121
 ---
 # Issue #1298: Prp-2121 : Set A Flag For Smartfleet Companies To Control Smartfleet Events Processing And Notifications (Not Subscription Modifications).
 

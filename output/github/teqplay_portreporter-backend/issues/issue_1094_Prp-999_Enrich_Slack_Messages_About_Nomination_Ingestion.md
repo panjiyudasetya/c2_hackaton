@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1094
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-999
 ---
 # Issue #1094: Prp-999/Enrich Slack Messages About Nomination Ingestion
 

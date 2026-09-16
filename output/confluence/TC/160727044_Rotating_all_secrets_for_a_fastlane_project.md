@@ -7,7 +7,8 @@ title: Rotating all secrets for a fastlane project
 author: Damon Asberg
 date: '2025-01-06'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160727044
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/160727044
 ---
 # Rotating all secrets for a fastlane project
 

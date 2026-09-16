@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/319
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2287
 ---
 # Issue #319: Spv-2287 Update Recalculation State On Finish
 

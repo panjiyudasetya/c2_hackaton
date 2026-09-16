@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1320
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1993
 ---
 # Issue #1320: Prp-1993 : Inforce Companyid Not To Be Empty For Smartfleetsubscriptionprofile Creation.
 

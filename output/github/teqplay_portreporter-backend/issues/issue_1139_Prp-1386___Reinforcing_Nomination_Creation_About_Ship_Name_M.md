@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1139
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1386
 ---
 # Issue #1139: Prp-1386 : Reinforcing Nomination Creation About Ship Name Matching (Case Insensitive And Considering Prefixes).
 

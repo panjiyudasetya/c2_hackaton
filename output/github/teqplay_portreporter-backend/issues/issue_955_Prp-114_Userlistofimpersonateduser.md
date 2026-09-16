@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/955
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-114
 ---
 # Issue #955: Prp-114 Userlistofimpersonateduser
 

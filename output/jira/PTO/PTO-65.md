@@ -15,7 +15,13 @@ author: Maryam Tavakoli
 status: Done
 date: '2023-09-13'
 url: https://teqplaybv.atlassian.net/browse/PTO-65
-explicit_links: []
+explicit_links:
+- jira:PTO-66
+- jira:PTO-67
+- jira:PTO-68
+- jira:PTO-69
+- jira:PTO-70
+- jira:PTO-71
 ---
 # [PTO-65] As a Developer I want to have a live environment for PTO ETL project
 

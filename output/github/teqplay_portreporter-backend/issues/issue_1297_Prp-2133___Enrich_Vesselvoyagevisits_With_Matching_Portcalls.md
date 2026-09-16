@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1297
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2133
 ---
 # Issue #1297: Prp-2133 : Enrich Vesselvoyagevisits With Matching Portcalls (When They Exist) And Supply With The New Endpoint /V1/Vesselvoyage/Visitsaroundportcall.
 

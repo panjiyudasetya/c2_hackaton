@@ -10,7 +10,9 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1288
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1896
+- github:teqplay/portreporter-backend:issue:654
 ---
 # Issue #1288: Feat/Prp-1896/Use New Vessel Voyage Endpoints
 

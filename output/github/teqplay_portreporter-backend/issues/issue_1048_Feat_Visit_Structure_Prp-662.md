@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1048
 labels: []
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/92667905/Portreporter+Visit+structure+rules
 ---
 # Issue #1048: Feat/Visit Structure Prp-662
 

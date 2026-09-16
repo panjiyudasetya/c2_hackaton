@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1102
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1040
 ---
 # Issue #1102: Prp-1040 : Allow Pushing Portcallevents In A Scheduled Way.
 

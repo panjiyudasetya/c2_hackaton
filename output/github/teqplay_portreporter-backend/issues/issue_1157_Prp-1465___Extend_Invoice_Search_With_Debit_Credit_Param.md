@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1157
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1465
 ---
 # Issue #1157: Prp-1465 : Extend Invoice Search With Debit/Credit Param.
 

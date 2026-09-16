@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1007
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-404
 ---
 # Issue #1007: Prp-404/Feat/Nortendering Send Email Onvisitstatechange
 

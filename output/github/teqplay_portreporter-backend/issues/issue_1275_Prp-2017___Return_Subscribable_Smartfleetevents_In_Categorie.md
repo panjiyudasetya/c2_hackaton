@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1275
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2017
 ---
 # Issue #1275: Prp-2017 : Return Subscribable Smartfleetevents In Categories.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/959
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-179
 ---
 # Issue #959: Columnconfig: Add New Endpoint To Make 'Companyid' Optional
 

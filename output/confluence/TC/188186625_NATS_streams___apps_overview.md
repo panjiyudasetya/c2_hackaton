@@ -7,7 +7,8 @@ title: NATS streams & apps overview
 author: Former user (Deleted)
 date: '2023-06-22'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/188186625
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/188186625
 ---
 # NATS streams & apps overview
 

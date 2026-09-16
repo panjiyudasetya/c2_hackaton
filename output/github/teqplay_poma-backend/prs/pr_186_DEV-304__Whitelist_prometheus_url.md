@@ -14,7 +14,8 @@ head_branch: DEV-304/prometheus
 url: https://github.com/teqplay/poma-backend/pull/186
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:DEV-304
 ---
 # PR #186: DEV-304: Whitelist prometheus url
 

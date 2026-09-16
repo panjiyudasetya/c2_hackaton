@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1150
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1273
 ---
 # Issue #1150: Prp-1273: Covering Edge Case For Iso8601 Week Validation.
 

@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1107
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1011
 ---
 # Issue #1107: Prp-1011: Remove Portcall Inside Invoice References
 

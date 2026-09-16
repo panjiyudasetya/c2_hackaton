@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1179
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1514
 ---
 # Issue #1179: Prp-1514 : Excluding Portcall_Orders When Generating The Kickback Invoice Overview Spreadsheet For Shipping Lines.
 

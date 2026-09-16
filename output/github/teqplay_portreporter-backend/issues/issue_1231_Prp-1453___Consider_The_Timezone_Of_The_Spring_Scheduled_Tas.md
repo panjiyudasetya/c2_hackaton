@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1231
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1453
 ---
 # Issue #1231: Prp-1453 : Consider The Timezone Of The Spring Scheduled Tasks In The Calculation Of Week-Shifting Seconds.
 

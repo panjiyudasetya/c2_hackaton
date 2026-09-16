@@ -14,8 +14,7 @@ head_branch: PTO-2513
 url: https://github.com/teqplay/dataflow_plugins/pull/27
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-2513
+explicit_links: []
 ---
 # PR #27: PTO-2513 Add batch SOF retrieval endpoint and update API documentation
 
@@ -28,14 +27,14 @@ explicit_links:
 
 ## Description
 
-### Description
-
-This PR adds support for retrieving Statement of Facts (SOF) data from multiple ports in a single API call via the new `get_sof_by_ports()` method. Additionally, updates all Swagger documentation URLs to reflect the new endpoint naming convention.
-
-**Changes:**
-- New `get_sof_by_ports()` method for batch SOF retrieval
-- Updated Swagger URLs to new format
-- Added example payload documentation
+### Description
+
+This PR adds support for retrieving Statement of Facts (SOF) data from multiple ports in a single API call via the new `get_sof_by_ports()` method. Additionally, updates all Swagger documentation URLs to reflect the new endpoint naming convention.
+
+**Changes:**
+- New `get_sof_by_ports()` method for batch SOF retrieval
+- Updated Swagger URLs to new format
+- Added example payload documentation
 
 
 ## Commits
@@ -92,52 +91,52 @@ Addressed by afb7c27.
 
 ### panjiyudasetya — 2026-02-24
 
-Here is the test script to check the new API:
-```python
-
-# Create test file on: /dataflow_plugins/test.py
-
-
-from dotenv import load_dotenv
-from dataflow_plugins.api_clients.teqplay_api.vessel_voyage import VesselVoyageAPI
-
-load_dotenv()
-
-
-if __name__ == "__main__":
-    token = "<put-your-api-token>"
-
-    api = VesselVoyageAPI()
-    result = api.get_sof_by_ports(token=token, payload=[
-        {
-            "view": "pto",
-            "unlocode": "NLRTM",
-            "start": "2026-01-01T00:00:00Z",
-            "end": "2026-01-07T00:00:00Z",
-            "vesselType": ["SEA_VESSEL"],
-            "finished": True,
-            "limit": 10
-        },
-        {
-            "view": "pto",
-            "unlocode": "NLRTM",
-            "start": "2026-01-01T00:00:00Z",
-            "end": "2026-01-07T00:00:00Z",
-            "vesselType": ["BARGE"],
-            "finished": True,
-            "limit": 10
-        },
-        {
-            "view": "pto",
-            "unlocode": "NLAMS",
-            "start": "2026-01-01T00:00:00Z",
-            "end": "2026-01-07T00:00:00Z",
-            "vesselType": ["SEA_VESSEL"],
-            "finished": True,
-            "limit": 10
-        }
-    ])
-
-    print(result)
-```
+Here is the test script to check the new API:
+```python
+
+# Create test file on: /dataflow_plugins/test.py
+
+
+from dotenv import load_dotenv
+from dataflow_plugins.api_clients.teqplay_api.vessel_voyage import VesselVoyageAPI
+
+load_dotenv()
+
+
+if __name__ == "__main__":
+    token = "<put-your-api-token>"
+
+    api = VesselVoyageAPI()
+    result = api.get_sof_by_ports(token=token, payload=[
+        {
+            "view": "pto",
+            "unlocode": "NLRTM",
+            "start": "2026-01-01T00:00:00Z",
+            "end": "2026-01-07T00:00:00Z",
+            "vesselType": ["SEA_VESSEL"],
+            "finished": True,
+            "limit": 10
+        },
+        {
+            "view": "pto",
+            "unlocode": "NLRTM",
+            "start": "2026-01-01T00:00:00Z",
+            "end": "2026-01-07T00:00:00Z",
+            "vesselType": ["BARGE"],
+            "finished": True,
+            "limit": 10
+        },
+        {
+            "view": "pto",
+            "unlocode": "NLAMS",
+            "start": "2026-01-01T00:00:00Z",
+            "end": "2026-01-07T00:00:00Z",
+            "vesselType": ["SEA_VESSEL"],
+            "finished": True,
+            "limit": 10
+        }
+    ])
+
+    print(result)
+```
 Run it using this command `$ python test.py`

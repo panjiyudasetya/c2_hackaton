@@ -10,7 +10,8 @@ state: closed
 date: '2025-01-07'
 url: https://github.com/teqplay/csi-backend/issues/84
 labels: []
-explicit_links: []
+explicit_links:
+- jira:CC-49
 ---
 # Issue #84: Cc-49 Sync Scheduling
 

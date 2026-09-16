@@ -14,8 +14,7 @@ head_branch: PTO-1849
 url: https://github.com/teqplay/dataflow_plugins/pull/2
 labels: []
 linked_issues: []
-explicit_links:
-- jira:PTO-1849
+explicit_links: []
 ---
 # PR #2: PTO-1849 Updates URL settings to ingest data from Teqplay
 
@@ -28,8 +27,8 @@ explicit_links:
 
 ## Description
 
-### Description
-
+### Description
+
 This patch updates URL settings to ingest data from Teqplay. Apart from that, some documentation and tests have been adjusted as well.
 
 ## Commits

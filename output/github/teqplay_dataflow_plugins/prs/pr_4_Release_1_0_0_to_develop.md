@@ -27,9 +27,9 @@ explicit_links: []
 
 ## Description
 
-## [1.0.0] - 2025-03-11
-### Added
-- Add Teqplay API clients.
+## [1.0.0] - 2025-03-11
+### Added
+- Add Teqplay API clients.
 - Add common utilities.
 
 ## Commits

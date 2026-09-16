@@ -7,7 +7,8 @@ title: EKS cluster backup & restore
 author: Darius Wattimena
 date: '2023-06-14'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/148078597
-explicit_links: []
+explicit_links:
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/148078597
 ---
 # EKS cluster backup & restore
 

@@ -14,7 +14,8 @@ head_branch: CC-122-function-types-for-berth
 url: https://github.com/teqplay/poma-backend/pull/189
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:CC-122
 ---
 # PR #189: Put REPARE back, fix when all projects have this update
 
@@ -47,6 +48,8 @@ _No comment._
 
 ### TeqJoostD — 2025-02-28 on `api/src/main/kotlin/nl/teqplay/poma/api/v1/FunctionType.kt`
 
-Did you create a card to fix this? Otherwise might be good to add a todo along the lines of:
-
+Did you create a card to fix this? Otherwise might be good to add a todo along the lines of:
+
+
+
 // TODO(<card-code>) Fix spelling issue

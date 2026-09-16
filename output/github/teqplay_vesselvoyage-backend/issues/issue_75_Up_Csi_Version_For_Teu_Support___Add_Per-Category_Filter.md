@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/75
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1010
 ---
 # Issue #75: Up Csi Version For Teu Support & Add Per-Category Filter
 

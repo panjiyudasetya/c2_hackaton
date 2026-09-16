@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/965
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-182
 ---
 # Issue #965: Prp-182 Use Portcall Nomination Matching On Portcall Record
 

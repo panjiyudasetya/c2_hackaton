@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/314
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2275
 ---
 # Issue #314: Spv-2275 Lock Stops
 

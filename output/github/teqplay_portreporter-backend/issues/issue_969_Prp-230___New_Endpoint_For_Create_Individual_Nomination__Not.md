@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/969
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-230
 ---
 # Issue #969: Prp-230 : New Endpoint For Create Individual Nomination (Not In Batch)
 

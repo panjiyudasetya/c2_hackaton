@@ -7,7 +7,14 @@ title: Platform Component deployment plan dev/live
 author: Richard van Klaveren
 date: '2022-10-04'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/139034625
-explicit_links: []
+explicit_links:
+- jira:PRA-259
+- jira:PRA-260
+- jira:PRA-256
+- jira:PRA-257
+- jira:PRA-261
+- jira:PRA-262
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/139034625
 ---
 # Platform Component deployment plan dev/live
 

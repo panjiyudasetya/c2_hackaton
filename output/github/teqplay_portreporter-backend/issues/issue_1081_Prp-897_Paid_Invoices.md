@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1081
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-897
 ---
 # Issue #1081: Prp-897 Paid Invoices
 

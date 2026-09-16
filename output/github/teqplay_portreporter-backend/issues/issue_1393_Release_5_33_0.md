@@ -10,7 +10,16 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1393
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2413
+- jira:PRP-2432
+- jira:PRP-2433
+- jira:SEC-35
+- jira:CO-2398
+- jira:PRP-2398
+- jira:PRP-2379
+- jira:PRP-2446
+- jira:CO-2446
 ---
 # Issue #1393: Release 5.33.0
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1078
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-974
 ---
 # Issue #1078: Prp-974: Parse The Statusevents Once Into A Combined List And Only Then Check The Portcallevent Type, To Reduce The Amount Of Times We Loop Over All Statusevents
 

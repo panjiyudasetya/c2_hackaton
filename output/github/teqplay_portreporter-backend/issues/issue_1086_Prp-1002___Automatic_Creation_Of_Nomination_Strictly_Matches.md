@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1086
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1002
 ---
 # Issue #1086: Prp-1002 : Automatic Creation Of Nomination Strictly Matches Ship By Imo Number
 

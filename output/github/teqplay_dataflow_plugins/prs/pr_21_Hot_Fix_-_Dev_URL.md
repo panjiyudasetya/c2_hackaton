@@ -27,7 +27,7 @@ explicit_links: []
 
 ## Description
 
-### Description
+### Description
 This patch adopts URL changes on the dev cluster.
 
 ## Commits

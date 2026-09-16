@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1145
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1275
 ---
 # Issue #1145: Feat/Prp-1275/Endpoint For Unpaid Invoices Extended
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1399
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-2490
 ---
 # Issue #1399: Prp-2490 : Try-Catching Csi Ships Not Found Http Exceptions And Returning Null. Adding A Schduled Report In Slack Of These Missing Ships Detected By Portreporter.
 

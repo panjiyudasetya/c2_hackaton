@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1127
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1272
 ---
 # Issue #1127: Prp-1272 : Data Models And Logic Added For Applying Invoice Kickbacks.
 

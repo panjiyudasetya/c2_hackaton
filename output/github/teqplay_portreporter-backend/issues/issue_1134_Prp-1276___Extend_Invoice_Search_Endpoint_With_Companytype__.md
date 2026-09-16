@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1134
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1276
 ---
 # Issue #1134: Prp-1276 : Extend Invoice Search Endpoint With Companytype, Port And Week As New Optional Filter Parameters.
 

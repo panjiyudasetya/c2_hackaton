@@ -14,7 +14,8 @@ head_branch: TCC-1104-encounter-imo-mmsi-matching
 url: https://github.com/teqplay/vesselvoyage-backend/pull/823
 labels: []
 linked_issues: []
-explicit_links: []
+explicit_links:
+- jira:TCC-1104
 ---
 # PR #823: TCC-1104 Resolve encounter other-ship MMSIs at the time of the encounter
 

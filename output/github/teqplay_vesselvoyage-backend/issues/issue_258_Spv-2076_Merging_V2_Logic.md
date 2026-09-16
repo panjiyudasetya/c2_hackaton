@@ -10,7 +10,12 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/258
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2076
+- jira:SPV-2032
+- jira:SPV-2086
+- jira:SPV-2100
+- jira:SPV-2059
 ---
 # Issue #258: Spv-2076 Merging V2 Logic
 

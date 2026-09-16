@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/332
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2314
 ---
 # Issue #332: Spv-2314 Timeline Link Story Page
 

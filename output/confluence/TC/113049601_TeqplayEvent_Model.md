@@ -7,7 +7,9 @@ title: TeqplayEvent Model
 author: Joost Dambrink (Unlicensed)
 date: '2025-01-09'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/113049601
-explicit_links: []
+explicit_links:
+- jira:ISO-8601
+- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/113049601
 ---
 # TeqplayEvent Model
 

@@ -10,7 +10,8 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/226
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2108
 ---
 # Issue #226: Spv-2108 Update The True Destination On Visit And Voyage
 

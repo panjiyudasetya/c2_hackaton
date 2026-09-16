@@ -10,7 +10,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1100
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1186
 ---
 # Issue #1100: Prp-1186: Allow Smart_Fleet_Admin Roles To Get Related Shippinglines.
 

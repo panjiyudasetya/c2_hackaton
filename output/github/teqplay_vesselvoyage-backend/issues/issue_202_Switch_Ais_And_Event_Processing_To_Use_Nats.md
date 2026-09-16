@@ -10,7 +10,10 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/202
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-1992
+- jira:SPV-1946
+- jira:SPV-2029
 ---
 # Issue #202: Switch Ais And Event Processing To Use Nats
 

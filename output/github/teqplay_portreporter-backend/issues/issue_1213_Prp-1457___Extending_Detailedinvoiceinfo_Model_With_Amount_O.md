@@ -12,7 +12,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1213
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1457
 ---
 # Issue #1213: Prp-1457 : Extending Detailedinvoiceinfo Model With Amount Of Direct And Indirect Invoices. Also, Correcting A Related Bug: Portinvoicetotalsummary Model Was Taking The Debit Info To Build The Credit.
 

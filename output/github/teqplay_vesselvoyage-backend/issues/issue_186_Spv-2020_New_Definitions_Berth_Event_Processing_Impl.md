@@ -10,7 +10,9 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/186
 labels: []
-explicit_links: []
+explicit_links:
+- jira:SPV-2019
+- jira:SPV-1985
 ---
 # Issue #186: Spv-2020 New Definitions Berth Event Processing Impl
 

@@ -11,7 +11,8 @@ state: closed
 date: '2025-02-11'
 url: https://github.com/teqplay/portreporter-backend/issues/1112
 labels: []
-explicit_links: []
+explicit_links:
+- jira:PRP-1243
 ---
 # Issue #1112: Set-Up A Regular Job To Keep Documents Usagestats Collection Not Older Than N Days.
 

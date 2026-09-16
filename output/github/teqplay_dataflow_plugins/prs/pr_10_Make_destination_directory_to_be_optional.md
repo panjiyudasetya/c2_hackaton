@@ -27,7 +27,7 @@ explicit_links: []
 
 ## Description
 
-### Description
+### Description
 Create a destination directory only when it is provided.
 
 ## Commits
