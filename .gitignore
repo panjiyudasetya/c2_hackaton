@@ -222,3 +222,12 @@ __marimo__/
 # decision-intel: generated artifacts (rebuildable with `decision-intel build`)
 output/.chromadb/
 output/.graph.dboutput/github/.DS_Store
+
+# The Python-boilerplate `lib/` rule above (for venv lib/ dirs) also matches
+# frontend/lib/ -- bare `dirname/` patterns match at any depth, not just
+# root level. Confirmed directly: `git add frontend/lib/api.ts` printed
+# "frontend/lib is ignored by one of your .gitignore files" during a merge
+# conflict resolution, which is exactly how frontend/lib/api.ts silently
+# lost a function earlier. Do not remove this again on the assumption that
+# "no rule matches lib/" -- one does, see line 17.
+!frontend/lib/
