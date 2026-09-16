@@ -14,9 +14,7 @@ head_branch: TCC-1062-support-for-per-ship-changes
 url: https://github.com/teqplay/vesselvoyage-backend/pull/835
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1062
-- jira:TCC-1061
+explicit_links: []
 ---
 # PR #835: TCC-1062: per-ship changes view for recalculation statistics
 

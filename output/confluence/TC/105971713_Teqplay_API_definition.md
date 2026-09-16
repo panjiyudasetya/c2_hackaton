@@ -7,8 +7,7 @@ title: Teqplay API definition
 author: Richard van Klaveren
 date: '2025-06-30'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/105971713
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/105971713
+explicit_links: []
 ---
 # Teqplay API definition
 

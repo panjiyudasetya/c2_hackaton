@@ -7,8 +7,7 @@ title: Frontend / testing approach
 author: Damon Asberg
 date: '2023-04-19'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/177963009
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/177963009
+explicit_links: []
 ---
 # Frontend / testing approach
 

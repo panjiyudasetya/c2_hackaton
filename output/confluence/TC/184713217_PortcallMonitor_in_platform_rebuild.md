@@ -7,8 +7,7 @@ title: PortcallMonitor in platform rebuild
 author: Richard van Klaveren
 date: '2023-05-22'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/184713217
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/184713217
+explicit_links: []
 ---
 # PortcallMonitor in platform rebuild
 

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>decision-intel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar: session-local question history (nothing is persisted server-side) -->
+  <aside class="sidebar">
+    <div class="brand">
+      <i class="fa-solid fa-diagram-project"></i>
+      <h1>DECISION<span>-INTEL</span></h1>
+    </div>
+    <button class="new-chat-btn" onclick="startNewChat()">
+      <i class="fa-solid fa-plus"></i> New Question
+    </button>
+    <div class="chat-list" id="chatList">
+      <div class="chat-list-empty">Questions you ask will show up here.</div>
+    </div>
+  </aside>
+
+  <!-- Main chat workspace -->
+  <main class="chat-container">
+    <header class="chat-header">
+      <div class="chat-title">
+        <h2>Decision Assistant</h2>
+        <p><i class="fa-solid fa-circle" id="statusDot" style="color: #94A3B8; font-size: 0.6rem;"></i> <span id="statusText">Checking setup…</span></p>
+      </div>
+    </header>
+
+    <div class="chat-box" id="chatBox">
+      <div class="message bot">
+        <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+        <div class="msg-content">
+          Hi — I'm the <strong>decision-intel</strong> assistant. Ask me why a technical decision
+          was made and I'll search the collected GitHub, JIRA, Confluence, and Notion data and
+          cite my sources.
+        </div>
+      </div>
+    </div>
+
+    <div class="suggestions">
+      <div class="chip" onclick="useSuggestion('Why was X library or framework chosen over alternatives?')"><i class="fa-solid fa-code-branch"></i> Why was X chosen?</div>
+      <div class="chip" onclick="useSuggestion('What was the incident that caused this to be rewritten?')"><i class="fa-solid fa-triangle-exclamation"></i> What caused the rewrite?</div>
+      <div class="chip" onclick="useSuggestion('Who decided to deprecate this, and why?')"><i class="fa-solid fa-user-check"></i> Who decided this?</div>
+      <div class="chip" onclick="useSuggestion('What problem was this change actually solving?')"><i class="fa-solid fa-layer-group"></i> What problem did this solve?</div>
+    </div>
+
+    <div class="input-container">
+      <div class="input-wrapper">
+        <input type="text" id="userInput" placeholder="Ask about a technical decision..." onkeydown="handleKeyPress(event)">
+      </div>
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </main>
+
+  <script src="chat.js"></script>
+</body>
+</html>

@@ -147,16 +147,16 @@ Improves performance of merging revents recalculation scenarios back into produc
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsReplayMergeService.kt | Adds `fetchInterestsByShip` and updates `buildMergeEntries` to accept pre-sliced interests. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt | Introduces per-merge interest caching, passes interests into merge, reuses overwritten entries as persistence baseline, and bulk-schedules post-processing. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/PostProcessingService.kt | Adds bulk scheduling overload to enable single-round-trip queue writes. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/PostProcessableDataSource.kt | Implements bulk upsert via `bulkWrite` for post-processing queue entries. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/PersistChangesService.kt | Extends unchanged-recalculation persistence path to accept `PreviousEntryVersions`. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/properties/RecalculationProperties.kt | Updates default merge ship thread count to 8. |
-| src/main/resources/application.properties | Updates configured `recalculation.merge-ship-threads` to 8. |
-| src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsReplayMergeServiceTest.kt | Updates tests for new merge signature and adds grouping test for interests-by-ship. |
+| File | Description |
+| ---- | ----------- |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsReplayMergeService.kt | Adds `fetchInterestsByShip` and updates `buildMergeEntries` to accept pre-sliced interests. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt | Introduces per-merge interest caching, passes interests into merge, reuses overwritten entries as persistence baseline, and bulk-schedules post-processing. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/PostProcessingService.kt | Adds bulk scheduling overload to enable single-round-trip queue writes. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/datasource/PostProcessableDataSource.kt | Implements bulk upsert via `bulkWrite` for post-processing queue entries. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/PersistChangesService.kt | Extends unchanged-recalculation persistence path to accept `PreviousEntryVersions`. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/properties/RecalculationProperties.kt | Updates default merge ship thread count to 8. |
+| src/main/resources/application.properties | Updates configured `recalculation.merge-ship-threads` to 8. |
+| src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsReplayMergeServiceTest.kt | Updates tests for new merge signature and adds grouping test for interests-by-ship. |
 | src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationServiceTest.kt | Updates stubs/verifications for new merge signature and bulk post-processing scheduling. |
 </details>
 

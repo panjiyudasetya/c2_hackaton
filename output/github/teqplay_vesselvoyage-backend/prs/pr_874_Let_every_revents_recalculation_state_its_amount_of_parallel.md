@@ -248,12 +248,12 @@ Adds an optional `parallelJobs` query parameter to the port recalculation endpoi
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
-| src/main/kotlin/nl/teqplay/vesselvoyage/controller/processing/ProcessingRecalculateV2Controller.kt | Adds `parallelJobs` query param (with Swagger description) and forwards it to the recalculation service. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt | Adds `parallelJobs` argument, enforces bounds, and passes it into scenario creation. |
-| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsConversionService.kt | Extends port scenario request creation to populate `Scenario.Settings.parallelJobs`. |
-| src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationServiceTest.kt | Updates stubbing/verification for the new argument and adds tests for invalid values + forwarding. |
+| File | Description |
+| ---- | ----------- |
+| src/main/kotlin/nl/teqplay/vesselvoyage/controller/processing/ProcessingRecalculateV2Controller.kt | Adds `parallelJobs` query param (with Swagger description) and forwards it to the recalculation service. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationService.kt | Adds `parallelJobs` argument, enforces bounds, and passes it into scenario creation. |
+| src/main/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsConversionService.kt | Extends port scenario request creation to populate `Scenario.Settings.parallelJobs`. |
+| src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsRecalculationServiceTest.kt | Updates stubbing/verification for the new argument and adds tests for invalid values + forwarding. |
 | src/test/kotlin/nl/teqplay/vesselvoyage/service/recalculation/ReventsConversionServiceTest.kt | Updates expected settings and adds tests for default and explicit `parallelJobs` propagation. |
 </details>
 

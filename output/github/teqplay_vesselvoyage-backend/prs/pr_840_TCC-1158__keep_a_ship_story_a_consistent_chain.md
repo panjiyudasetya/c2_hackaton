@@ -14,8 +14,7 @@ head_branch: claude/tcc-1158-investigation-cdbf3f
 url: https://github.com/teqplay/vesselvoyage-backend/pull/840
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1158
+explicit_links: []
 ---
 # PR #840: TCC-1158: keep a ship story a consistent chain
 
@@ -239,5 +238,5 @@ _No comment._
 
 ### TeqJoostD — 2026-08-04
 
-augment review
+augment review
 

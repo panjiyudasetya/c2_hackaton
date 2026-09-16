@@ -7,8 +7,7 @@ title: Fuelboss roles & permissions
 author: Leon Joosse (Unlicensed)
 date: '2023-07-17'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/36929544
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/36929544
+explicit_links: []
 ---
 # Fuelboss roles & permissions
 

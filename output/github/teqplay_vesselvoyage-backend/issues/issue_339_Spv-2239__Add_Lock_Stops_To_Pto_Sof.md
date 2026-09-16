@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/339
 labels: []
-explicit_links:
-- jira:SPV-2239
+explicit_links: []
 ---
 # Issue #339: Spv-2239: Add Lock Stops To Pto Sof
 

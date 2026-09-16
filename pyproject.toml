@@ -26,6 +26,8 @@ dependencies = [
     "click>=8.1",
     "rich>=13.7",
     "markdownify>=0.13",   # confluence.py: HTML page body -> markdown
+    # web chat UI (Flask backend + SSE streaming to the browser)
+    "flask>=3.0",
 ]
 
 [project.optional-dependencies]

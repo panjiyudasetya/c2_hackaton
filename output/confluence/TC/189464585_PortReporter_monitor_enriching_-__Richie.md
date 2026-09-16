@@ -7,8 +7,7 @@ title: PortReporter monitor enriching - "Richie"
 author: Former user (Deleted)
 date: '2023-06-09'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/189464585
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/189464585
+explicit_links: []
 ---
 # PortReporter monitor enriching - "Richie"
 

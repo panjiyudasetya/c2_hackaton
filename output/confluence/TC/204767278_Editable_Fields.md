@@ -7,8 +7,7 @@ title: Editable Fields
 author: Joost Dambrink (Unlicensed)
 date: '2023-08-23'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/204767278
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/204767278
+explicit_links: []
 ---
 # Editable Fields
 

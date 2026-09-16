@@ -7,8 +7,7 @@ title: DevOps research library packaging solutions
 author: Minh Trang Nguyen (Unlicensed)
 date: '2023-06-06'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/187564033
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/187564033
+explicit_links: []
 ---
 # DevOps research library packaging solutions
 

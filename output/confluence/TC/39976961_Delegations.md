@@ -7,8 +7,7 @@ title: Delegations
 author: Joost Dambrink (Unlicensed)
 date: '2023-08-14'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/39976961
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/39976961
+explicit_links: []
 ---
 # Delegations
 

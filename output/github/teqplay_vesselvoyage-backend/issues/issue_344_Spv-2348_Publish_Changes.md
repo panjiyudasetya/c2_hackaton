@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/344
 labels: []
-explicit_links:
-- jira:SPV-2348
+explicit_links: []
 ---
 # Issue #344: Spv-2348 Publish Changes
 

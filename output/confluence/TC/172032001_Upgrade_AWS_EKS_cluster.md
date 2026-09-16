@@ -7,8 +7,7 @@ title: Upgrade AWS EKS cluster
 author: Jamie de Leest
 date: '2026-03-26'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/172032001
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/172032001
+explicit_links: []
 ---
 # Upgrade AWS EKS cluster
 

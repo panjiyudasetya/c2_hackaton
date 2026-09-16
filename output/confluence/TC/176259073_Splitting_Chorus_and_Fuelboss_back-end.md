@@ -7,10 +7,7 @@ title: Splitting Chorus and Fuelboss back-end
 author: Leon Joosse (Unlicensed)
 date: '2023-04-06'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/176259073
-explicit_links:
-- jira:CHOR-123
-- jira:FLB-123
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/176259073
+explicit_links: []
 ---
 # Splitting Chorus and Fuelboss back-end
 

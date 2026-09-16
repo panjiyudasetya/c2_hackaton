@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/374
 labels: []
-explicit_links:
-- jira:SPV-2413
+explicit_links: []
 ---
 # Issue #374: Spv-2413 Add Handling Of Corrupt Revents Scenarios
 

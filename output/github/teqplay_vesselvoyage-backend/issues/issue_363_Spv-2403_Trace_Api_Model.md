@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/363
 labels: []
-explicit_links:
-- jira:SPV-2403
+explicit_links: []
 ---
 # Issue #363: Spv-2403 Trace Api Model
 

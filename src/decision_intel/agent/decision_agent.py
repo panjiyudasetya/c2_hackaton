@@ -9,6 +9,7 @@ sees the answer building up in real time.
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Iterator
 
 import anthropic
 
@@ -99,9 +100,13 @@ class DecisionAgent:
     def __init__(self, output_dir: Path) -> None:
         self.output_dir = output_dir
 
-    def ask(self, question: str) -> str:
+    def ask_stream(self, question: str) -> Iterator[str]:
         """
-        Stream the answer to stdout token-by-token and return the full text.
+        Yield the answer as it streams in, one text chunk at a time.
+
+        Used directly by callers that want to display tokens themselves as
+        they arrive (e.g. the Flask chat backend's SSE endpoint) instead of
+        having them printed to stdout — see ``ask()`` below for that case.
 
         Reads ANTHROPIC_API_KEY from the environment (set in .env or shell).
         """
@@ -114,16 +119,22 @@ class DecisionAgent:
 
         client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
-        chunks: list[str] = []
         with client.messages.stream(
             model=_MODEL,
             max_tokens=8192,
             system=_SYSTEM,
             messages=[{"role": "user", "content": prompt}],
         ) as stream:
-            for text in stream.text_stream:
-                print(text, end="", flush=True)
-                chunks.append(text)
+            yield from stream.text_stream
+
+    def ask(self, question: str) -> str:
+        """
+        Stream the answer to stdout token-by-token and return the full text.
+        """
+        chunks: list[str] = []
+        for text in self.ask_stream(question):
+            print(text, end="", flush=True)
+            chunks.append(text)
 
         print()  # final newline after streaming finishes
         return "".join(chunks)

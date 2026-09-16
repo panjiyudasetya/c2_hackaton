@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/369
 labels: []
-explicit_links:
-- jira:SPV-2323
+explicit_links: []
 ---
 # Issue #369: Spv-2323 Post Processing Service
 

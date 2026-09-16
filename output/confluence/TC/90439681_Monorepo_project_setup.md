@@ -7,8 +7,7 @@ title: Monorepo project setup
 author: Former user (Deleted)
 date: '2022-03-11'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/90439681
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/90439681
+explicit_links: []
 ---
 # Monorepo project setup
 

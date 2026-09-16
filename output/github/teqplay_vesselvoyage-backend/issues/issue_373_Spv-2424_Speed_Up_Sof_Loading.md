@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/373
 labels: []
-explicit_links:
-- jira:SPV-2424
+explicit_links: []
 ---
 # Issue #373: Spv-2424 Speed Up Sof Loading
 

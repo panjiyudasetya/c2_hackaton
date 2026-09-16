@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/370
 labels: []
-explicit_links:
-- jira:SPV-2414
+explicit_links: []
 ---
 # Issue #370: Spv-2414 Correct Selected Pilot In Sof
 

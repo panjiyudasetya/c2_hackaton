@@ -7,8 +7,7 @@ title: Teqplay Nominations
 author: Joaquin Marquez Bugella
 date: '2022-05-30'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/109838337
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/109838337
+explicit_links: []
 ---
 # Teqplay Nominations
 

@@ -146,9 +146,13 @@ def github(
 @click.option("--project", "projects", multiple=True, metavar="KEY",
               help="JIRA project key to collect. Repeatable, e.g. --project OFI --project TECH.")
 @click.option("--jql", default="", help="Raw JQL query (combined with --project if both given).")
+@click.option("--board", "boards", multiple=True, metavar="NAME",
+              help="JIRA Agile board name (substring match). Repeatable, e.g. --board PTO --board TCC. "
+                   "Pulls the board's cards and subtasks directly, instead of a JQL search — "
+                   "mutually exclusive with --project/--jql.")
 @click.option("--max", "max_results", default=50, show_default=True)
 @click.pass_context
-def jira(ctx: click.Context, projects: tuple[str, ...], jql: str, max_results: int) -> None:
+def jira(ctx: click.Context, projects: tuple[str, ...], jql: str, boards: tuple[str, ...], max_results: int) -> None:
     """
     Fetch JIRA issues and write one markdown file per issue.
 
@@ -158,6 +162,7 @@ def jira(ctx: click.Context, projects: tuple[str, ...], jql: str, max_results: i
       decision-intel jira --project OFI
       decision-intel jira --project OFI --project TECH
       decision-intel jira --project OFI --jql "sprint in openSprints()"
+      decision-intel jira --board PTO --board TCC
     """
     from decision_intel.collectors import JiraCollector
 
@@ -166,15 +171,21 @@ def jira(ctx: click.Context, projects: tuple[str, ...], jql: str, max_results: i
         console.print("[red]JIRA not configured.[/red] Set JIRA_URL, JIRA_USER, JIRA_API_TOKEN.")
         raise SystemExit(1)
 
-    # Build effective JQL from --project and/or --jql.
-    effective_jql = jql.strip()
-    if projects:
-        keys = ", ".join(projects)
-        project_clause = f"project in ({keys})"
-        effective_jql = f"{project_clause} AND ({effective_jql})" if effective_jql else project_clause
+    if boards:
+        if projects or jql:
+            console.print("[yellow]--board ignores --project/--jql.[/yellow]")
+        with _make_progress_collector(collector):
+            paths = collector.collect_boards(list(boards), max_results_per_board=max_results)
+    else:
+        # Build effective JQL from --project and/or --jql.
+        effective_jql = jql.strip()
+        if projects:
+            keys = ", ".join(projects)
+            project_clause = f"project in ({keys})"
+            effective_jql = f"{project_clause} AND ({effective_jql})" if effective_jql else project_clause
 
-    with _make_progress_collector(collector):
-        paths = collector.collect(jql=effective_jql, max_results=max_results)
+        with _make_progress_collector(collector):
+            paths = collector.collect(jql=effective_jql, max_results=max_results)
 
     _print_results("JIRA", paths)
 
@@ -430,6 +441,44 @@ def build(ctx: click.Context) -> None:
     ctx.invoke(enrich)
     ctx.invoke(index)
     ctx.invoke(graph)
+
+
+# ── web chat UI ───────────────────────────────────────────────────────────────
+
+@cli.command()
+@click.option("--host", default="127.0.0.1", show_default=True)
+@click.option("--port", default=5000, show_default=True)
+@click.pass_context
+def serve(ctx: click.Context, host: str, port: int) -> None:
+    """
+    Run the Flask chat UI at http://HOST:PORT — a browser front-end for
+    asking questions over the collected data (same evidence/answer pipeline
+    as `ask`). Requires `build` to have been run first.
+    """
+    from .webapp import create_app
+
+    output_dir = ctx.obj["output_dir"]
+    app = create_app(output_dir)
+    console.print(f"decision-intel chat running at [bold]http://{host}:{port}[/bold]  (output dir: {output_dir})")
+    app.run(host=host, port=port, debug=False, threaded=True)
+
+
+@cli.command()
+@click.option("--host", default="127.0.0.1", show_default=True)
+@click.option("--port", default=8000, show_default=True)
+@click.pass_context
+def api(ctx: click.Context, host: str, port: int) -> None:
+    """
+    Run the REST API backend for the Next.js frontend (see frontend/) at
+    http://HOST:PORT — collection/pipeline as pollable background jobs, plus
+    /search, /links, /docs, and a streaming /ask.
+    """
+    from .api_server import create_api_app
+
+    output_dir = ctx.obj["output_dir"]
+    app = create_api_app(output_dir)
+    console.print(f"decision-intel API running at [bold]http://{host}:{port}[/bold]  (output dir: {output_dir})")
+    app.run(host=host, port=port, debug=False, threaded=True)
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────

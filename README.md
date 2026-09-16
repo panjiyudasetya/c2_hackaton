@@ -1,6 +1,6 @@
 # decision-intel
 
-A local RAG pipeline that collects engineering artefacts from GitHub, JIRA, Notion, and Confluence, indexes them into a semantic vector store and a cross-source metadata graph, then answers "why was this decision made?" questions using Claude — with no separate Anthropic API key required.
+A local RAG pipeline that collects engineering artefacts from GitHub, JIRA, Notion, and Confluence, indexes them into a semantic vector store and a cross-source metadata graph, then answers "why was this decision made?" questions using Claude — from the CLI or a browser-based chat UI.
 
 ---
 
@@ -75,6 +75,21 @@ decision-intel ask "Why was chunk-processing added to the fact_bunkering query?"
 
 ---
 
+## Chat UI
+
+Prefer a browser over the CLI? `decision-intel serve` runs the same evidence-search-and-answer pipeline as `ask` behind a small Flask backend, with a chat frontend included:
+
+```bash
+decision-intel build          # if you haven't already
+decision-intel serve          # → http://127.0.0.1:5000
+```
+
+Answers stream in token-by-token, same as the CLI. `--host`/`--port` override the default; the backend refuses to answer (with a clear message in the chat) until `decision-intel build` has produced a vector index.
+
+Want collection/pipeline steps triggerable from the browser too (not just chat), or a TypeScript/Tailwind frontend instead of plain HTML? See [`frontend/`](frontend/README.md) — a Next.js app backed by `decision-intel api` (a richer REST API on port 8000, with `/collect/*` and `/pipeline/*` as pollable background jobs). Both chat UIs answer from the same index/graph; pick whichever fits.
+
+---
+
 ## Sample question and answer
 
 **Question**
@@ -122,6 +137,7 @@ decision-intel --help
 | `graph` | Build SQLite cross-source metadata graph |
 | `build` | Run enrich + index + graph in sequence |
 | `ask "QUESTION"` | Ask the AI agent a decision question |
+| `serve` | Run the Flask chat UI in a browser at `http://127.0.0.1:5000` |
 | `search "QUERY"` | Raw semantic search (JSON output, for scripting) |
 | `links "DOC_ID"` | Follow graph links from a document (JSON output) |
 | `read-doc "PATH"` | Print full content of a collected Markdown file |

@@ -7,8 +7,7 @@ title: Encrypted storage classes
 author: Minh Trang Nguyen (Unlicensed)
 date: '2023-09-22'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/214138891
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/214138891
+explicit_links: []
 ---
 # Encrypted storage classes
 

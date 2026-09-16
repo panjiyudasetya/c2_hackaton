@@ -7,8 +7,7 @@ title: Charterer/ship-owner read-only access  - Technical description
 author: Daan Spikker (Unlicensed)
 date: '2021-08-18'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/28049409
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/28049409
+explicit_links: []
 ---
 # Charterer/ship-owner read-only access  - Technical description
 

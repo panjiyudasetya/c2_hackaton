@@ -1,0 +1,64 @@
+---
+id: github:teqplay/vesselvoyage-backend:pr:821
+source: github
+type: pull_request
+repo: teqplay/vesselvoyage-backend
+number: 821
+title: TCC-1076 start up improvements
+author: Darius-Wattimena
+state: closed
+date: '2026-07-17'
+merged_at: '2026-07-20'
+base_branch: develop
+head_branch: TCC-1076-start-up
+url: https://github.com/teqplay/vesselvoyage-backend/pull/821
+labels: []
+linked_issues: []
+explicit_links: []
+---
+# PR #821: TCC-1076 start up improvements
+
+**Repo:** teqplay/vesselvoyage-backend  
+**URL:** https://github.com/teqplay/vesselvoyage-backend/pull/821  
+**State:** closed | **Author:** Darius-Wattimena  
+**Base ← Head:** `develop` ← `TCC-1076-start-up`  
+**Created:** 2026-07-17  
+**Merged:** 2026-07-20  
+
+## Description
+
+Cuts processing/API startup from ~56s to ~11s.
+
+- **Lazy ship statuses**: no bulk preload at startup anymore; `ProcessingShipStatusService` loads each ship's status (identifiers → snapshot/entries) from the database on first access.
+- **Parallel startup**: ships, infra, and the two CSI payloads are fetched concurrently instead of sequentially.
+- **Streaming JSON**: CSI/Poma list endpoints are parsed via a streaming `getForStreamedList` instead of buffering the full ~233 MB ship register in memory.
+- **Gzip**: CSI/Poma rest templates now send `Accept-Encoding: gzip` and transparently decompress (`GzipResponseInterceptor`). Requires server-side compression to be enabled (done now only on CSI/Poma DEV, I will do PROD monday)
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+## Commits
+
+- `8164ddf4` **Darius Wattimena** (2026-07-17): Adjust VesselVoyage startup to do full lazy loading of all ships
+- `1a5e8407` **Darius Wattimena** (2026-07-17): Adjust CSI loading to be faster
+- `4399f9da` **Darius Wattimena** (2026-07-17): Add support gzip responses to make csi and poma loading even faster
+
+## Reviews
+
+### augmentcode[bot] — COMMENTED (2026-07-17)
+
+Review completed. 1 suggestion posted.
+
+[![Fix All in Augment](https://public.augment-assets.com/code-review/fix-all-in-augment.svg "Fix All in Augment")](https://app.augmentcode.com/open-chat?mode=agent&prompt=%23%23%20Review%20Comment%20Analysis%0A%0APlease%20help%20me%20address%20all%20the%20review%20comments%20from%20this%20PR%3A%20https%3A%2F%2Fgithub.com%2Fteqplay%2Fvesselvoyage-backend%2Fpull%2F821%0A%0A%23%23%23%20Steps%20to%20Follow%3A%0A%0A1.%20%2A%2ADetermine%20Github%20Branch%2A%2A%3A%20Use%20%60git%20branch%20--show-current%60%20to%20get%20the%20current%20branch%2C%20then%20fetch%20PR%20details%20from%20the%20Github%20API%20to%20determine%20the%20correct%20branch%20for%20this%20PR%0A2.%20%2A%2ABranch%20Verification%2A%2A%3A%20Ask%20the%20user%20to%20switch%20branches%20if%20they%20are%20not%20on%20the%20correct%20branch%0A3.%20%2A%2AReview%20Comments%2A%2A%3A%20List%20all%20review%20comments%20from%20the%20PR%20and%20ask%20me%20which%20ones%20I%20want%20to%20fix%0A%0APlease%20start%20by%20checking%20the%20current%20branch%20and%20PR%20details.)
+
+
+<h2></h2>
+
+Comment `augment review` to trigger a new review at any time.
+
+### TeqJoostD — APPROVED (2026-07-20)
+
+_No comment._
+
+## Review Comments
+
+## Comments

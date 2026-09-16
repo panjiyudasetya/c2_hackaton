@@ -1,3 +1,10 @@
+---
+id: file:20260915_131633_why_was_chunk_processing_added_to_the_fact_bunkering_query__
+source: unknown
+explicit_links:
+- jira:PTO-2866
+- jira:PTO-2867
+---
 # Why was chunk-processing added to the fact_bunkering query, and what was slow about the original approach?
 
 ## Summary

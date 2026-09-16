@@ -14,8 +14,7 @@ head_branch: fix/drifting-pending-unchanged-entries
 url: https://github.com/teqplay/vesselvoyage-backend/pull/859
 labels: []
 linked_issues: []
-explicit_links:
-- jira:TCC-1121
+explicit_links: []
 ---
 # PR #859: Fix driftingPending never resolving for unchanged merge entries
 

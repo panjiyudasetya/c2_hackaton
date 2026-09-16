@@ -7,8 +7,7 @@ title: PortcallPlus monitor rebuild functionality details
 author: Darius Wattimena
 date: '2023-12-05'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/205193220
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/205193220
+explicit_links: []
 ---
 # PortcallPlus monitor rebuild functionality details
 

@@ -7,8 +7,7 @@ title: AIS stream application architecture
 author: Michel Wilson
 date: '2022-07-07'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/122486785
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/122486785
+explicit_links: []
 ---
 # AIS stream application architecture
 

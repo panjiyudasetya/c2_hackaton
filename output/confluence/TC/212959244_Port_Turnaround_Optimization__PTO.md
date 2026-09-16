@@ -7,8 +7,7 @@ title: Port Turnaround Optimization (PTO)
 author: Maryam Tavakoli (Unlicensed)
 date: '2023-09-22'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/212959244
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/212959244
+explicit_links: []
 ---
 # Port Turnaround Optimization (PTO)
 

@@ -7,8 +7,7 @@ title: Add Slack deployment message to your project
 author: Damon Asberg
 date: '2023-05-09'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181075975
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/181075975
+explicit_links: []
 ---
 # Add Slack deployment message to your project
 

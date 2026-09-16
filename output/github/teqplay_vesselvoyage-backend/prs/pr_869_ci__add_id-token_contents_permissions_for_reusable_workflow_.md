@@ -73,8 +73,8 @@ Updates the repository’s CI configuration to explicitly grant OIDC token and r
 <details>
 <summary>File summaries</summary>
 
-| File | Description |
-| ---- | ----------- |
+| File | Description |
+| ---- | ----------- |
 | .github/workflows/coverage.yml | Grants `id-token` and `contents` permissions to the reusable workflow caller job for OIDC/authenticated access while keeping contents read-only. |
 </details>
 

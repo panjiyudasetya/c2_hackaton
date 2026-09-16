@@ -7,9 +7,7 @@ title: Set up Backend Project for EKS
 author: Former user (Deleted)
 date: '2022-09-27'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/88145921
-explicit_links:
-- github:npryce/konfig:issue:36
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/88145921
+explicit_links: []
 ---
 # Set up Backend Project for EKS
 

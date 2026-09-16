@@ -7,8 +7,7 @@ title: Portreporter Visit structure rules
 author: Richard van Klaveren
 date: '2022-02-24'
 url: https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/92667905
-explicit_links:
-- confluence:https://teqplaybv.atlassian.net/wiki/spaces/TC/pages/92667905
+explicit_links: []
 ---
 # Portreporter Visit structure rules
 

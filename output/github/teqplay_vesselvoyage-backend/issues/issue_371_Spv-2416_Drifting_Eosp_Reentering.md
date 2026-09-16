@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/371
 labels: []
-explicit_links:
-- jira:SPV-2416
+explicit_links: []
 ---
 # Issue #371: Spv-2416 Drifting Eosp Reentering
 

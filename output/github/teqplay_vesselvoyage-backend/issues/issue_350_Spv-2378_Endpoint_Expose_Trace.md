@@ -10,8 +10,7 @@ state: closed
 date: '2024-12-20'
 url: https://github.com/teqplay/vesselvoyage-backend/issues/350
 labels: []
-explicit_links:
-- jira:SPV-2378
+explicit_links: []
 ---
 # Issue #350: Spv-2378 Endpoint Expose Trace
 
