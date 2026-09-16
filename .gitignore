@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -220,3 +219,6 @@ __marimo__/
 # decision-intel: generated artifacts (rebuildable with `decision-intel build`)
 output/.chromadb/
 output/.graph.dboutput/github/.DS_Store
+
+# explicitly track Next.js lib utilities
+!frontend/lib/
