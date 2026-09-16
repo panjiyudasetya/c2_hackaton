@@ -219,6 +219,3 @@ __marimo__/
 # decision-intel: generated artifacts (rebuildable with `decision-intel build`)
 output/.chromadb/
 output/.graph.dboutput/github/.DS_Store
-
-# explicitly track Next.js lib utilities
-!frontend/lib/
